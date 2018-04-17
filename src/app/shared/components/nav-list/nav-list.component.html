@@ -1,0 +1,15 @@
+<div class="list-wrap">
+  <ul class="nav-list">
+    <li *ngFor="let item of navList">
+      <a (click)="navListSelected(item)"
+        [routerLink]="[item.path]"
+         routerLinkActive="active"
+         class="a-label" href="#">
+        <img class="img_logo" src="/assets/img/nav-list-logo24.png" alt=""/>
+        {{item.name}}
+      </a>
+
+    </li>
+  </ul>
+</div>
+

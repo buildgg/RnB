@@ -1,0 +1,25 @@
+header {
+  font-size: 20px;
+  border-bottom: 2px solid #3A6699;
+  /*rgba(0, 139, 255, 0.48);*/
+  font-weight: bolder;
+  padding-bottom: 3px;
+  color: #3A6699;
+
+}
+.img_logo {
+ /* font-size: 3.0em;*/
+  padding-left: 10%;
+}
+a.a-label {
+  text-decoration: none;
+  color: #3A6699;
+  transition: .3s linear;
+  padding: 7px;
+  cursor: pointer;
+}
+a.a-label:hover {
+  background: rgba(73, 140, 206, 0.84);
+  color: white;
+  border-radius: 7px;
+}

@@ -1,0 +1,23 @@
+.nav-root {
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);
+  color: #3A6699;
+  padding: 8px;
+  margin-top: 16px;
+  margin-left: 41px;
+ /* margin: 16px 550px 0px 20px;*/
+  font-weight: bolder;
+  font-size: 25px;
+}
+a/*.a-label*/ {
+  text-decoration: none;
+  color: #3A6699;
+  transition: .3s linear;
+  padding: 7px;
+  cursor: pointer;
+
+}
+a/*.a-label*/:hover {
+  background: rgba(73, 140, 206, 0.84);
+  color: white;
+  border-radius: 7px;
+}

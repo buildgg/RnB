@@ -1,0 +1,14 @@
+<form class="form-signin" [formGroup]="signIn" (ngSubmit)="onSignIn(signIn)">
+  <img class="justify-content-lg-center" src="/assets/img/logo_64_2.png" alt="" >
+
+  <label for="inputName" class="sr-only">Пользователь</label>
+  <input type="name" id="inputName" class="form-control" placeholder="Пользователь" autofocus
+         formControlName="name">
+
+  <label for="inputPassword" class="sr-only">Пароль</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Пароль" formControlName="password">
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Войти</button>
+
+  <p class="alert alert-danger" *ngIf="message">{{message}}</p>
+</form>

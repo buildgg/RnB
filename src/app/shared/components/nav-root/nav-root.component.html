@@ -1,0 +1,23 @@
+<!--
+<div class="nav-root col-md-11">
+  <a routerLink="/home-screen" class="a-label col-md-2">
+    Home Screen
+    <img class="img_logo" src="/assets/img/nav-list-logo24.png" alt=""/>
+  </a>
+  <div *ngIf="isNotNullRoot()"  class="a-label col-md-2">хехе</div>
+</div>
+-->
+<ul class="nav nav-root col-md-11">
+  <li class="nav-item">
+    <a routerLink="/home-screen" class="a-label col-md-2" (click)="returnHome()">
+      Home Screen
+      <img class="img_logo" src="/assets/img/nav-list-logo24.png" alt=""/>
+    </a>
+  </li>
+  <li class="nav-item" *ngIf="!isEmptyNavRootsName()">
+    <a [routerLink]="[navRootsPath]" class="a-label col-md-2">
+     {{navRootsName}}
+    </a>
+  </li>
+</ul>
+<!--*ngIf="isClearRoot"-->

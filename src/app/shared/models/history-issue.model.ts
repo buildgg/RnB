@@ -4,9 +4,9 @@ import {Operation} from './operation.model';
 
 export class HistoryIssue {
   $id: string;
-  actionDate: any;
-  previosIssueState: IssueState;
-  role: Role;
-  operation: Operation;
+  actionDate: string;
+  previosIssueState: string;
+  role: string;
+  operation: string;
   description: string;
 }

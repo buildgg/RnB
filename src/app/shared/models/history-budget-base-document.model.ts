@@ -4,9 +4,9 @@ import {Operation} from './operation.model';
 
 export class HistoryBudgetBaseDocument {
   $id: string;
-  actionDate: any;
-  previosBudgetPositionState: BudgetBaseDocumentState;
-  role: Role;
-  operation: Operation;
+  actionDate: string;
+  previosBudgetPositionState: string;
+  role: string;
+  operation: string;
   description: string;
 }

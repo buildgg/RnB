@@ -6,18 +6,18 @@ import {HistoryBudgetPosition} from './history-budget-position.model';
 
 export class BudgetPosition {
   $id: string;
-  budgetDate: any;
+  budgetDate: string;
   comments: string;
-  realBudgetDate: any;
-  mngResponsCenter: MngResponsCenter;
-  division: Division;
+  realBudgetDate: string;
+  mngResponsCenter: string;
+  division: string;
   count: number;
   measure: string;
-  budgetArticle: BudgetArticle;
+  budgetArticle: string;
   approximateAmount: number;
   amount: number;
   payedAmount: number;
   utilizedAmount: number;
-  budgetPositionState: BudgetPositionState;
+  budgetPositionState: string;
   historyBudgetPositionList: HistoryBudgetPosition[];
 }

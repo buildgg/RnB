@@ -1,8 +1,8 @@
 import {User} from './user.model';
 
 export class Role {
-  constructor(name: string,
-              user: User[],
-              $id?: string) {
+  constructor(public name: string,
+              public user: User[],
+              public $id?: string) {
   }
 }

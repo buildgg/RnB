@@ -1,0 +1,19 @@
+<div class="bg-warning">
+
+</div>
+
+
+<table class="table table-sm table-bordered table-striped">
+  <tr><th></th><th>name</th><th>Role</th></tr>
+  <tr *ngFor="let user of users; let i = index;">
+    <td style="vertical-align:middle">{{i + 1}}</td>
+    <td style="vertical-align:middle">{{user.name}}</td>
+    <td style="vertical-align:middle">{{user.role.name}}</td>
+    <td class="text-xs-center">
+      <button class="btn btn-warning btn-sm"
+              (click)="onSelect(user)">
+        Edit
+      </button>
+    </td>
+  </tr>
+</table>

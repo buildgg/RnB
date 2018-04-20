@@ -1,5 +1,5 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import {ButtonAnchor} from '../../models/button-anchor.model';
+import {Component, Input} from '@angular/core';
+import {ButtonAnchor} from '../../models/button/button-anchor.model';
 
 @Component({
   selector: 'rb-table',

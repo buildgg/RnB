@@ -5,3 +5,5 @@ export class BudgetArticle {
   name: string;
   budgetArticleType: string;
 }
+
+

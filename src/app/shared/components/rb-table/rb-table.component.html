@@ -1,0 +1,48 @@
+<table class="<!--table table-sm  table-bordered-->">
+  <thead>
+  <tr>
+    <th scope="col" *ngFor="let head of tableHead">{{head}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of dataList$ | async">
+    <td>
+      <input type="checkbox" name="collection" value="1" checked>
+    </td>
+    <td [style.color]="'red'">{{data.issueNo}}</td>
+    <td>{{data.date}}</td>
+    <td>{{data.state}}</td>
+    <td>{{data.collectionName}}</td>
+    <td>{{data.issuer}}</td>
+    <td>{{data.responsiblePerson}}</td>
+    <td>{{data.budgetArticleType}}</td>
+    <td>
+        <rb-button [srcImg]="updateButton.srcImg"
+                   [titleHover]="updateButton.titleHover"
+                   [anchorRouterLink]="updateButton.anchorRouterLink">
+        </rb-button>
+        <rb-button [srcImg]="deleteButton.srcImg"
+                   [titleHover]="deleteButton.titleHover"
+                   [anchorRouterLink]="deleteButton.anchorRouterLink"
+        >
+        </rb-button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<!--#1771cb-->
+<!--
+<rb-button [anchorRouterLink]="'/'"
+           [srcImg]="'/assets/img/update2.png'"
+           [titleHover]="'Изменить'">
+</rb-button>
+<rb-button [anchorRouterLink]="'/'"
+           [srcImg]="'/assets/img/delete10.png'"
+           [titleHover]="'Удалить'">
+</rb-button>-->
+
+<!--[anchorRouterLink]="'/'"-->
+<!--[anchorRouterLink]="{{update.anchorRouterLink}}"-->
+<!-- [titleHover]= "update.titleHover"-->
+

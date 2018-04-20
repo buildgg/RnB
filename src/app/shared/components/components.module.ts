@@ -5,13 +5,16 @@ import {NavHeaderComponent} from './nav-header/nav-header.component';
 import { RbFooterComponent } from './rb-footer/rb-footer.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { NavRootComponent } from './nav-root/nav-root.component';
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
+import { RbTableComponent } from './rb-table/rb-table.component';
+import { RbButtonComponent } from './rb-button/rb-button.component';
 
 export const COMPONENTS = [
   NavHeaderComponent,
   RbFooterComponent,
   NavListComponent,
-  NavRootComponent
+  NavRootComponent,
+  RbTableComponent
 ];
 
 
@@ -25,7 +28,9 @@ export const COMPONENTS = [
     NavHeaderComponent,
     RbFooterComponent,
     NavListComponent,
-    NavRootComponent],
+    NavRootComponent,
+    RbTableComponent,
+    RbButtonComponent],
   exports: [COMPONENTS]
 })
 export class ComponentsModule { }

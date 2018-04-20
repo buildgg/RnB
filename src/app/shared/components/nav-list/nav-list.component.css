@@ -14,17 +14,17 @@ ul {
  }
 li {
   margin: 12px 0 12px 8px;
+  padding-bottom: 5px;
 }
 a.a-label {
   text-decoration: none;
   /*display: block;*/
-  font-size: 20px;
+  font-size: 18px;
   color: #3A6699;
   padding: 8px;
 /*  position: relative;*/
  /* transition: .3s linear;*/
   cursor: pointer;
-
 }
 a.a-label:hover {
    background: rgba(73, 140, 206, 0.84);

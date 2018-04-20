@@ -5,8 +5,8 @@ import {HistoryBudgetBaseDocument} from './history-budget-base-document.model';
 
 export class BudgetBaseDocument {
   $id: string;
-  documentnumber: string;
-  documentdate: any;
+  documentNo: string;
+  documentDate: string;
   budgetBaseDocumentState: BudgetBaseDocumentState;
   budgetPositionList: BudgetPosition[];
   dealList: Deal[];

@@ -16,7 +16,6 @@ import {AuthService} from '../../../auth/auth.service';
     AuthModule
   ],
   declarations: [LayoutComponent],
-  exports: [LayoutComponent]/*,
-  providers: [AuthService]*/
+  exports: [LayoutComponent]
 })
 export class LayoutModule { }

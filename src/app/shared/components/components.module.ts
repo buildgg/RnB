@@ -8,13 +8,15 @@ import { NavRootComponent } from './nav-root/nav-root.component';
 import {RouterModule} from '@angular/router';
 import { RbTableComponent } from './rb-table/rb-table.component';
 import { RbButtonComponent } from './rb-button/rb-button.component';
+import { RbFiltersComponent } from './rb-filters/rb-filters.component';
 
 export const COMPONENTS = [
   NavHeaderComponent,
   RbFooterComponent,
   NavListComponent,
   NavRootComponent,
-  RbTableComponent
+  RbTableComponent,
+  RbFiltersComponent
 ];
 
 
@@ -30,7 +32,8 @@ export const COMPONENTS = [
     NavListComponent,
     NavRootComponent,
     RbTableComponent,
-    RbButtonComponent],
+    RbButtonComponent,
+    RbFiltersComponent],
   exports: [COMPONENTS]
 })
 export class ComponentsModule { }

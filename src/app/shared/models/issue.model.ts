@@ -1,5 +1,6 @@
 export class Issue {
-  constructor(description: string,
+  constructor(
+              description: string,
               count: number,
               budgetArticleType: string,
               issuer: string,

@@ -26,15 +26,8 @@ export class BudgetIssueComponent implements OnInit {
   constructor(private issueMockService: IssueMockData) { }
 
   ngOnInit() {
-    console.log('Start!');
-    this.issueMockService
-      .getIssues()
-      .subscribe(
-        (issueList: Issue[]) =>
-          console.log(issueList[0])
-      );
-
     this.issueList$ = this.issueMockService.getIssues();
+
   }
 
 }

@@ -1,0 +1,23 @@
+<div class="filter" *ngIf="isShowFilter">
+<div class="dropmenu">
+<select class="filters">
+  <option value="" hidden >Фильтры</option>
+  <option value="" >Пользовательский</option>
+
+  <option class="option" *ngFor="let filter of filtersList"
+          [value]="filter">{{filter}}
+  </option>
+</select>
+</div>
+<div>
+  <input class="check-filter" type="checkbox" name="collection" value="1">
+  Выбранные заявки
+</div>
+<div>
+  <button type="button" (click)="toggleButtonFilter()">Сбросить фильтры</button>
+</div>
+</div>
+
+<div *ngIf="isShowButtonFilter" class="show-filter">
+  <button type="button" (click)="toggleButtonFilter()">Показать Фильтры</button>
+</div>

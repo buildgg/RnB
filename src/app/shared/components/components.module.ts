@@ -14,7 +14,8 @@ export const COMPONENTS = [
   RbFooterComponent,
   NavListComponent,
   NavRootComponent,
-  RbTableComponent
+  RbTableComponent,
+    RbButtonComponent
 ];
 
 

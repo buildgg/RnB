@@ -16,9 +16,9 @@ export const COMPONENTS = [
   NavListComponent,
   NavRootComponent,
   RbTableComponent,
-  RbFiltersComponent
+  RbFiltersComponent,
+  RbButtonComponent
 ];
-
 
 @NgModule({
   imports: [

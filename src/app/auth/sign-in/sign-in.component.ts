@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../auth.service';
 import {Router} from '@angular/router';
+import {Subject} from 'rxjs/Subject';
 
 @Component({
   selector: 'app-sign-in',
@@ -30,14 +31,13 @@ export class SignInComponent implements OnInit {
     const name = fg.value.name;
     const password = fg.value.password;
     this.signIn(name, password);
+
   }
 
   signIn(name: string, password: string) {
 
     this.authService.login(name, password).subscribe((user) => {
-
         if (this.authService.isLoggedIn) {
-
           if (this.authService.redirectUrl) {
             this.url = this.authService.redirectUrl;
           } else {

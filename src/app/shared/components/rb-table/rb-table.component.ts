@@ -12,6 +12,13 @@ export class RbTableComponent {
   @Input() dataList$;
   @Input() updateButton: ButtonAnchor;
   @Input() deleteButton: ButtonAnchor;
+  checked;
 
+  ngOnChange() {
+    console.log(this.checked + ' check');
+  }
 
+  onChangeCheck(data, val) {
+    console.log(data.issuer + ' : ' + val.checked);
+}
 }

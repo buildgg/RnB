@@ -1,3 +1,24 @@
-<p>
-  user-edit-form works!
-</p>
+<form [formGroup]="usersform">
+  <div class="form-group">
+    <label>Users</label>
+    <select class="form-control"
+            formControlName="users">
+    <option value="">Please select a User</option>
+    <option *ngFor="let lang of users"
+            [value]="lang">{{lang.name}}
+    </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <label>Roles</label>
+    <select class="form-control"
+            formControlName="roles">
+      <option value="">Please select a Role</option>
+      <option *ngFor="let lang of roles"
+              [value]="lang">{{lang}}
+      </option>
+    </select>
+  </div>
+  <button type="submit">Submit</button>
+
+</form>

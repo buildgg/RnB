@@ -14,6 +14,9 @@ import {AuthModule} from './auth/auth.module';
 import {AdminPageModule} from './admin-page/admin-page.module';
 import {AppRoutingModule} from "./app-routing.module";
 import {UserStaticData} from './shared/staticDataMockup/userStaticData'
+import {RoleStaticData} from './shared/staticDataMockup/roleStaticData';
+import {ReactiveFormsModule} from "@angular/forms";
+import {UserClassProxy} from "./shared/ProxyDataSource/userClassProxy";
 
 
 
@@ -32,7 +35,7 @@ import {UserStaticData} from './shared/staticDataMockup/userStaticData'
     AdminPageModule,
     AppRoutingModule
   ],
-  providers: [UserStaticData],
+  providers: [UserStaticData, RoleStaticData, UserClassProxy, UserStaticData ],
   bootstrap: [AppComponent]
 
 })

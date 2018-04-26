@@ -17,19 +17,15 @@ import {AuthGuard} from "../auth/auth-guard.service";
 const routes: Routes = [
 
     {
-        path: "admin-page", component: AdminPageComponent,
-      //  canActivate: [AuthGuard],
-        children: [
-            { path: "user", component: UserComponent  },
-            { path: "userEditForm/:id", component: UserEditFormComponent  },
-            { path: "role", component: RoleComponent }
-        ]
+        path: 'admin-page', component: AdminPageComponent
+        //  canActivate: [AuthGuard],
+
     }
 ];
 
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forChild(routes)],
+    exports: [RouterModule]
 })
 export class AdminPageRoutingModule { }

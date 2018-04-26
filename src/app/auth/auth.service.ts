@@ -7,8 +7,8 @@ import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/filter';
 
 export const USERS: User[] = [
-    new User('admin', '123321', {name: 'Бюджетный контролёр банка', user: null, $id: 'BBBBBB1'}, 'BBUUUUU1'),
-    new User('test', '123321', {name: 'Инициатор Ф', user: null, $id: 'TTTTT1'}, 'TUUUUU1')
+    new User('admin', '123321', {name: 'Бюджетный контролёр банка', users: null, $id: 'BBBBBB1'}, 'BBUUUUU1'),
+    new User('test', '123321', {name: 'Инициатор Ф', users: null, $id: 'TTTTT1'}, 'TUUUUU1')
 ];
 
 

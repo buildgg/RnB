@@ -1,9 +1,11 @@
-<div class="rb-caption">
-
-<rb-filters></rb-filters>
-<rb-operations></rb-operations>
-
+<div class="rb-caption container">
+<div class="row">
+  <rb-filters class="col-md-10" ></rb-filters>
+  <rb-operations class="col-md-2"></rb-operations>
 </div>
+</div>
+
+
 <rb-table [tableHead]="tableHeadList"
           [dataList$]="issueList$"
           [updateButton]="updateButton"

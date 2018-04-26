@@ -1,0 +1,38 @@
+<div class="rb-caption">
+  Базовые бюджетные договора!
+</div>
+<table class="<!--table table-sm  table-bordered-->">
+  <thead>
+  <tr>
+    <th scope="col" *ngFor="let head of tableHeadList">{{head}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of budgetBaseDocumentList$ | async">
+    <td>
+      <input type="checkbox" name="collection" value="1" checked>
+    </td>
+    <td [style.color]="'red'">
+      {{data.documentNo}}</td>
+    <td>{{data.documentDate}}</td>
+    <td>{{data.supplier}}</td>
+    <td>{{data.responsiblePerson}}</td>
+    <td class="amount">{{data.approximateAmount}}</td>
+    <td class="amount">{{data.amount}}</td>
+    <td class="amount">{{data.payedAmount}}</td>
+    <td class="amount">{{data.utilizedAmount}}</td>
+    <td>{{data.budgetBaseDocumentState}}</td>
+    <td>
+      <rb-button [srcImg]="updateButton.srcImg"
+                 [titleHover]="updateButton.titleHover"
+                 [anchorRouterLink]="updateButton.anchorRouterLink">
+      </rb-button>
+      <rb-button [srcImg]="deleteButton.srcImg"
+                 [titleHover]="deleteButton.titleHover"
+                 [anchorRouterLink]="deleteButton.anchorRouterLink">
+      </rb-button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+

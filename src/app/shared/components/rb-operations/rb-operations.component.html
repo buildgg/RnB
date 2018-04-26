@@ -1,0 +1,24 @@
+<!--<div class="operation">
+  <ul>
+    <li>Операции</li>
+    <li>Сделать свод</li>
+    <li>Отвязать от свода</li>
+    <li>Передать распорядителю</li>
+  </ul>
+</div>-->
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenu2"
+          data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false"
+          (click)="showOperation()"
+  >
+    Dropdown
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu2" [class.show]="isShow">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>

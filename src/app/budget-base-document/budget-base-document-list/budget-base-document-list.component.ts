@@ -10,6 +10,7 @@ const tableHeads: string[] = ['', 'Номер', 'Дата договора', 'П
     'Состояние', 'Ориентировочная сумма', 'Сумма договора', 'Оплачено', 'Закрыто', 'Операции'];
 
 @Component({
+    moduleId: module.id,
     selector: 'budget-base-document-list',
     templateUrl: './budget-base-document-list.component.html',
     styleUrls: ['./budget-base-document-list.component.css']
@@ -37,4 +38,14 @@ export class BudgetBaseDocumentListComponent implements OnInit {
         this.budgetBaseDocumentList$ = this.budgetBaseDocumentMockService.getBudgetBaseDocuments();
     }
 
+    onEdit(bbd: BudgetBaseDocument) {
+        console.log('ON_EDIT');
+        console.log(bbd.documentNo);
+        this.budgetBaseDocumentMockService.selectedBudgetBaseDocument = Object.assign({}, bbd);
+        console.log(this.budgetBaseDocumentMockService.selectedBudgetBaseDocument.documentNo);
+    }
+
+    onDelete(bbd: BudgetBaseDocument) {
+        console.log('ON_DELETE');
+    }
 }

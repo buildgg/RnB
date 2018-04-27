@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+    transition: .3s linear;
+    cursor: pointer;
+}
+img {
+    opacity: 0.75;
+}
+img:hover {
+    opacity: 1.00;
+}

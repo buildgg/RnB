@@ -10,10 +10,12 @@ export const routesBudgetBaseDocument: Routes = [
         path: '', component: BudgetBaseDocumentComponent,
         canActivate: [AuthGuard],
         children: [
+            {path: '', component: BudgetBaseDocumentListComponent},
             {path: 'list', component: BudgetBaseDocumentListComponent},
             {path: 'edit', component: BudgetBaseDocumentEditComponent}
         ]
     }
+
 ];
 
 @NgModule({

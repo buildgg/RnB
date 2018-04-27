@@ -8,15 +8,19 @@ import {BudgetBaseDocumentListComponent} from './budget-base-document-list/budge
 import {BudgetBaseDocumentEditComponent} from './budget-base-document-edit/budget-base-document-edit.component';
 import {ComponentsModule} from '../shared/components/components.module';
 import {BudgetBaseDocumentMockData} from './budget-base-document-mock-data';
+import {ReactiveFormsModule} from '@angular/forms';
+import {BudgetPositionListComponent} from './budget-base-document-edit/budget-position-list/budget-position-list.component';
+import {BudgetPositionEditComponent} from './budget-base-document-edit/budget-position-edit/budget-position-edit.component';
 
 @NgModule({
     imports: [
         CommonModule,
         LayoutModule,
         BudgetBaseDocumentRoutingModule,
-        ComponentsModule
+        ComponentsModule,
+        ReactiveFormsModule
     ],
-    declarations: [BudgetBaseDocumentComponent, BudgetBaseDocumentListComponent, BudgetBaseDocumentEditComponent],
+    declarations: [BudgetBaseDocumentComponent, BudgetBaseDocumentListComponent, BudgetBaseDocumentEditComponent, BudgetPositionListComponent, BudgetPositionEditComponent],
     providers: [BudgetBaseDocumentMockData]
 })
 export class BudgetBaseDocumentModule {

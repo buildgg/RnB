@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
-  selector: 'budget-base-document',
-  templateUrl: './budget-base-document.component.html',
-  styleUrls: ['./budget-base-document.component.css']
+    moduleId: module.id,
+    selector: 'budget-base-document',
+    templateUrl: './budget-base-document.component.html',
+    styleUrls: ['./budget-base-document.component.css']
 })
 export class BudgetBaseDocumentComponent implements OnInit {
 
-  constructor() { }
+    constructor() {
+    }
 
-  ngOnInit() {
-  }
+    ngOnInit() {
+    }
 
 }

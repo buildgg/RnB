@@ -24,7 +24,7 @@ import {Role} from "../../../shared/models/role.model";
 
 export class UserEditFormComponent implements OnInit {
 
-    usersform: FormGroup;
+    userEditForm: FormGroup;
     users: User[] = [];
     roles: Role[] = [];
     private router: Router;
@@ -36,15 +36,13 @@ export class UserEditFormComponent implements OnInit {
 
     ngOnInit() {
         console.log(this.users);   // проверка
-        this.usersform = new FormGroup({
-            users: new FormControl(),
-            roles: new FormControl()
+        this.userEditForm = this.formBuilder.group({
+            user: new FormControl(),
+            role: new FormControl()
         });
     }
-    onSubmit(){
-        const users = this.usersform.get('users') as FormArray;
-        users.push(new FormControl());
-    }
+
+    onSubmit(value: any): void {console.log(value);}
 
 
 

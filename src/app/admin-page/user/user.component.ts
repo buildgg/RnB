@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UserStaticData} from '../../shared/staticDataMockup/userStaticData';
 import {User} from '../../shared/models/user.model';
-import { Router } from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class UserComponent implements OnInit {
   users: User[];
-  constructor(private userStaticData: UserStaticData, private router: Router ) {}
+  constructor(private userStaticData: UserStaticData, private router: Router, private route: ActivatedRoute ) {}
+
   getData () {
     this.users = this.userStaticData.getdata();
 }
@@ -18,18 +19,10 @@ export class UserComponent implements OnInit {
       this.getData();
   }
   onEdit (selected: User) {
-
-      // При клике по элементу списка перенаправляем пользователя по адресу /phrases/id
-      // адрес с обязательным параметром указан в настройках маршрутизации в файле    app.routes.ts
-      this.router.navigate(['home-screen/admin-page/usereditform', selected.$id]);
+      this.router.navigate(['../usereditform', selected.$id], {relativeTo: this.route});
   }
 
-      onView (selected: User) {
-
-          // При клике по элементу списка перенаправляем пользователя по адресу /phrases/id
-          // адрес с обязательным параметром указан в настройках маршрутизации в файле    app.routes.ts
-          this.router.navigate(['UserViewForm', selected.$id]);
-      }
+  onView (selected: User) {   this.router.navigate(['UserViewForm', selected.$id]);   }
 }
 
 

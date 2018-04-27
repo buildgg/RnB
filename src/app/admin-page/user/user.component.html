@@ -3,7 +3,7 @@
   <tr *ngFor="let user of users; let i = index;">
     <td style="vertical-align:middle">{{i + 1}}</td>
     <td style="vertical-align:middle">{{user.name}}</td>
-    <td style="vertical-align:middle">{{user.role.name}}</td>
+    <td style="vertical-align:middle">{{user.role}}</td>
     <td class="text-xs-center">
       <button class="btn  btn-outline-secondary"
               (click)="onEdit(user)">

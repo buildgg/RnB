@@ -6,17 +6,17 @@
             formControlName="user">
     <option value="">Please select a User</option>
     <option *ngFor="let user of users"
-            [value]="user.$id">{{user.name}}
+            [ngValue]="user">{{user.name}}
     </option>
     </select>
   </div>
   <div class="form-group">
     <label>Roles</label>
     <select class="form-control"
-            formControlName="ro">
+            formControlName="role">
       <option value="">Please select a Role</option>
       <option *ngFor="let role of roles"
-              [value]="role.$id">{{role.name}}
+              [ngValue]="role">{{role.name}}
       </option>
     </select>
   </div>

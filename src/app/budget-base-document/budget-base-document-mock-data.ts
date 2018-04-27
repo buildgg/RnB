@@ -160,6 +160,7 @@ const budgetBaseDocuments: BudgetBaseDocument[] = [
 
 @Injectable()
 export class BudgetBaseDocumentMockData {
+    selectedBudgetBaseDocument: BudgetBaseDocument = new BudgetBaseDocument();
     private budgetBaseDocumentList: BudgetBaseDocument[] = budgetBaseDocuments;
 
     getBudgetBaseDocuments(): Observable<BudgetBaseDocument[]> {

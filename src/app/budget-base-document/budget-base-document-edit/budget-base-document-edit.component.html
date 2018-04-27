@@ -1,3 +1,58 @@
-<p>
-  budget-base-document-edit works!
-</p>
+<div>
+<form [formGroup]="bbdEditForm">
+    <div class="row">
+        <div class="form-group col-md-5">
+            <label>Номер</label>
+            <input class="form-control" type="text" id="input-no" formControlName="documentNo"
+                   placeholder="Номер договора">
+        </div>
+        <div class="form-group col-md-5">
+            <label>Дата</label>
+            <input class="form-control" type="date" id="input-date" formControlName="documentDate"
+                   placeholder="Дата договора">
+            <!--<td *ngIf="formErrors.productid" class="alert alert-danger">{{formErrors.productid}}</td>-->
+        </div>
+    </div>
+    <div class=" row form-group col-md-10">
+        <label>Поставщик</label><br>
+        <input class="form-control" type="text" id="input-supplier" formControlName="supplier" placeholder="Поставщик">
+
+    </div>
+    <div class="row">
+    <div class="form-group col-md-5">
+        <label>Ориентировочная сумма</label><br>
+        <input class="form-control" type="text" id="input-approximateAmount" formControlName="approximateAmount">
+    </div>
+    <div class="form-group col-md-5">
+        <label>Сумма договора</label><br>
+        <input class="form-control" type="text" id="input-amount" formControlName="amount">
+    </div>
+    </div>
+    <div class="row">
+    <div class="form-group col-md-5">
+        <label>Сумма "Оплачено"</label><br>
+        <input class="form-control" type="text" id="input-payedAmount" formControlName="payedAmount">
+    </div>
+    <div class="form-group col-md-5">
+        <label>Сумма "Закрыто"</label><br>
+        <input class="form-control" type="text" id="input-utilizedAmount" formControlName="utilizedAmount">
+    </div>
+    </div>
+    <div class="row">
+    <div class="form-group col-md-7">
+        <label>Ответственный</label><br>
+        <input class="form-control" type="text" id="input-responsiblePerson" formControlName="responsiblePerson"
+               placeholder="Ответственный">
+    </div>
+    <div class="form-group col-md-3">
+        <label>Состояние</label><br>
+        <input class="form-control" type="text" id="input-state" formControlName="budgetBaseDocumentState">
+    </div>
+    </div>
+
+</form>
+</div>
+<div>
+    <!--<button routerLink='/home-screen/budget-base-document/edit/positionlist'>Показать!</button>-->
+<router-outlet></router-outlet>
+</div>

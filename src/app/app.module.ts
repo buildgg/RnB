@@ -16,7 +16,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {UserStaticData} from './shared/staticDataMockup/userStaticData';
 import {RoleStaticData} from './shared/staticDataMockup/roleStaticData';
 import {ReactiveFormsModule} from "@angular/forms";
-import {UserClassProxy} from './shared/ProxyDataSource/userClassProxy';
+import {UserClassProxy} from './shared/proxy-data-source/userClassProxy';
 import {AngularFireModule} from 'angularfire2';
 import { environment } from '../environments/environment';
 import {RnbRealTimeFireBaseService} from './shared/serviceFireBase/realTimeFireBase';

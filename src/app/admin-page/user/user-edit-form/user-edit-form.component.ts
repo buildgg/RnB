@@ -8,7 +8,7 @@ import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
 import {FormArray, FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AppComponent} from '../../../app.component';
 import {thLocale} from "ngx-bootstrap";
-import {UserClassProxy} from "../../../shared/ProxyDataSource/userClassProxy";
+import {UserClassProxy} from "../../../shared/proxy-data-source/userClassProxy";
 import {Role} from "../../../shared/models/role.model";
 
 @NgModule({

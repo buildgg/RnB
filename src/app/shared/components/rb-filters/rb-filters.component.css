@@ -1,0 +1,31 @@
+.filters {
+  border: none;
+  border-bottom: 2px solid;
+  padding: 4px;
+  font-size: 18px;
+  color: #3A6699;
+  font-weight: 600;
+}
+div {
+  display:inline-block;
+  padding: 3px;
+}
+
+button {
+  text-decoration: none;
+  border: none;
+  color: #FFFFFF;
+  padding: 7px;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: #4179b2;
+}
+button:hover {
+  background-color: #498CCE;
+  border-radius: 7px;
+  color: #FFFFFF;
+}
+.show-filter {
+  padding: 5px;
+  transition: color .2s linear;
+}

@@ -5,15 +5,22 @@ import {NavHeaderComponent} from './nav-header/nav-header.component';
 import { RbFooterComponent } from './rb-footer/rb-footer.component';
 import { NavListComponent } from './nav-list/nav-list.component';
 import { NavRootComponent } from './nav-root/nav-root.component';
-import {RouterModule} from "@angular/router";
+import {RouterModule} from '@angular/router';
+import { RbTableComponent } from './rb-table/rb-table.component';
+import { RbButtonComponent } from './rb-button/rb-button.component';
+import { RbFiltersComponent } from './rb-filters/rb-filters.component';
+import { RbOperationsComponent } from './rb-operations/rb-operations.component';
 
 export const COMPONENTS = [
   NavHeaderComponent,
   RbFooterComponent,
   NavListComponent,
-  NavRootComponent
+  NavRootComponent,
+  RbTableComponent,
+  RbFiltersComponent,
+  RbButtonComponent,
+  RbOperationsComponent
 ];
-
 
 @NgModule({
   imports: [
@@ -25,7 +32,11 @@ export const COMPONENTS = [
     NavHeaderComponent,
     RbFooterComponent,
     NavListComponent,
-    NavRootComponent],
+    NavRootComponent,
+    RbTableComponent,
+    RbButtonComponent,
+    RbFiltersComponent,
+    RbOperationsComponent],
   exports: [COMPONENTS]
 })
 export class ComponentsModule { }

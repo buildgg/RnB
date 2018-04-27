@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  margin-bottom: 60px;
+}
+table {
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #dddddd;
+}
+th {
+  border-bottom: 2px solid #1771cb;
+
+}
+td {
+  border-bottom: 1px solid #dddddd;
+}
+tr:hover {
+  background-color: rgba(144, 219, 248, 0.15);
+
+}
+td.amount{
+  text-align: right;
+}

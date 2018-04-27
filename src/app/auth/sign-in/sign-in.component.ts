@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {AuthSandbox} from "../auth.sandbox";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AuthService} from '../auth.service';
+import {Router} from '@angular/router';
+import {Subject} from 'rxjs/Subject';
 
 @Component({
   selector: 'app-sign-in',
@@ -9,15 +11,17 @@ import {AuthSandbox} from "../auth.sandbox";
 })
 export class SignInComponent implements OnInit {
 
-  signIn: FormGroup;
-
+  signInForm: FormGroup;
+  url: string;
   message: string = null;
 
   constructor(private fb: FormBuilder,
-              private authSandbox: AuthSandbox) { }
+              private authService: AuthService,
+              public router: Router) {
+  }
 
   ngOnInit() {
-    this.signIn = this.fb.group({
+    this.signInForm = this.fb.group({
       name: ['', Validators.required],
       password: ['', Validators.required]
     });
@@ -26,11 +30,27 @@ export class SignInComponent implements OnInit {
   onSignIn(fg: FormGroup) {
     const name = fg.value.name;
     const password = fg.value.password;
-    console.log(`message = ${this.message}`);
+    this.signIn(name, password);
 
-    if (!this.authSandbox.signIn(name, password)) {
-      this.message = 'Неверное имя пользователя или пароль';
-    }
   }
 
+  signIn(name: string, password: string) {
+
+    this.authService.login(name, password).subscribe((user) => {
+        if (this.authService.isLoggedIn) {
+          if (this.authService.redirectUrl) {
+            this.url = this.authService.redirectUrl;
+          } else {
+            this.url = '';
+          }
+          this.router.navigate([this.url]);
+        }
+      },
+      () => {
+        this.message = 'Неверное имя пользователя или пароль';
+      }
+    );
+
+
+  }
 }

@@ -8,9 +8,9 @@ import 'rxjs/add/operator/filter';
 import 'rxjs/add/operator/first';
 
 export const USERS: User[] = [
-    new User('admin', '123321', '10'),
-    new User('boss', '123321', '20'),
-    new User('test', '123321', '30')
+    new User('admin', '123321', '10', 'qqqqq'),
+    new User('boss', '123321', '20', 'qqqqq'),
+    new User('test', '123321', '30', 'qqqqq')
 ];
 
 
@@ -18,7 +18,7 @@ export const USERS: User[] = [
 export class AuthService {
   isLoggedIn = false;
   redirectUrl: string;
-  currentUser: User = new User(null, null, null);
+  currentUser: User = new User(null, null, null, null);
 
 
   checkUser(name: string, password: string) {

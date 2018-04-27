@@ -12,12 +12,14 @@ import {BudgetIssueModule} from './budget-issue/budget-issue.module';
 import {BudgetBaseDocumentModule} from './budget-base-document/budget-base-document.module';
 import {AuthModule} from './auth/auth.module';
 import {AdminPageModule} from './admin-page/admin-page.module';
-import {AppRoutingModule} from "./app-routing.module";
-import {UserStaticData} from './shared/staticDataMockup/userStaticData'
+import {AppRoutingModule} from './app-routing.module';
+import {UserStaticData} from './shared/staticDataMockup/userStaticData';
 import {RoleStaticData} from './shared/staticDataMockup/roleStaticData';
 import {ReactiveFormsModule} from "@angular/forms";
-import {UserClassProxy} from "./shared/ProxyDataSource/userClassProxy";
-
+import {UserClassProxy} from './shared/ProxyDataSource/userClassProxy';
+import {AngularFireModule} from 'angularfire2';
+import { environment } from '../environments/environment';
+import {RnbRealTimeFireBaseService} from './shared/serviceFireBase/realTimeFireBase';
 
 
 @NgModule({
@@ -33,9 +35,10 @@ import {UserClassProxy} from "./shared/ProxyDataSource/userClassProxy";
     BudgetBaseDocumentModule,
     AuthModule,
     AdminPageModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
-  providers: [UserStaticData, RoleStaticData, UserClassProxy, UserStaticData ],
+  providers: [UserStaticData, RoleStaticData, UserClassProxy, UserStaticData , RnbRealTimeFireBaseService],
   bootstrap: [AppComponent]
 
 })

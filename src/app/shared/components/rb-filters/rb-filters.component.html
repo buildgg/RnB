@@ -1,6 +1,6 @@
 <div class="filter" *ngIf="isShowFilter">
 <div class="dropmenu">
-<select class="filters">
+<select class="filters ">
   <option value="" hidden >Фильтры</option>
   <option value="" >Пользовательский</option>
 
@@ -19,5 +19,5 @@
 </div>
 
 <div *ngIf="isShowButtonFilter" class="show-filter">
-  <button type="button" (click)="toggleButtonFilter()">Показать Фильтры</button>
+  <button type="button" (click)="toggleButtonFilter()" class="">Показать Фильтры</button>
 </div>

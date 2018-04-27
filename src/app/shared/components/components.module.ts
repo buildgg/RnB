@@ -9,6 +9,7 @@ import {RouterModule} from '@angular/router';
 import { RbTableComponent } from './rb-table/rb-table.component';
 import { RbButtonComponent } from './rb-button/rb-button.component';
 import { RbFiltersComponent } from './rb-filters/rb-filters.component';
+import { RbOperationsComponent } from './rb-operations/rb-operations.component';
 
 export const COMPONENTS = [
   NavHeaderComponent,
@@ -17,7 +18,8 @@ export const COMPONENTS = [
   NavRootComponent,
   RbTableComponent,
   RbFiltersComponent,
-  RbButtonComponent
+  RbButtonComponent,
+  RbOperationsComponent
 ];
 
 @NgModule({
@@ -33,7 +35,8 @@ export const COMPONENTS = [
     NavRootComponent,
     RbTableComponent,
     RbButtonComponent,
-    RbFiltersComponent],
+    RbFiltersComponent,
+    RbOperationsComponent],
   exports: [COMPONENTS]
 })
 export class ComponentsModule { }

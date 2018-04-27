@@ -10,15 +10,6 @@ export class NavRootComponent {
   @Input() navRootsName = null;
   @Input() navRootsPath = null;
 
-  constructor(activeRouter: ActivatedRoute) {
-    console.log(`root = ${activeRouter.root} 
-    routeConfig = ${activeRouter.routeConfig.path}
-    url = ${activeRouter.url.subscribe(v => console.log(v.forEach(e => console.log(e.path))))
-      
-    }
-    `  );
-  }
-
   returnHome() {
     this.navRootsName = null;
   }

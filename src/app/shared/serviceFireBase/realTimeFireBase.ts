@@ -57,6 +57,7 @@ export class RnbRealTimeFireBaseService  {
     }
 
     updateRecord(oneRecord: RnBRecord, listName: string) {
+
         const rezultInstance = {} as RnBRecord;
         const rezultInstanceIDField = {} as RnBRecord;
         for (const objProp in oneRecord) {
@@ -66,7 +67,9 @@ export class RnbRealTimeFireBaseService  {
                 rezultInstanceIDField[objProp] = oneRecord[objProp];
             }
         }
-        this.innerGetDataList(listName).update(rezultInstanceIDField.$id, rezultInstance);
+        this.innerGetDataList(listName).update(rezultInstanceIDField.$id, rezultInstance).then(
+                value => {  console.log(value + 'Update в FireBase прошла успешно '); return value; },
+                value => {  console.log(value + 'Ошибка updatate в FireBase '); return value; });
     }
 
 

@@ -2,11 +2,11 @@ import {NgModule} from '@angular/core';
 import {AuthGuard} from '../../auth/auth-guard.service';
 import {Routes, RouterModule} from '@angular/router';
 import {UserComponent} from './user.component';
-import {UserEditFormComponent} from './user-edit-form/user-edit-form.component';
+import {UserLinkRoleEditFormComponent} from './user-link-role/user-link-role.component';
 
 export const routesAdminPageUser: Routes = [
     {path: '', component: UserComponent, canActivate: [AuthGuard]},
-    {path: 'usereditform/:id', component: UserEditFormComponent}
+    {path: 'usereditform/:id', component: UserLinkRoleEditFormComponent}
 ];
 
 @NgModule({

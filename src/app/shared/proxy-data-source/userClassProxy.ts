@@ -6,15 +6,16 @@ import {RnbRealTimeFireBaseService} from '../serviceFireBase/realTimeFireBase';
 
 @Injectable()
 export class UserClassProxy {
-    private users: User[];
+
+    selectdUser: User = new User(null, null, null, null);
 
     constructor(private fireservice: RnbRealTimeFireBaseService) {
-        // this.users = usersData.getdata();
-    }
+     }
 
     getUsers(): Observable<User[]> {
-        // return Observable.from([this.users]);
-        return this.fireservice.getDataList <User>('user');
+         return this.fireservice.getDataList <User>('user');
     }
+
+    updateUser (recordToUpdate: User) { this.fireservice.updateRecord( recordToUpdate, 'user' ); }
 
 }

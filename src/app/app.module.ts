@@ -13,9 +13,6 @@ import {BudgetBaseDocumentModule} from './budget-base-document/budget-base-docum
 import {AuthModule} from './auth/auth.module';
 import {AdminPageModule} from './admin-page/admin-page.module';
 import {AppRoutingModule} from './app-routing.module';
-import {UserStaticData} from './shared/staticDataMockup/userStaticData';
-import {RoleStaticData} from './shared/staticDataMockup/roleStaticData';
-import {ReactiveFormsModule} from "@angular/forms";
 
 
 

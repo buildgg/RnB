@@ -30,23 +30,26 @@ export class UserLinkRoleEditFormComponent implements OnInit {
                 private  usersClassProxy: UserClassProxy,
                 private  roleClassProxy: RoleClassProxy,
                 private router: Router) {
-        usersClassProxy.getUsers().subscribe(value => this.users = value);
         roleClassProxy.getUsers().subscribe(value => this.roles = value);
     }
 
 
     ngOnInit() {
-          this.userEditForm = this.formBuilder.group({
+        this.userEditForm = this.formBuilder.group({
             'user': [this.usersClassProxy.selectdUser.name],
             'role': [null]
         });
     }
 
     onSubmit(value: any): void {
-        this.usersClassProxy.updateUser({$id: this.usersClassProxy.selectdUser.$id,
-                                                       name: this.usersClassProxy.selectdUser.name,
-                                                       password: this.usersClassProxy.selectdUser.password,
-                                                       role: value.role.name});
+
+        this.usersClassProxy.updateUser({
+            $id: this.usersClassProxy.selectdUser.$id,
+            name: this.usersClassProxy.selectdUser.name,
+            password: this.usersClassProxy.selectdUser.password,
+            role: value.role.name
+        }).subscribe(value => alert('Всё ОК, id = ' + value ), value => alert(value));
+
         this.router.navigate(['../admin-page/user']);
     }
 

@@ -5,7 +5,7 @@ import {LayoutModule} from '../shared/containers/layout/layout.module';
 import {AdminPageComponent} from './admin-page.component';
 import {UserComponent} from './user/user.component';
 import {RoleComponent} from './role/role.component';
-import {UserLinkRoleEditFormComponent} from './user/user-link-role/user-link-role.component';
+import {UserLinkRoleEditFormComponent} from './user/user-link-role-edit-form/user-link-role-edit-form.component';
 import {RoleEditFormComponent} from './role/role-edit-form/role-edit-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ComponentsModule} from '../shared/components/components.module';

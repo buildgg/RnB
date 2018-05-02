@@ -1,8 +1,70 @@
+<router-outlet>
 <nav>
+<!--
   <a routerLink="/home-screen/admin-page/user">User</a>
   <a routerLink="/home-screen/admin-page/role">Role</a>
+-->
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Присвоение ролей пользователям
+  </button>
+
+
+  <button class="btn btn-default"
+          (click)="onClickRole()">
+    Роли
+  </button>
+
+
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Статусы заявок
+  </button>
+
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Статусы бюджетных договоров
+  </button>
+
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Операции
+  </button>
+
+
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Настройка логики операций
+  </button>
+
+
 </nav>
+<p>  </p>
+<nav>
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Доступы к фильтрам
+  </button>
 
-<router-outlet>  router 3</router-outlet>
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Доступы к операциям
+  </button>
+
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Доступы к областям
+  </button>
+
+  <button class="btn btn-default"
+          (click)="onClickUser()">
+    Критерии маршуртизации
+  </button>
 
 
+</nav>
+<nav>
+  <p> </p>
+<!--<router-outlet></router-outlet>-->
+</nav>
+</router-outlet>

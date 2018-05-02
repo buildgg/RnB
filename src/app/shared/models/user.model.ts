@@ -1,9 +1,10 @@
-import {Role} from './role.model';
+import {RnBRecord} from './rnb-shared-structures';
 
-export class User {
+export class User implements RnBRecord{
   constructor(public name: string,
               public password: string,
-              public role: Role,
-              public $id?: string) {
+              public role: string,
+              public $id: string) {
   }
 }
+

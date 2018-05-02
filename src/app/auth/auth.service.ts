@@ -5,10 +5,12 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/filter';
+import 'rxjs/add/operator/first';
 
 export const USERS: User[] = [
-    new User('admin', '123321', {name: 'Бюджетный контролёр банка', users: null, $id: 'BBBBBB1'}, 'BBUUUUU1'),
-    new User('test', '123321', {name: 'Инициатор Ф', users: null, $id: 'TTTTT1'}, 'TUUUUU1')
+    new User('admin', '123321', '10', 'qqqqq'),
+    new User('boss', '123321', '20', 'qqqqq'),
+    new User('test', '123321', '30', 'qqqqq')
 ];
 
 
@@ -16,7 +18,7 @@ export const USERS: User[] = [
 export class AuthService {
   isLoggedIn = false;
   redirectUrl: string;
-  currentUser: User = new User(null, null, null);
+  currentUser: User = new User(null, null, null, null);
 
 
   checkUser(name: string, password: string) {
@@ -29,13 +31,13 @@ export class AuthService {
   login(name: string, password: string) {
     return Observable.from(USERS)
       .delay(300)
+      .filter(user => user.name === name && user.password === password)
       .do(user => {
         if (user.name === name && user.password === password) {
           this.isLoggedIn = true;
           this.currentUser = user;
         }
-      })
-      .filter(user => user.name === name && user.password === password);
+      }).first();
   }
 
   logout(): void {

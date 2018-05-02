@@ -41,3 +41,6 @@ e2e
 # System Files
 .DS_Store
 Thumbs.db
+.editorconfig
+src/assets/.gitkeep
+src/assets/img/temp/

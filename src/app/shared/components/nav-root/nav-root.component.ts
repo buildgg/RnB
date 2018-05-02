@@ -1,4 +1,5 @@
 import {Component, Input } from '@angular/core';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'rb-nav-root',
@@ -15,4 +16,5 @@ export class NavRootComponent {
   isEmptyNavRootsName() {
     return this.navRootsName === null ? true : false;
   }
+
 }

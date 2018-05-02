@@ -1,14 +1,32 @@
 import {BudgetPosition} from './budget-position.model';
-import {BudgetBaseDocumentState} from './budget-base-document-state.model';
 import {Deal} from './deal.model';
-import {HistoryBudgetBaseDocument} from './history-budget-base-document.model';
 
 export class BudgetBaseDocument {
-  $id: string;
-  documentnumber: string;
-  documentdate: any;
-  budgetBaseDocumentState: BudgetBaseDocumentState;
-  budgetPositionList: BudgetPosition[];
-  dealList: Deal[];
-  historyBudgetBaseDocument: HistoryBudgetBaseDocument[];
+    documentNo: string;
+    documentDate: string;
+    supplier: string;
+    responsiblePerson: string;
+    approximateAmount: number;
+    amount: number;
+    payedAmount: number;
+    utilizedAmount: number;
+    budgetBaseDocumentState: string;
+    budgetPositionList: BudgetPosition[];
+    dealList: Deal[];
+    $id?: string;
+    /*constructor(documentNo: string,
+                documentDate: string,
+                supplier: string,
+                responsiblePerson: string,
+                approximateAmount: number,
+                amount: number,
+                payedAmount: number,
+                utilizedAmount: number,
+                budgetBaseDocumentState: string,
+                budgetPositionList: BudgetPosition[],
+                dealList: Deal[],
+                $id?: string) {
+    }*/
+
+    // historyBudgetBaseDocument: HistoryBudgetBaseDocument[];
 }

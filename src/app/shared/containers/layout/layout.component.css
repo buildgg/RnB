@@ -1,7 +1,7 @@
 .rb-content /deep/ {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);
   padding: 12px;
-  margin: 20px 5px 30px 30px;
+  margin: 20px 5px 75px 10px;
   font-family: "Segoe UI",Roboto,"Helvetica Neue", Arial,sans-serif;
   font-size: 18px;
 }

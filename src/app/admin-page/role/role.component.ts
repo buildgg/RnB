@@ -1,42 +1,30 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-import {User} from '../../shared/models/user.model';
-import {RoleStaticData} from '../../shared/staticDataMockup/roleStaticData';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Role} from '../../shared/models/role.model';
+import {RoleClassProxy} from '../../shared/proxy-data-source/roleClassProxy';
 
 @Component({
     selector: 'app-role',
-    templateUrl: './role.component.html',
-    styleUrls: ['./role.component.css']
+    templateUrl: './role.component.html'
 })
 export class RoleComponent implements OnInit {
 
     roles: Role[];
 
-    constructor(private roleStaticData: RoleStaticData, private router: Router) {
-    }
-
-    getData() {
-        this.roles = this.roleStaticData.getdata();
+    constructor(private  roleClassProxy: RoleClassProxy, private router: Router, private route: ActivatedRoute) {
+        roleClassProxy.getUsers().subscribe(value => this.roles = value);
     }
 
     ngOnInit() {
-        this.getData();
     }
 
-    onSelect(selected: Role) {
-        this.router.navigate(['RoleEditForm', selected.$id]);
+    onEdit(selected: Role) {
+        this.router.navigate(['../roleeditform', selected.$id], {relativeTo: this.route});
     }
 
     onView(selected: Role) {
-        this.router.navigate(['RoleViewForm', selected.$id]);
+        this.router.navigate(['ТУТ НАДО ДОБАВИТЬ ПУТЬ', selected.$id], {relativeTo: this.route});
     }
 
-    onDelete(selected: Role) {
-        this.router.navigate(['RoleDeleteForm', selected.$id]);
-    }
-
-    onAdd() {
-          }
 
 }

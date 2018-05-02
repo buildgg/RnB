@@ -1,15 +1,32 @@
 import { Component, OnInit } from '@angular/core';
+import {RbButtonComponent} from '../shared/components/rb-button/rb-button.component';
+import {ButtonAnchor} from '../shared/models/button/button-anchor.model';
+import {ActivatedRoute, Router} from '@angular/router';
+import {User} from '../shared/models';
+
 
 @Component({
-  selector: 'admin-page',
-  templateUrl: './admin-page.component.html',
-  styleUrls: ['./admin-page.component.css']
-})
+    selector: 'admin-page',
+    templateUrl: './admin-page.component.html'})
 export class AdminPageComponent implements OnInit {
 
-  constructor() { }
+    userButton: RbButtonComponent;
+    userButtonAnchor: ButtonAnchor;
 
-  ngOnInit() {
-  }
+    constructor(private router: Router, private route: ActivatedRoute)
+    {  }
+
+    ngOnInit() {
+    }
+
+    onClickUser() {
+        this.router.navigate(['../admin-page/user'], );
+    }
+
+    onClickRole() {
+        this.router.navigate(['../admin-page/role']);
+
+    }
+
 
 }

@@ -12,7 +12,10 @@ import {BudgetIssueModule} from './budget-issue/budget-issue.module';
 import {BudgetBaseDocumentModule} from './budget-base-document/budget-base-document.module';
 import {AuthModule} from './auth/auth.module';
 import {AdminPageModule} from './admin-page/admin-page.module';
-import {AppRoutingModule} from "./app-routing.module";
+import {AppRoutingModule} from './app-routing.module';
+import {UserStaticData} from './shared/staticDataMockup/userStaticData';
+import {RoleStaticData} from './shared/staticDataMockup/roleStaticData';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 
@@ -29,9 +32,7 @@ import {AppRoutingModule} from "./app-routing.module";
     BudgetBaseDocumentModule,
     AuthModule,
     AdminPageModule,
-    AppRoutingModule
-  ],
-  providers: [],
+    AppRoutingModule  ],
   bootstrap: [AppComponent]
 
 })

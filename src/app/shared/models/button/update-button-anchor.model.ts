@@ -1,13 +1,18 @@
 import {ButtonAnchor} from './button-anchor.model';
+import {EventEmitter} from '@angular/core';
 
 export class UpdateButtonAnchor implements ButtonAnchor {
   srcImg?: string;
   titleHover?: string;
-  actionButton?: string;
+ /* actionButton?;*/
 
-  constructor(public anchorRouterLink: string) {
+  constructor(public anchorRouterLink: string = null) {
     this.srcImg = '/assets/img/update2.png';
     this.titleHover = 'Изменить';
-    this.actionButton = '';
   }
+  actionButton(data) {
+    console.log('CLICK 2 = ' + data);
+    return new EventEmitter().emit(data.name);
+  }
+
 }

@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
 import {ButtonAnchor} from '../../models/button/button-anchor.model';
 
 @Component({
@@ -11,13 +11,10 @@ export class RbTableComponent {
   @Input() tableHead;
   @Input() dataList$;
   @Input() updateButton: ButtonAnchor;
+  /*@Output() updateButtonClick = new EventEmitter();*/
   @Input() deleteButton: ButtonAnchor;
-
   checked;
 
-  ngOnChange() {
-    console.log(this.checked + ' check');
-  }
 
   onChangeCheck(data, val) {
     console.log(data.issuer + ' : ' + val.checked);

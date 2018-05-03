@@ -6,6 +6,8 @@ import {BudgetIssueComponent} from './budget-issue.component';
 import {LayoutModule} from '../shared/containers/layout/layout.module';
 import {ComponentsModule} from '../shared/components/components.module';
 import {IssueMockData} from './issue-mock-data';
+import { IssueListComponent } from './issue-list/issue-list.component';
+import { IssueEditComponent } from './issue-edit/issue-edit.component';
 
 @NgModule({
   imports: [
@@ -15,7 +17,9 @@ import {IssueMockData} from './issue-mock-data';
     ComponentsModule
   ],
   declarations: [
-    BudgetIssueComponent],
+    BudgetIssueComponent,
+    IssueListComponent,
+    IssueEditComponent],
   providers: [IssueMockData]
 })
 export class BudgetIssueModule { }

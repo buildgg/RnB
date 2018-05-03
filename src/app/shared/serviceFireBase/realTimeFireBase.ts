@@ -4,7 +4,9 @@ import {Subject} from 'rxjs/Subject';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/fromPromise';
 import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
+import 'rxjs/add/operator/timeout';
 
+const FIRE_TIMEOUT = 10000; // ТАЙМАУТ НЕ ПОМАГАЕТ - ОН ТУПО ГЕНЕРИТ ERROR ЧЕРЕЗ ТАЙМАУТ, если ничего не прихоидт с обзёрвбла , на который подписались
 
 @Injectable()
 export class RnbRealTimeFireBaseService {
@@ -35,7 +37,7 @@ export class RnbRealTimeFireBaseService {
             },
             value => {pubSub.next(null); }
         );
-        return pubSub.asObservable();
+        return pubSub.asObservable().timeout(FIRE_TIMEOUT);
     }
 
     insertRecord(oneRecord: RnBRecord, listName: string): Observable<$id> {
@@ -52,7 +54,7 @@ export class RnbRealTimeFireBaseService {
             value => {
                 pubSub.error('ошибка при попытке insert');
             }));
-        return pubSub.asObservable();
+        return pubSub.asObservable().timeout(FIRE_TIMEOUT);
     }
 
     updateRecord(oneRecord: RnBRecord, listName: string): Observable<$id>{
@@ -73,7 +75,7 @@ export class RnbRealTimeFireBaseService {
             value => {
                 pubSub.next('ошибка при попытке update');
             });
-        return pubSub.asObservable();
+        return pubSub.asObservable().timeout(FIRE_TIMEOUT);
     }
 
 
@@ -86,7 +88,7 @@ export class RnbRealTimeFireBaseService {
             value => {
                 pubSub.next('ошибка при попытке delete');
             });
-        return pubSub.asObservable();
+        return pubSub.asObservable().timeout(FIRE_TIMEOUT);
     }
 
 

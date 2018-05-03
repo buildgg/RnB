@@ -11,8 +11,9 @@ export class RbButtonComponent {
   @Input() srcImg;
   @Output() actionButton = new EventEmitter();
 
-  onClickButton (root) {
-    this.actionButton.emit(root);
+  onClickButton () {
+    console.log('Button!! ');
+    this.actionButton.emit();
   }
 
 

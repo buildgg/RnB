@@ -13,13 +13,11 @@ export const USERS: User[] = [
   new User('test', '123321', '30')
 ];
 
-
 @Injectable()
 export class AuthService {
-  isLoggedIn = false;
+  isLoggedIn = true;
   redirectUrl: string;
   currentUser: User = new User(null, null, null);
-
 
   checkUser(name: string, password: string) {
     USERS.forEach(

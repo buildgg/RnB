@@ -37,7 +37,7 @@ export class RnbRealTimeFireBaseService {
             },
             value => {pubSub.next(null); }
         );
-        return pubSub.asObservable().timeout(FIRE_TIMEOUT);
+        return pubSub.asObservable();
     }
 
     insertRecord(oneRecord: RnBRecord, listName: string): Observable<$id> {

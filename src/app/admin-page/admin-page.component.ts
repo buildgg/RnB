@@ -20,11 +20,11 @@ export class AdminPageComponent implements OnInit {
     }
 
     onClickUser() {
-        this.router.navigate(['../admin-page/user'], );
+        this.router.navigate(['../home-screen/admin-page/user'], );
     }
 
     onClickRole() {
-        this.router.navigate(['../admin-page/role']);
+        this.router.navigate(['../home-screen/admin-page/role']);
 
     }
 

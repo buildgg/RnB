@@ -1,15 +1,21 @@
-<div class="rb-caption container">
-<div class="row">
-  <rb-filters class="col-md-10" ></rb-filters>
-  <rb-operations class="col-md-2"></rb-operations>
+<div *ngIf="isVisibleList; else issueEdit">
+  <div class="rb-caption container">
+    <div class="row">
+      <rb-filters class="col-md-10"></rb-filters>
+      <rb-operations class="col-md-2"></rb-operations>
+    </div>
+  </div>
+
+  <issue-list
+    [tableHeadList]="tableHeadList"
+    [issueList$]="issueList$"
+    [updateButton]="updateButton"
+    [deleteButton]="deleteButton"
+    (actionButtonUpdate)="onActionButtonUpdate($event)"
+    (actionButtonDelete)="onActionButtonDelete($event)">
+  </issue-list>
 </div>
-</div>
 
-
-<rb-table [tableHead]="tableHeadList"
-          [dataList$]="issueList$"
-          [updateButton]="updateButton"
-          [deleteButton]="deleteButton">
-</rb-table>
-
-
+<ng-template #issueEdit>
+  <issue-edit></issue-edit>
+</ng-template>

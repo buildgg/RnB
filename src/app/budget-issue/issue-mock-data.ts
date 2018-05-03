@@ -13,7 +13,19 @@ const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите',
-    $id: 3
+    $id: 1
+  },
+  {
+    description: 'Очень необходимо два офисных стулья',
+    count: 4,
+    budgetArticleType: 'канцелярские товары',
+    issuer: 'Марко Лукич Кропивни',
+    responsiblePerson: 'Хамза Хакимзаде Ния',
+    collectionName: '№ 22м',
+    date: '01.02.2017',
+    issueNo: '433',
+    state: '"ОТКЛ.Распорядите',
+    $id: 2
   },
   {
     description: 'Очень необходимо два офисных стулья',
@@ -31,25 +43,13 @@ const issues: Issue[] = [
     description: 'Очень необходимо два офисных стулья',
     count: 4,
     budgetArticleType: 'канцелярские товары',
-    issuer: 'Марко Лукич Кропивни',
-    responsiblePerson: 'Хамза Хакимзаде Ния',
-    collectionName: '№ 22м',
-    date: '01.02.2017',
-    issueNo: '433',
-    state: '"ОТКЛ.Распорядите',
-    $id: 3
-  },
-  {
-    description: 'Очень необходимо два офисных стулья',
-    count: 4,
-    budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
     collectionName: '№ 22м',
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите',
-    $id: 3
+    $id: 4
   },
   {
     description: 'Очень необходимо два офисных стулья',
@@ -61,7 +61,7 @@ const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите',
-    $id: 3
+    $id: 5
   },
   {
     description: 'Очень необходимо два офисных стулья',
@@ -73,7 +73,7 @@ const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: 3
+    $id: 6
   },
   {
     description: 'Очень необходимо два офисных стулья',
@@ -85,7 +85,7 @@ const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: 3
+    $id: 7
   },
   {
     description: 'Очень необходимо два офисных стулья',
@@ -97,7 +97,7 @@ const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: 3
+    $id: 8
   },
   {
     description: 'Очень необходимо два офисных стулья',
@@ -109,7 +109,7 @@ const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: 3
+    $id: 9
   },
   {
     description: 'Очень необходимо два офисных стулья',
@@ -121,7 +121,7 @@ const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: 3
+    $id: 10
   },
   {
     description: 'Очень необходимо два офисных стулья',
@@ -133,7 +133,7 @@ const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: 3
+    $id: 11
   }
 ];
 

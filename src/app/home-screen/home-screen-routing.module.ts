@@ -5,7 +5,7 @@ import {BudgetIssueComponent} from '../budget-issue/budget-issue.component';
 import {BudgetBaseDocumentComponent} from '../budget-base-document/budget-base-document.component';
 import {AuthGuard} from '../auth/auth-guard.service';
 import {routesAdminPage} from '../admin-page/admin-page-routing.module';
-import {routesBudgetBaseDocument} from "../budget-base-document/budget-base-document-routing.module";
+import {routesBudgetBaseDocument} from '../budget-base-document/budget-base-document-routing.module';
 
 export const routesHomeScreen: Routes = [
   {

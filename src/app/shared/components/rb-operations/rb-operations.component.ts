@@ -25,9 +25,8 @@ export class RbOperationsComponent implements OnInit {
   ngOnInit() {
     this.operationArray = operations;
   }
-
-  showOperation() {
-    this.isShow = true;
+  toggleOperation() {
+    this.isShow = !this.isShow;
   }
 
   closeOperation() {

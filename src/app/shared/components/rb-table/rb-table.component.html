@@ -21,7 +21,8 @@
     <td>
         <rb-button [srcImg]="updateButton.srcImg"
                    [titleHover]="updateButton.titleHover"
-                   [anchorRouterLink]="updateButton.anchorRouterLink">
+                   [anchorRouterLink]="updateButton.anchorRouterLink"
+                   (actionButton)="updateButton.actionButton2(data)">
         </rb-button>
         <rb-button [srcImg]="deleteButton.srcImg"
                    [titleHover]="deleteButton.titleHover"

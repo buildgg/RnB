@@ -1,0 +1,38 @@
+<table class="<!--table table-sm  table-bordered-->">
+  <thead>
+  <tr>
+    <!-- <th scope="col" *ngFor="let head of tableHead">{{head}}</th>-->
+    <th scope="col" *ngFor="let head of tableHeadList">{{head}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of issueList$ | async">
+    <td>
+      <input type="checkbox" name="collection" value="1" #valueCheck
+             [checked]="checked"
+             (change)="onChangeCheck(data.$id, valueCheck)">
+    </td>
+    <td >{{data.issueNo}}</td>
+    <td>{{data.date}}</td>
+    <td>{{data.state}}</td>
+    <td>{{data.collectionName}}</td>
+    <td>{{data.issuer}}</td>
+    <td>{{data.responsiblePerson}}</td>
+    <td>{{data.budgetArticleType}}</td>
+    <td>
+      <rb-button [srcImg]="updateButton.srcImg"
+                 [titleHover]="updateButton.titleHover"
+                 [anchorRouterLink]="updateButton.anchorRouterLink"
+                 (actionButton)="onActionButtonUpdate(data)">
+      </rb-button>
+      <rb-button [srcImg]="deleteButton.srcImg"
+                 [titleHover]="deleteButton.titleHover"
+                 [anchorRouterLink]="deleteButton.anchorRouterLink"
+                 (actionButton)="onActionButtonDelete(data)"
+
+      >
+      </rb-button>
+    </td>
+  </tr>
+  </tbody>
+</table>

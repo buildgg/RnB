@@ -1,7 +1,7 @@
 import {BudgetPosition} from './budget-position.model';
 import {Deal} from './deal.model';
 
-export class BudgetBaseDocument {
+export class BBD {
     documentNo: string;
     documentDate: string;
     supplier: string;
@@ -10,7 +10,7 @@ export class BudgetBaseDocument {
     amount: number;
     payedAmount: number;
     utilizedAmount: number;
-    budgetBaseDocumentState: string;
+    bbdState: string;
     budgetPositionList: BudgetPosition[];
     dealList: Deal[];
     $id?: string;

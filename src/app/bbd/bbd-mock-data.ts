@@ -1,8 +1,8 @@
-import {BudgetBaseDocument} from '../shared/models/budget-base-document.model';
+import {BBD} from '../shared/models/bbd.model';
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 
-const budgetBaseDocuments: BudgetBaseDocument[] = [
+const bbd: BBD[] = [
     {
         documentNo: 'no1',
         documentDate: '01.01.2018',
@@ -12,7 +12,7 @@ const budgetBaseDocuments: BudgetBaseDocument[] = [
         amount: 55000.00,
         payedAmount: 0.00,
         utilizedAmount: 0.00,
-        budgetBaseDocumentState: 'Введен',
+        bbdState: 'Введен',
         budgetPositionList: [
             {
                 $id: '11',
@@ -63,7 +63,7 @@ const budgetBaseDocuments: BudgetBaseDocument[] = [
         amount: 55000.00,
         payedAmount: 0.00,
         utilizedAmount: 0.00,
-        budgetBaseDocumentState: 'Введен',
+        bbdState: 'Введен',
         budgetPositionList: [
             {
                 $id: '13',
@@ -114,7 +114,7 @@ const budgetBaseDocuments: BudgetBaseDocument[] = [
         amount: 55000.00,
         payedAmount: 0.00,
         utilizedAmount: 0.00,
-        budgetBaseDocumentState: 'Введен',
+        bbdState: 'Введен',
         budgetPositionList: [
             {
                 $id: '15',
@@ -159,12 +159,12 @@ const budgetBaseDocuments: BudgetBaseDocument[] = [
 ];
 
 @Injectable()
-export class BudgetBaseDocumentMockData {
-    selectedBudgetBaseDocument: BudgetBaseDocument = new BudgetBaseDocument();
-    private budgetBaseDocumentList: BudgetBaseDocument[] = budgetBaseDocuments;
+export class BBDMockData {
+    selectedBBD: BBD = new BBD();
+    private bbdList: BBD[] = bbd;
 
-    getBudgetBaseDocuments(): Observable<BudgetBaseDocument[]> {
-        return Observable.from([this.budgetBaseDocumentList]);
+    getBBD(): Observable<BBD[]> {
+        return Observable.from([this.bbdList]);
     }
 
 }

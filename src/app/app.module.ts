@@ -9,10 +9,10 @@ import {Router} from '@angular/router';
 
 import {HomeScreenRoutingModule} from './home-screen/home-screen-routing.module';
 import {BudgetIssueModule} from './budget-issue/budget-issue.module';
-import {BudgetBaseDocumentModule} from './budget-base-document/budget-base-document.module';
 import {AuthModule} from './auth/auth.module';
 import {AdminPageModule} from './admin-page/admin-page.module';
 import {AppRoutingModule} from './app-routing.module';
+import {BBDModule} from './bbd/bbd.module';
 
 
 
@@ -26,7 +26,7 @@ import {AppRoutingModule} from './app-routing.module';
     AlertModule.forRoot(),
     HomeScreenRoutingModule,
     BudgetIssueModule,
-    BudgetBaseDocumentModule,
+    BBDModule,
     AuthModule,
     AdminPageModule,
     AppRoutingModule  ],

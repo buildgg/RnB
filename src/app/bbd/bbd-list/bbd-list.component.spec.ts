@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { BudgetBaseDocumentListComponent } from './budget-base-document-list.component';
+import { BBDListComponent } from './bbd-list.component';
 
 describe('BudgetBaseDocumentListComponent', () => {
-  let component: BudgetBaseDocumentListComponent;
-  let fixture: ComponentFixture<BudgetBaseDocumentListComponent>;
+  let component: BBDListComponent;
+  let fixture: ComponentFixture<BBDListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ BudgetBaseDocumentListComponent ]
+      declarations: [ BBDListComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(BudgetBaseDocumentListComponent);
+    fixture = TestBed.createComponent(BBDListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

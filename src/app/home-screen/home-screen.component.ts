@@ -10,7 +10,7 @@ const urlHomeScreen: string[] = ['/', '/home-screen'];
 })
 export class HomeScreenComponent implements OnInit{
 
-  private isVisible: boolean = true;
+  isVisible: boolean = true;
 
   constructor(private router: Router) {}
 

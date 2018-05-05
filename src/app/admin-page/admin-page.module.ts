@@ -19,6 +19,7 @@ import {RnbRealTimeFireBaseService} from '../shared/serviceFireBase/realTimeFire
 import {environment} from '../../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { UserLinkRoleListComponent } from './user/user-link-role-list/user-link-role-list.component';
 
 
 
@@ -36,7 +37,7 @@ import {AngularFireDatabaseModule} from 'angularfire2/database';
         AngularFireDatabaseModule,
         AngularFireModule.initializeApp(environment.firebaseConfig)
     ],
-    declarations: [AdminPageComponent, UserComponent, RoleComponent, UserLinkRoleEditFormComponent, RoleEditFormComponent],
+    declarations: [AdminPageComponent, UserComponent, RoleComponent, UserLinkRoleEditFormComponent, RoleEditFormComponent, UserLinkRoleListComponent],
     exports: [AdminPageComponent, UserComponent, RoleComponent ],
     providers: [ UserClassProxy, RoleClassProxy, RnbRealTimeFireBaseService ]
 })

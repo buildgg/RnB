@@ -3,9 +3,10 @@ import {AuthGuard} from '../../auth/auth-guard.service';
 import {Routes, RouterModule} from '@angular/router';
 import {UserComponent} from './user.component';
 import {UserLinkRoleEditFormComponent} from './user-link-role-edit-form/user-link-role-edit-form.component';
+import {UserLinkRoleListComponent} from "./user-link-role-list/user-link-role-list.component";
 
 export const routesAdminPageUser: Routes = [
-    {path: '', component: UserComponent, canActivate: [AuthGuard]},
+    {path: '', component: UserLinkRoleListComponent, canActivate: [AuthGuard]},
     {path: 'usereditform/:id', component: UserLinkRoleEditFormComponent}
 ];
 

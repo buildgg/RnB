@@ -1,16 +1,38 @@
 <rb-layout>
-<!--  <a routerLink="/budget-issue" routerLinkActive="active" class="a-label">
-test
-  </a>-->
- <!-- Спеціаліст відділу заставного стягнення
-  Київ  10.03.2017
-  Касир в банк
-  Київ  19.03.2018
-  Фінансовий консультант відділення
-  Київ  13.03.2017
-  Провідний спеціаліст з обслуговування клієнтів (юридичні особи)
-  Київ  15.03.2018
-  Контролер відділення
-  Київ  15.03.2017-->
+  <div class="row" *ngIf="isVisible">
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"> Заявки инициаторов</h5>
+          <p class="card-text">Возможность ввода заявок на приобретение товаров, работ или услуг.
+            Создание и удаление сводов заявок.
+            Создание  Базовых Бюджетных Договоров на основе сводов заявок.
+            Передача заявок на согласование Распорядителям, Управляющим Филиалов</p>
+          <button routerLink="/home-screen/budget-issue" class="btn btn-primary">Заявки инициаторов</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Базовый бюджетный договор</h5>
+          <p class="card-text">Рабочее место распорядителей и бюджетного контролёра банка. Администрирование базовых бюджетных договоров, которые утилизируют
+            утвержденные плановые суммы по статьям бюджета и подразделениям.</p>
+          <button routerLink="/home-screen/budget-base-document" class="btn btn-primary">Базовый бюджетный договор</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Администрирование</h5>
+          <p class="card-text">Администрирование ролей, состояний, доступов, настройка сути выполняемых операций.
+            Настройка логики операций, выдача прав на доступа к фильтрам, операциям, областям.
+            Критерии маршрутизации. Присвоение ролей пользователям</p>
+          <button routerLink="/home-screen/admin-page" class="btn btn-primary">Администрирование</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <router-outlet></router-outlet>
 </rb-layout>

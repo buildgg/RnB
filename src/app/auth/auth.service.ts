@@ -10,12 +10,13 @@ import 'rxjs/add/operator/first';
 export const USERS: User[] = [
     new User('admin', '123321', '10', 'qqqqq'),
     new User('boss', '123321', '20', 'qqqqq'),
-    new User('test', '123321', '30', 'qqqqq')
+    new User('test', '123321', '30', 'qqqqq'),
+    new User('v', '1', '30', 'qqqqq')
 ];
 
 @Injectable()
 export class AuthService {
-  isLoggedIn = true;
+  isLoggedIn = false;
   redirectUrl: string;
   currentUser: User = new User(null, null, null, null);
 

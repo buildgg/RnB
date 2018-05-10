@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {BBD} from '../models/bbd.model';
 import {RnbRealTimeFireBaseService} from '../serviceFireBase/realTimeFireBase';
 

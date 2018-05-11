@@ -8,7 +8,7 @@ const urlHomeScreen: string[] = ['/', '/home-screen'];
   templateUrl: './home-screen.component.html',
   styleUrls: ['./home-screen.component.css']
 })
-export class HomeScreenComponent implements OnInit{
+export class HomeScreenComponent implements OnInit {
 
   isVisible: boolean = true;
 
@@ -22,8 +22,7 @@ export class HomeScreenComponent implements OnInit{
     if (urlHomeScreen.indexOf(this.router.url) === -1) {
       this.isVisible = false;
     }
-    this.router.events.filter(
-      (event) => event instanceof NavigationEnd)
+    this.router.events.filter((event) => event instanceof NavigationEnd)
       .subscribe(
         (event: NavigationEnd) => {
           if (urlHomeScreen.indexOf(event.url) === -1) {

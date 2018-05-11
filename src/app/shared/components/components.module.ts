@@ -10,6 +10,8 @@ import { RbTableComponent } from './rb-table/rb-table.component';
 import { RbButtonComponent } from './rb-button/rb-button.component';
 import { RbFiltersComponent } from './rb-filters/rb-filters.component';
 import { RbOperationsComponent } from './rb-operations/rb-operations.component';
+import { SortableColumnComponent } from './sortable-column/sortable-column.component';
+import {SortService} from './sortable-column/sort-service';
 
 export const COMPONENTS = [
   NavHeaderComponent,
@@ -19,7 +21,8 @@ export const COMPONENTS = [
   RbTableComponent,
   RbFiltersComponent,
   RbButtonComponent,
-  RbOperationsComponent
+  RbOperationsComponent,
+  SortableColumnComponent
 ];
 
 @NgModule({
@@ -36,7 +39,9 @@ export const COMPONENTS = [
     RbTableComponent,
     RbButtonComponent,
     RbFiltersComponent,
-    RbOperationsComponent],
-  exports: [COMPONENTS]
+    RbOperationsComponent,
+    SortableColumnComponent],
+  exports: [COMPONENTS],
+  providers: [SortService]
 })
 export class ComponentsModule { }

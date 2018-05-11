@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, EventEmitter, HostListener, OnInit, Output, ViewChild} from '@angular/core';
 import {Operation} from '../../models/operation.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 const operations: Operation[] = [
   {$id: '111', name: 'сделать Свод'},

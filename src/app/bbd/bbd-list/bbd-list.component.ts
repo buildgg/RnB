@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {BBD} from '../../shared/models/bbd.model';
 import {ButtonAnchor} from '../../shared/models/button/button-anchor.model';
 import {UpdateButtonAnchor} from '../../shared/models/button/update-button-anchor.model';

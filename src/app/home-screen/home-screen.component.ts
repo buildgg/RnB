@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {NavigationEnd, Router} from '@angular/router';
+import { filter } from 'rxjs/operators';
 
 const urlHomeScreen: string[] = ['/', '/home-screen'];
 
@@ -22,7 +23,8 @@ export class HomeScreenComponent implements OnInit {
     if (urlHomeScreen.indexOf(this.router.url) === -1) {
       this.isVisible = false;
     }
-    this.router.events.filter((event) => event instanceof NavigationEnd)
+    this.router.events.pipe(filter(
+      (event) => event instanceof NavigationEnd))
       .subscribe(
         (event: NavigationEnd) => {
           if (urlHomeScreen.indexOf(event.url) === -1) {

@@ -10,6 +10,7 @@ import { RbTableComponent } from './rb-table/rb-table.component';
 import { RbButtonComponent } from './rb-button/rb-button.component';
 import { RbFiltersComponent } from './rb-filters/rb-filters.component';
 import { RbOperationsComponent } from './rb-operations/rb-operations.component';
+import {SortService} from './sortable-column/sort-service';
 
 export const COMPONENTS = [
   NavHeaderComponent,
@@ -37,6 +38,7 @@ export const COMPONENTS = [
     RbButtonComponent,
     RbFiltersComponent,
     RbOperationsComponent],
-  exports: [COMPONENTS]
+  exports: [COMPONENTS],
+  providers: [SortService]
 })
 export class ComponentsModule { }

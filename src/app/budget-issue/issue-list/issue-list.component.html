@@ -2,7 +2,9 @@
   <thead>
   <tr>
     <!-- <th scope="col" *ngFor="let head of tableHead">{{head}}</th>-->
-    <th scope="col" *ngFor="let head of tableHeadList">{{head}}</th>
+    <th scope="col" *ngFor="let head of tableHeadList"
+        sortable-column="head">
+      {{head}}</th>
   </tr>
   </thead>
   <tbody>
@@ -12,7 +14,7 @@
              [checked]="checked"
              (change)="onChangeCheck(data.$id, valueCheck)">
     </td>
-    <td >{{data.issueNo}}</td>
+    <td>{{data.issueNo}}</td>
     <td>{{data.date}}</td>
     <td>{{data.state}}</td>
     <td>{{data.collectionName}}</td>

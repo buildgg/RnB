@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Issue} from '../shared/models/issue.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 const issues: Issue[] = [
   {

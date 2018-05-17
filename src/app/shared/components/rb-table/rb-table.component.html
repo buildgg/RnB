@@ -11,7 +11,7 @@
              [checked]="checked"
              (change)="onChangeCheck(data, valueCheck)">
     </td>
-    <td >{{data.issueNo}}</td>
+    <td>{{data.issueNo}}</td>
     <td>{{data.date}}</td>
     <td>{{data.state}}</td>
     <td>{{data.collectionName}}</td>
@@ -22,7 +22,7 @@
         <rb-button [srcImg]="updateButton.srcImg"
                    [titleHover]="updateButton.titleHover"
                    [anchorRouterLink]="updateButton.anchorRouterLink"
-                   (actionButton)="updateButton.actionButton2(data)">
+                   (actionButton)="updateButton.actionButton(data)">
         </rb-button>
         <rb-button [srcImg]="deleteButton.srcImg"
                    [titleHover]="deleteButton.titleHover"

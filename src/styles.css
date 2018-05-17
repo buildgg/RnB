@@ -24,3 +24,6 @@ tr:hover {
 td.amount{
   text-align: right;
 }
+th[sortable-column] {
+  text-align: left;
+}

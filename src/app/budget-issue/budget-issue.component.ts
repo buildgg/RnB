@@ -1,7 +1,7 @@
 import {Component, OnChanges, OnInit, ViewChild} from '@angular/core';
 import {IssueMockData} from './issue-mock-data';
 import {Issue} from '../shared/models/issue.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ButtonAnchor} from '../shared/models/button/button-anchor.model';
 import {UpdateButtonAnchor} from '../shared/models/button/update-button-anchor.model';
 import {DeleteButtonAnchor} from '../shared/models/button/delete-button-anchor.model';

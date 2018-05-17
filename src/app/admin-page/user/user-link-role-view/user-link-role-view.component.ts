@@ -7,29 +7,32 @@ import {Role} from "../../../shared/models/role.model";
 import {User} from "../../../shared/models/user.model";
 
 
-
 @Component({
-  selector: 'app-user-link-role-view',
-  templateUrl: './user-link-role-view.component.html',
+    selector: 'user-link-role-view',
+    templateUrl: './user-link-role-view.component.html',
 
 })
 export class UserLinkRoleViewComponent implements OnInit {
-    users: User[];
-    @Output() selectedUser = new EventEmitter();
 
-    UserListSelected(user) {
-        this.selectedUser .emit(user);
-    }
+    userLinkRoleViewForm: FormGroup;
+    @Input() user: User;
 
-
-    constructor(private  usersClassProxy: UserClassProxy, private router: Router, private route: ActivatedRoute) {
-        usersClassProxy.getUsers().subscribe(value => this.users = value);
+    constructor(private  usersClassProxy: UserClassProxy,
+                private router: Router,
+                private route: ActivatedRoute,
+                private formBuilder: FormBuilder) {
     }
 
     ngOnInit() {
+        this.userLinkRoleViewForm = this.formBuilder.group({
+            'user': [this.user.name],
+            'role': [this.user.role]
+        });
     }
 
-
+    onSubmit(value: any) {
+        this.router.navigate(['../admin-page/user']);
+    }
 
 
 }

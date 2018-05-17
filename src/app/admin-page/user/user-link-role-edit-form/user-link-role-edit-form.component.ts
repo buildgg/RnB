@@ -7,7 +7,7 @@ import {RoleClassProxy} from '../../../shared/proxy-data-source/roleClassProxy';
 import {Router} from '@angular/router';
 
 @Component({
-    selector: 'user-link-role',
+    selector: 'user-link-role-edit-form',
     templateUrl: './user-link-role-edit-form.component.html'
 })
 
@@ -28,7 +28,7 @@ export class UserLinkRoleEditFormComponent implements OnInit {
     ngOnInit() {
         this.userEditForm = this.formBuilder.group({
             'user': [this.usersClassProxy.selectdUser.name],
-            'role': [null]
+            'role': [null] // ПРОБЛЕМА - в списке не вібрана нужная роль
         });
     }
 

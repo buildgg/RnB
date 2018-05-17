@@ -7,7 +7,7 @@ import {UserLinkRoleListComponent} from "./user-link-role-list/user-link-role-li
 import {UserLinkRoleViewComponent} from "./user-link-role-view/user-link-role-view.component";
 
 export const routesAdminPageUser: Routes = [
-    {path: '', component: UserLinkRoleListComponent, canActivate: [AuthGuard]},
+    {path: '', component: UserComponent, canActivate: [AuthGuard]},
     {path: 'usereditform/:id', component: UserLinkRoleEditFormComponent},
     {path: 'userview/:id', component: UserLinkRoleViewComponent}
 ];

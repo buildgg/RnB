@@ -1,4 +1,5 @@
-    <app-user-link-role-list
-            [usersList]="usersList"
-            (selectedUser)= "onSelectedUser($event)">
-    </app-user-link-role-list>
+<user-link-role-list *ngIf="showUserLinkRoleListComponent" (selectedUser)="onSelectToView($event)"
+                     [users]="users"></user-link-role-list>
+<user-link-role-view *ngIf="showUserLinkRoleViewComponent" [user]="selectedUser"></user-link-role-view>
+<user-link-role-edit-form *ngIf="showUserLinkRoleEditFormComponent"></user-link-role-edit-form>
+

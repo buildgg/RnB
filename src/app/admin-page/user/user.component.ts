@@ -11,10 +11,25 @@ import {Role} from '../../shared/models/role.model';
     templateUrl: './user.component.html'
 })
 export class UserComponent implements OnInit {
+    selectedUser: User;
+    users: User[];
+    showUserLinkRoleViewComponent: boolean = false;
+    showUserLinkRoleEditFormComponent: boolean = false;
+    showUserLinkRoleListComponent: boolean = true;
+
+    constructor(private  usersClassProxy: UserClassProxy, private router: Router, private route: ActivatedRoute) {
+        usersClassProxy.getUsers().subscribe(value => this.users = value);
+    }
 
     ngOnInit() {
     }
 
+    onSelectToView(user: User ){
+        this.selectedUser = user;
+        //this.showUserLinkRoleViewComponent = false;
+        //this.showUserLinkRoleEditFormComponent = false;
+        this.showUserLinkRoleListComponent = true;
+    }
 }
 
 

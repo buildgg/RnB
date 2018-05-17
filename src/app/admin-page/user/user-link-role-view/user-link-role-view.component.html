@@ -7,32 +7,14 @@
       {{user.name}}</td>
     <td style="vertical-align:middle">{{user.role}}</td>
     <td>
-      <a title= "Изменить"
+      <a title= "Назад"
          class="ml-md-2 mr-md-2 mt-md-1"
          (click)="UserListSelected(user)"
-         [routerLink]="['../usereditform', user.$id]"
+         [routerLink]="['../user', user.$id]"
          routerLinkActive="active">
         <img src="assets/img/update2.png"/>
       </a>
       <!--routerLink="/home-screen/budget-base-document/edit"-->
     </td>
     <td>
-      <a title= "Смотреть"
-         class="ml-md-2 mr-md-2 mt-md-1"
-         (click)="UserListSelected(user)"
-      [routerLink]="['../userview',user.$id]"
-      routerLinkActive="active"
-      class="a-label" href="#">
-        <img src="assets/img/make-up.png"/>
-      </a>
-      <!--routerLink="/home-screen/budget-base-document/edit"-->
-      <!--
-      <button class="btn btn-success"
-              (click)="onView(user)">
-        View
-      </button>
--->
-    </td>
-  </tr>
 </table>
-

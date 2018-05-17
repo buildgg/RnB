@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../../../shared/models/user.model';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserClassProxy} from '../../../shared/proxy-data-source/userClassProxy';
@@ -12,7 +12,7 @@ import {Router} from '@angular/router';
 })
 
 export class UserLinkRoleEditFormComponent implements OnInit {
-
+    @Input() user;
     userEditForm: FormGroup;
     users: User[] = [];
     roles: Role[] = [];

@@ -9,7 +9,7 @@ import {User} from '../../../shared/models/user.model';
 })
 export class UserLinkRoleListComponent implements OnInit {
     users: User[];
-    @Input() usersList;
+
     @Output() selectedUser = new EventEmitter();
 
     UserListSelected(user) {

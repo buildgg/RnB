@@ -10,7 +10,10 @@ import {Role} from '../../shared/models/role.model';
     selector: 'app-user',
     templateUrl: './user.component.html'
 })
-export class UserComponent {
+export class UserComponent implements OnInit {
+
+    ngOnInit() {
+    }
 
 }
 

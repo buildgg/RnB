@@ -1,7 +1,8 @@
-<h4> Сопоставьте пользователю роль :</h4>
+<h4> Соответствие роли пользователю Б2 :</h4>
 
 <form [formGroup]="userLinkRoleViewForm"
-      (ngSubmit)="onSubmit(userLinkRoleViewForm.value)">
+      (ngSubmit)="onBackToList(userLinkRoleViewForm.value)" >
+
 
   <div class="form-group col-md-7">
   Пользователь АБС Б2 :   <input type="text" id="user" formControlName="user" disabled >

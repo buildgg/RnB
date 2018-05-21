@@ -12,13 +12,17 @@ export class UserLinkRoleListComponent implements OnInit {
 
   //   usersClassProxy: UserClassProxy;
 
-    @Output() selectedUser = new EventEmitter<User>();
+    @Output() selectedUserToView = new EventEmitter<User>();
+    @Output() selectedUserToEdit = new EventEmitter<User>();
     @Input() users: User[];
 
-    UserListSelected(user) {
-        this.selectedUser.emit(user);
+    UserSelectedToView(user: User) {
+        this.selectedUserToView.emit(user);
     }
 
+    UserSelectedtoEdit(user: User) {
+        this.selectedUserToEdit.emit(user);
+    }
 
     constructor() {
     }

@@ -21,6 +21,7 @@ import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { UserLinkRoleListComponent } from './user/user-link-role-list/user-link-role-list.component';
 import {UserLinkRoleViewComponent} from "./user/user-link-role-view/user-link-role-view.component";
+import {UserStaticData} from '../shared/staticDataMockup/userStaticData';
 
 
 
@@ -40,7 +41,7 @@ import {UserLinkRoleViewComponent} from "./user/user-link-role-view/user-link-ro
     ],
     declarations: [AdminPageComponent, UserComponent, RoleComponent, UserLinkRoleEditFormComponent, RoleEditFormComponent, UserLinkRoleListComponent, UserLinkRoleViewComponent],
     exports: [AdminPageComponent, UserComponent, RoleComponent ],
-    providers: [ UserClassProxy, RoleClassProxy, RnbRealTimeFireBaseService ]
+    providers: [ UserClassProxy, RoleClassProxy, RnbRealTimeFireBaseService, UserStaticData ]
 })
 export class AdminPageModule {
 }

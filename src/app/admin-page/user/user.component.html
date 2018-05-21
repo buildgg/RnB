@@ -1,5 +1,14 @@
-<user-link-role-list *ngIf="showUserLinkRoleListComponent" (selectedUser)="onSelectToView($event)"
-                     [users]="users"></user-link-role-list>
-<user-link-role-view *ngIf="showUserLinkRoleViewComponent" [user]="selectedUser"></user-link-role-view>
-<user-link-role-edit-form *ngIf="showUserLinkRoleEditFormComponent"></user-link-role-edit-form>
 
+<!--<user-link-role-view *ngIf="showUserLinkRoleViewComponent" [user]="selectedUser"></user-link-role-view>
+<user-link-role-edit-form *ngIf="showUserLinkRoleEditFormComponent"></user-link-role-edit-form>-->
+
+<div  [ngSwitch]="switchComponent">
+
+    <user-link-role-list *ngSwitchCase="'LIST'" (selectedUserToView)="onSelectToView($event)" (selectedUserToEdit)="onSelectToEdit($event)"  [users]="users"></user-link-role-list>
+
+    <user-link-role-view *ngSwitchCase="'VIEW'"  (viewedUser)="onReturnToListFromView($event)" [user]="selectedUser"></user-link-role-view>
+
+    <user-link-role-edit-form *ngSwitchCase="'EDIT'" (editedUser)="onReturnToListFromEdit($event)"  [user]="selectedUser" [roles]="roles"></user-link-role-edit-form>
+<!--    <pre>{{selectedUser | json}}</pre>-->
+
+</div>

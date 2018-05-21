@@ -11,25 +11,57 @@ import {Role} from '../../shared/models/role.model';
     templateUrl: './user.component.html'
 })
 export class UserComponent implements OnInit {
+
     selectedUser: User;
     users: User[];
-    showUserLinkRoleViewComponent: boolean = false;
-    showUserLinkRoleEditFormComponent: boolean = false;
-    showUserLinkRoleListComponent: boolean = true;
+    roles: Role[];
+    switchComponent: string = 'LIST';
 
-    constructor(private  usersClassProxy: UserClassProxy, private router: Router, private route: ActivatedRoute) {
+    constructor(private  /*us: UserStaticData*/ usersClassProxy: UserClassProxy, private  roleClassProxy: RoleClassProxy, private router: Router, private route: ActivatedRoute) {
         usersClassProxy.getUsers().subscribe(value => this.users = value);
+        roleClassProxy.getRole().subscribe(value => this.roles = value);
+    /* this.users= us.getdata();*/
     }
 
     ngOnInit() {
+        this.switchComponent = 'LIST';
     }
 
     onSelectToView(user: User ){
         this.selectedUser = user;
-        //this.showUserLinkRoleViewComponent = false;
-        //this.showUserLinkRoleEditFormComponent = false;
-        this.showUserLinkRoleListComponent = true;
+        this.switchComponent = 'VIEW';
+
     }
+
+    onSelectToEdit(user: User ){
+        this.selectedUser = user;
+        this.switchComponent = 'EDIT';
+
+    }
+
+    onReturnToListFromView (user: User ){
+        this.selectedUser = user;
+        this.switchComponent = 'LIST';
+
+    }
+
+    onReturnToListFromEdit(user: User ){
+
+        this.selectedUser = user;
+
+        this.usersClassProxy.updateUser({
+            $id: this.selectedUser.$id,
+            name: this.selectedUser.name,
+            password: this.selectedUser.password,
+            roleid: this.selectedUser.roleid,
+            rolename: this.selectedUser.rolename
+        }).subscribe(value => alert('Всё ОК, id = ' + value ), value => alert(value));
+
+        this.switchComponent = 'LIST';
+    }
+
+
+
 }
 
 

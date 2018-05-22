@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import {ColumnTable} from '../column-table';
+import {ColumnTable} from '../../../models/view-model/column-table';
 import {DataSource, SelectionModel} from '@angular/cdk/collections';
 import {Issue} from '../../../models/issue.model';
 import {Observable} from 'rxjs/index';

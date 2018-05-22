@@ -4,7 +4,7 @@ import {ButtonAnchor} from '../shared/models/view-model/button/button-anchor.mod
 import {UpdateButtonAnchor} from '../shared/models/view-model/button/update-button-anchor.model';
 import {DeleteButtonAnchor} from '../shared/models/view-model/button/delete-button-anchor.model';
 import {IssueListComponent} from './issue-list/issue-list.component';
-import {ColumnTable} from '../shared/components/rb-material/column-table';
+import {ColumnTable} from '../shared/models/view-model/column-table';
 import {DropDownMenu} from '../shared/models/view-model/drop-down-menu.model';
 import {ViewButtonAnchor} from '../shared/models/view-model/button/view-button-anchor.model';
 

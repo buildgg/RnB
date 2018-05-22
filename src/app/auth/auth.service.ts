@@ -9,17 +9,17 @@ import { from } from 'rxjs';
 
 
 export const USERS: User[] = [
-    new User('admin', '123321', '10', 'qqqqq'),
-    new User('boss', '123321', '20', 'qqqqq'),
-    new User('test', '123321', '30', 'qqqqq'),
-    new User('v', '1', '30', 'qqqqq')
+    new User('10', 'admin', '123321', '10', 'Тестовая Роль1'),
+    new User('20', 'boss', '123321', '11', 'Тестовая Роль2'),
+    new User('30', 'test', '123321', '12', 'Тестовая Роль3'),
+    new User('40', 'otherboss', '123321', '14', 'Тестовая Роль4')
 ];
 
 @Injectable()
 export class AuthService {
   isLoggedIn = true;
   redirectUrl: string;
-  currentUser: User = new User(null, null, null, null);
+  currentUser: User = new User(null, null, null, null, null);
 
   checkUser(name: string, password: string) {
     USERS.forEach(

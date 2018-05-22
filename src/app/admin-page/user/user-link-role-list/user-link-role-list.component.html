@@ -3,35 +3,24 @@
   <tr *ngFor="let user of users; let i = index;">
     <td style="vertical-align:middle">{{i + 1}}</td>
     <td style="vertical-align:middle">
-
       {{user.name}}</td>
-    <td style="vertical-align:middle">{{user.role}}</td>
+    <td style="vertical-align:middle">{{user.rolename}}</td>
     <td>
       <a title= "Изменить"
          class="ml-md-2 mr-md-2 mt-md-1"
-         (click)="UserListSelected(user)"
-         [routerLink]="['../usereditform', user.$id]"
-         routerLinkActive="active">
+         (click)="UserSelectedtoEdit(user)">
         <img src="assets/img/update2.png"/>
       </a>
-      <!--routerLink="/home-screen/budget-base-document/edit"-->
+
     </td>
+
     <td>
       <a title= "Смотреть"
          class="ml-md-2 mr-md-2 mt-md-1"
-         (click)="UserListSelected(user)"
-      [routerLink]="[user.$id]"
-      routerLinkActive="active"
-      class="a-label" href="#">
+         (click)="UserSelectedToView(user)"
+          class="a-label">
         <img src="assets/img/make-up.png"/>
       </a>
-      <!--routerLink="/home-screen/budget-base-document/edit"-->
-      <!--
-      <button class="btn btn-success"
-              (click)="onView(user)">
-        View
-      </button>
--->
     </td>
   </tr>
 </table>

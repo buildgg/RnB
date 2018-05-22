@@ -1,29 +1,45 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 html {
   position: relative;
   min-height: 100%;
+  font-size: 14px;
+  font-family: Roboto;
+  background-color: #e9ecef;
+  /*font-family: "Segoe UI",Roboto,"Helvetica Neue", Arial,sans-serif;*/
 }
 body {
   margin-bottom: 60px;
+  background-color: #e9ecef !important;
+  font-family: "Segoe UI" !important;
+
 }
+
 table {
-  font-size: 16px;
-  text-align: center;
-  border: 1px solid #dddddd;
+/*  text-align: center;*/
+  /*border: 1px solid #dddddd;*/
 }
 th {
+/*  background-color: rgba(8, 148, 255, 0.16);*/
+}
+
+/*th {
   border-bottom: 2px solid #1771cb;
+  text-align: center;
 
 }
 td {
   border-bottom: 1px solid #dddddd;
-}
+  margin: 3px;
+  text-align: center;
+}*/
 tr:hover {
-  background-color: rgba(144, 219, 248, 0.15);
+ /* background-color: rgba(144, 219, 248, 0.15);*/
+   background-color: rgba(8, 148, 255, 0.16);
 
 }
-td.amount{
+/*td.amount{
   text-align: right;
-}
-th[sortable-column] {
-  text-align: left;
-}
+}*/
+

@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {BBD} from '../../shared/models/bbd.model';
-import {ButtonAnchor} from '../../shared/models/button/button-anchor.model';
-import {UpdateButtonAnchor} from '../../shared/models/button/update-button-anchor.model';
-import {DeleteButtonAnchor} from '../../shared/models/button/delete-button-anchor.model';
+import {ButtonAnchor} from '../../shared/models/view-model/button/button-anchor.model';
+import {UpdateButtonAnchor} from '../../shared/models/view-model/button/update-button-anchor.model';
+import {DeleteButtonAnchor} from '../../shared/models/view-model/button/delete-button-anchor.model';
 import {BBDMockData} from '../bbd-mock-data';
 
 const tableHeads: string[] = ['', 'Номер', 'Дата договора', 'Поставщик', 'Ответственный',

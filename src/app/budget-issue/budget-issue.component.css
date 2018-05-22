@@ -1,6 +1,29 @@
 .rb-caption {
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);
   color: #3A6699;
-  padding: 10px;
-  margin-bottom: 12px;
+  padding: 5px;
+  margin-bottom: 10px
+ /* overflow:hidden;*/
 }
+.box {
+  padding-bottom: 10px;
+  position: relative;
+}
+
+.box div {
+  display: inline-block;
+  margin-left: 10px;
+}
+.mat-filter {
+/*  width: 256px;
+  min-height: 64px;
+  padding: 8px 24px 0;*/
+ /* width: 60%;*/
+}
+.button-plus {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-30%);
+  right: 15px;
+}
+

@@ -5,6 +5,7 @@
   font-size: 18px;
   color: #3A6699;
   font-weight: 600;
+
 }
 div {
   display:inline-block;
@@ -17,12 +18,11 @@ button {
   color: #FFFFFF;
   padding: 7px;
   cursor: pointer;
-  border-radius: 7px;
-  background-color: #4179b2;
+  background-color: #1771cb;
+  font-size: 16px;
 }
 button:hover {
   background-color: #498CCE;
-  border-radius: 7px;
   color: #FFFFFF;
 }
 .show-filter {

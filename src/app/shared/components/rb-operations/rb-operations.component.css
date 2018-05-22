@@ -1,12 +1,12 @@
 .dropdown .button-dropdown{
-  background-color: #4179b2;
+  background-color: #1771cb;
   margin-top: 5px;
   padding: 7px;
   color: #FFFFFF;
   border: none;
   width: 130px;
   font-weight: 400;
-  border-radius: 7px;
+  font-size: 16px;
 }
 .dropdown-item {
   color: #3A6699;
@@ -15,14 +15,12 @@
 }
 .dropdown-item:hover {
   background-color: #498CCE;
-  border-radius: 7px;
   color: #FFFFFF;
   font-weight: 600;
 }
 
 .button-dropdown:hover {
   background-color: #498CCE;
-  border-radius: 7px;
   color: #FFFFFF;
   font-weight: 600;
 }

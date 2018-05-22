@@ -1,5 +1,5 @@
 import {Component, EventEmitter, HostListener, Input, Output} from '@angular/core';
-import {ButtonAnchor} from '../../models/button/button-anchor.model';
+import {ButtonAnchor} from '../../models/view-model/button/button-anchor.model';
 
 @Component({
   selector: 'rb-table',

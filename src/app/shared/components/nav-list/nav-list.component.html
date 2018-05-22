@@ -1,15 +1,53 @@
 <div class="list-wrap">
   <ul class="nav-list">
-    <li *ngFor="let item of navList">
+    <li *ngFor="let item of navList" class="li-hover">
+<!--    <rb-link
+      [routerLink]="[item.path]"
+      [classCss]="'a-label'">
+      <i [class]=[item.classI]></i>
+      {{item.name}}
+    </rb-link>-->
       <a (click)="navListSelected(item)"
         [routerLink]="[item.path]"
          routerLinkActive="active"
          class="a-label" href="#">
-        <img class="img_logo" src="/assets/img/nav-list-logo24.png" alt=""/>
+        <i [class]=[item.classI]></i>
         {{item.name}}
       </a>
-
     </li>
+    <li class="li-hover">
+      <a (click)="isVisible = !isVisible"
+         class="a-label dropdown-toggle"
+         routerLink="/home-screen/admin-page"
+         href="">
+        <i class='fa fa-cog'></i>
+        Администрирование
+      </a>
+    </li>
+    <div *ngIf="isVisible" class="hideAdmin">
+      <li>
+        <a (click)="navListSelected(item)"
+           routerLink="/home-screen/admin-page"
+           routerLinkActive="active"
+           class="a-label" href="#">
+          Присвоение ролей
+        </a>
+      </li>
+      <li>
+        <a (click)="navListSelected(item)"
+           routerLink="/home-screen/admin-page"
+           routerLinkActive="active"
+           class="a-label"
+           href="#">
+          Роли
+        </a>
+      </li>
+    </div>
   </ul>
 </div>
 
+
+<!--<img class="img_logo" src="/assets/img/nav-list-logo24.png" alt=""/>-->
+<!--<i class="fas fa-clipboard-list"></i>-->
+<!--   <i class="fas fa-clipboard-list fa-1x" aria-hidden="true"> routerLinkActive="active"</i>
+   <i class="fa fa-american-sign-language-interpreting fa-1x" aria-hidden="true"> </i>-->

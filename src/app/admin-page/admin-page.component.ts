@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RbButtonComponent} from '../shared/components/rb-button/rb-button.component';
-import {ButtonAnchor} from '../shared/models/button/button-anchor.model';
+import {ButtonAnchor} from '../shared/models/view-model/button/button-anchor.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {User} from '../shared/models';
 

@@ -1,7 +1,23 @@
+rb-layout /deep/ {
+  background-color: #e9ecef;
+}
+
 .rb-content /deep/ {
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);
-  padding: 12px;
-  margin: 20px 5px 75px 10px;
-  font-family: "Segoe UI",Roboto,"Helvetica Neue", Arial,sans-serif;
-  font-size: 18px;
+  box-shadow: 2px 2px 8px #1771CB;
+  padding: 10px;
+/*  -ms-flex: 0 0 66.666667%;*/
+  background-color: #FFFFFF;
+  margin: 10px 0px 0px 0px;
+  flex: 0 0 82%;
+  max-width: 100%;
+
+}
+.container-fluid {
+  padding-left: 5px;
+}
+.nav-list {
+  flex: 0 0 17%;
+  max-width: 17%;
+  padding-right: 10px;
+  padding-left: 10px;
 }

@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {ButtonAnchor} from '../../shared/models/button/button-anchor.model';
+import {ButtonAnchor} from '../../shared/models/view-model/button/button-anchor.model';
 
 @Component({
   selector: 'issue-list',

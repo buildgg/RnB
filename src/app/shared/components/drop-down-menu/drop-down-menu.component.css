@@ -1,0 +1,28 @@
+.dropdown .button-dropdown{
+  background-color: #085cb1;
+  margin-top: 1px;
+  padding: 7px;
+  color: #FFFFFF;
+  border: none;
+  width: 130px;
+  font-weight: 400;
+  font-size: 16px;
+}
+.dropdown-item {
+  color: #1771cb;
+  font-size: 16px
+}
+.dropdown-item:hover {
+ /* background-color: #1771cb;*/
+ /* color: #FFFFFF;*/
+  color: #1771cb;
+  font-weight: bolder;
+}
+
+.button-dropdown:active {
+  transform: translateY(2px);
+}
+.button-dropdown:focus {
+  outline: none;
+  border: none;
+}

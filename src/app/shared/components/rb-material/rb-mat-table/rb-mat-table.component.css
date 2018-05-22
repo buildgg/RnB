@@ -1,0 +1,32 @@
+.rb-mat-table {
+  display: flex;
+  flex-direction: column;
+  min-width: 300px;
+  overflow: auto;
+  max-height: 700px;
+  text-align: center;
+
+}
+.mat-table {
+  font-family: "Segoe UI",Roboto,"Helvetica Neue", Arial,sans-serif;
+  color: #0000008a;
+}
+.mat-header-cell {
+  font-size: 16px;
+  border-bottom: 2px solid #1771cb;
+  text-align: right;
+}
+.mat-cell {
+  color: #000000b5;
+}
+.rb-header {
+  padding-left: 15px;
+}
+/*
+.mat-header-cell:last-child {
+  padding-right: 10px;
+}
+*/
+.mat-cell:last-child {
+  padding-right: 5px;
+}

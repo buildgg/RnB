@@ -30,10 +30,11 @@ const operations: DropDownMenu[] = [
   styleUrls: ['./budget-issue.component.css']
 })
 
-export class BudgetIssueComponent implements OnInit, AfterContentChecked, OnChanges {
+export class BudgetIssueComponent implements OnInit {
 
   columns: ColumnTable[] = columnsExample;
-  issueList$; /*: Observable<Issue[]>*/
+  issueList$;
+  /*: Observable<Issue[]>*/
 
   updateButton: ButtonAnchor = new UpdateButtonAnchor();
   deleteButton: ButtonAnchor = new DeleteButtonAnchor();
@@ -48,37 +49,45 @@ export class BudgetIssueComponent implements OnInit, AfterContentChecked, OnChan
   @ViewChild(IssueListComponent)
   issueListComponent: IssueListComponent;
 
-  constructor(private issueMockService: IssueMockData) { }
+  constructor(private issueMockService: IssueMockData) {}
 
   ngOnInit() {
     this.issueList$ = this.issueMockService.getIssues();
+  }
+
+  applyFilter(value) {
 
   }
 
-  makeOperation(operation){
+  makeOperation(operation) {
     console.log(' operation = ' + operation.name);
   }
 
-  getSelectedIssue () {
+  getSelectedIssue() {
     this.issueListComponent.getSelectedIdArray();
   }
 
-  onActionButtonUpdate (data) {
+  onActionButtonUpdate(data) {
     console.log(data.$id);
     this.toggleVisibleList();
   }
+
   onActionButtonDelete($event) {
     console.log('Delete');
   }
+
   toggleVisibleList() {
     this.isVisibleList = !this.isVisibleList;
   }
+
   onClickUpdate(data) {
     console.log(data + ' onClickUpdate');
   }
+
   onClickDelete(data) {
     console.log(data + ' onClickUpdate');
   }
+
   onClickView(data) {
     console.log(data + ' onClickUpdate');
   }

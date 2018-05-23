@@ -1,13 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import {Observable} from 'rxjs';
-import {BBD} from '../../shared/models/bbd.model';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ButtonAnchor} from '../../shared/models/button/button-anchor.model';
-import {UpdateButtonAnchor} from '../../shared/models/button/update-button-anchor.model';
-import {DeleteButtonAnchor} from '../../shared/models/button/delete-button-anchor.model';
-import {BBDMockData} from '../bbd-mock-data';
 
-const tableHeads: string[] = ['', 'Номер', 'Дата договора', 'Поставщик', 'Ответственный',
-    'Состояние', 'Ориентировочная сумма', 'Сумма договора', 'Оплачено', 'Закрыто', 'Операции'];
 
 @Component({
     moduleId: module.id,
@@ -17,35 +10,35 @@ const tableHeads: string[] = ['', 'Номер', 'Дата договора', 'П
 })
 export class BBDListComponent implements OnInit {
 
-    tableHeadList: string[] = tableHeads;
+    @Input() tableHeadList;
+    @Input() bbdList$;
+    @Input() checked;
+    @Input() updateButton: ButtonAnchor;
+    @Input() deleteButton: ButtonAnchor;
 
-    bbdList$: Observable<BBD[]>;
+    @Output() actionButtonUpdate = new EventEmitter();
+    @Output() actionButtonDelete = new EventEmitter();
 
-    updateButton: ButtonAnchor = new UpdateButtonAnchor('/home-screen/bbd/edit');
-    deleteButton: ButtonAnchor = new DeleteButtonAnchor();
+    private selectedIdArray: string[] = [];
 
-    constructor(private bbdMockService: BBDMockData) {
+    private onChangeCheck(id, valueCheck) {
+        valueCheck.checked ? this.selectedIdArray.push(id) :
+            this.selectedIdArray.splice(this.selectedIdArray.indexOf(id), 1);
+    }
+    getSelectedIdArray() {
+        return this.selectedIdArray;
+    }
+
+    onActionButtonUpdate(data) {
+        this.actionButtonUpdate.emit(data);
+    }
+    onActionButtonDelete(data) {
+        this.actionButtonDelete.emit(data);
+    }
+
+    constructor() {
     }
 
     ngOnInit() {
-        this.bbdMockService
-            .getBBD()
-            .subscribe(
-                (bbdList: BBD[]) =>
-                    console.log(bbdList[0])
-            );
-
-        this.bbdList$ = this.bbdMockService.getBBD();
-    }
-
-    onEdit(bbd: BBD) {
-        console.log('ON_EDIT');
-        console.log(bbd.documentNo);
-        this.bbdMockService.selectedBBD = Object.assign({}, bbd);
-        console.log(this.bbdMockService.selectedBBD.documentNo);
-    }
-
-    onDelete(bbd: BBD) {
-        console.log('ON_DELETE');
     }
 }

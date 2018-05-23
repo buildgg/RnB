@@ -5,17 +5,7 @@ import {AuthGuard} from '../../auth/auth-guard.service';
 import {BudgetPositionListComponent} from './budget-position-list/budget-position-list.component';
 import {BudgetPositionEditComponent} from './budget-position-edit/budget-position-edit.component';
 
-export const routesBBDEdit: Routes = [
-    {
-        path: '', component: BBDEditComponent,
-        canActivate: [AuthGuard],
-        children: [
-            {path: '', component: BudgetPositionListComponent},
-            {path: 'positionlist', component: BudgetPositionListComponent},
-            {path: 'positionedit', component: BudgetPositionEditComponent}
-        ]
-    }
-];
+export const routesBBDEdit: Routes = [];
 
 @NgModule({
     imports: [RouterModule.forChild(routesBBDEdit)],

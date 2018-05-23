@@ -160,11 +160,18 @@ const bbd: BBD[] = [
 
 @Injectable()
 export class BBDMockData {
-    selectedBBD: BBD = new BBD();
     private bbdList: BBD[] = bbd;
 
     getBBD(): Observable<BBD[]> {
         return Observable.from([this.bbdList]);
+    }
+
+    getBBDbyID(id: string): BBD {
+        return this.bbdList.find(
+            value => {
+                return value.$id === id;
+            }
+        );
     }
 
 }

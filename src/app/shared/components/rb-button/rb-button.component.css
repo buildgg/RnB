@@ -2,10 +2,12 @@ a{
   text-decoration: none;
   transition: .3s linear;
   cursor: pointer;
+  padding: 3px;
 }
 img {
-  opacity: 0.75;
-}
-img:hover {
   opacity: 1.00;
 }
+img:hover {
+  opacity: 0.75;
+}
+

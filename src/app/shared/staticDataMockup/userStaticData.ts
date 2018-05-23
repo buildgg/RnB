@@ -7,8 +7,8 @@ export class UserStaticData {
 
     constructor() {
         this.data = new Array<User>(
-            new User('Хамса Ниязи', 'password1', 'Инициатор Ф', '11111'),
-            new User('Костаке Нигруцци', 'password1', 'Инициатор ГБ', '222'));
+            new User('Мокап Статикович1', 'password1', 'Инициатор Ф', '11111', 'Статомассив1'),
+            new User('Мокап Статикович2', 'password1', 'Инициатор ГБ', '222', 'Статомассив1'));
     }
 
     getdata(): User[] {

@@ -15,7 +15,7 @@ export class AuthSandbox {
 
   constructor(private authService: AuthService,
               public router: Router) {
-    this.user = new User(null, null, null, null);
+    this.user = new User(null, null, null, null, null);
   }
 
   signIn(name: string, password: string) {

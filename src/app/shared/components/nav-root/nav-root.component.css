@@ -2,11 +2,13 @@
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);
   color: #3A6699;
   padding: 8px;
-  margin-top: 16px;
-  margin-left: 41px;
- /* margin: 16px 550px 0px 20px;*/
+  margin-top: 10px;
+  margin-left: 24px;
   font-weight: bolder;
-  font-size: 21px;
+  font-size: 18px;
+  -ms-flex: 0 0 91.666667%;
+  flex: 0 0 91.666667%;
+  max-width: 97%;
 }
 a/*.a-label*/ {
   text-decoration: none;

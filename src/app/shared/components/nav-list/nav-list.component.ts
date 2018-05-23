@@ -7,10 +7,11 @@ import {Component, EventEmitter, HostListener, Input, Output} from '@angular/cor
 })
 export class NavListComponent {
   @Input() navList;
-  @Output() selectedItem = new EventEmitter();
+  isVisible: boolean = false;
 
   navListSelected(item) {
-    this.selectedItem.emit(item);
+    console.log( <{name: string, path: string, classI: string}> item.name );
+
   }
 
 }

@@ -1,7 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {ButtonAnchor} from '../../shared/models/button/button-anchor.model';
 
-
 @Component({
     moduleId: module.id,
     selector: 'bbd-list',

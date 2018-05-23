@@ -10,7 +10,7 @@ export class RoleClassProxy {
     constructor(private fireservice: RnbRealTimeFireBaseService) {
     }
 
-    getUsers(): Observable<Role[]> {
+    getRole(): Observable<Role[]> {
         return this.fireservice.getDataList <Role>('role');
     }
 

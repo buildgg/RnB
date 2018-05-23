@@ -29,7 +29,8 @@ import {BBDModule} from './bbd/bbd.module';
     BBDModule,
     AuthModule,
     AdminPageModule,
-    AppRoutingModule  ],
+    AppRoutingModule
+  ],
   bootstrap: [AppComponent]
 
 })

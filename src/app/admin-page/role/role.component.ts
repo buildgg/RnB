@@ -12,7 +12,7 @@ export class RoleComponent implements OnInit {
     roles: Role[];
 
     constructor(private  roleClassProxy: RoleClassProxy, private router: Router, private route: ActivatedRoute) {
-        roleClassProxy.getUsers().subscribe(value => this.roles = value);
+        roleClassProxy.getRole().subscribe(value => this.roles = value);
     }
 
     ngOnInit() {

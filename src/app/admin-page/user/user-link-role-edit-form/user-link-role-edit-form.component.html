@@ -1,25 +1,23 @@
-
-<h4> Сопоставьте пользователю роль :</h4>
+<h4> Сопоставьте пользователю Б2 роль R&B :</h4>
 
 <form [formGroup]="userEditForm"
       (ngSubmit)="onSubmit(userEditForm.value)">
 
-  <div class="form-group col-md-7">
-    Пользователь АБС Б2 :   <input type="text" id="user" formControlName="user" disabled >
-  </div>
+    <div class="form-group col-md-7">
+        Пользователь АБС Б2 : <input type="text" id="user" formControlName="user" disabled>
+    </div>
 
-  <div class="form-group">
-    <label>Роли :</label>
-    <select class="form-control" formControlName="role">
-      <option [ngValue]="null"> --- ВЫБЕРИТЕ РОЛЬ </option>
-      <option *ngFor="let role of roles"[ngValue]="role">
-{{role.name}}
+    <div class="form-group">
+        <label>Роли :</label>
+        <select class="form-control" formControlName="role">
+            <option [ngValue]="null"> --- ВЫБЕРИТЕ РОЛЬ</option>
+            <option *ngFor="let role of roles" [ngValue]="role">
+                {{role.name}}
+            </option>
+        </select>
+    </div>
+    <button type="submit">Submit</button>
 
-      </option>
-    </select>
-  </div>
-  <button type="submit">Submit</button>
-
-  <!--<pre>{{userEditForm.value | json}}</pre>-->
+    <pre>{{userEditForm.value | json}}</pre>
 
 </form>

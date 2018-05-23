@@ -1,11 +1,12 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {UpdateButtonAnchor} from '../shared/models/button/update-button-anchor.model';
-import {ButtonAnchor} from '../shared/models/button/button-anchor.model';
 import {BBD} from '../shared/models/bbd.model';
-import {DeleteButtonAnchor} from '../shared/models/button/delete-button-anchor.model';
 import {BBDListComponent} from './bbd-list/bbd-list.component';
 import {BBDMockData} from './bbd-mock-data';
 import {Observable} from 'rxjs/Observable';
+import {ButtonAnchor} from '../shared/models/view-model/button/button-anchor.model';
+import {UpdateButtonAnchor} from '../shared/models/view-model/button/update-button-anchor.model';
+import {DeleteButtonAnchor} from '../shared/models/view-model/button/delete-button-anchor.model';
+import {ViewButtonAnchor} from '../shared/models/view-model/button/view-button-anchor.model';
 
 
 const tableHeads: string[] = ['', 'Номер', 'Дата договора', 'Поставщик', 'Ответственный',
@@ -24,6 +25,7 @@ export class BBDComponent implements OnInit {
     selectedBBD: BBD;
     updateButton: ButtonAnchor = new UpdateButtonAnchor();
     deleteButton: ButtonAnchor = new DeleteButtonAnchor();
+    viewButton: ButtonAnchor = new ViewButtonAnchor();
     isVisibleList: boolean = true;
 
     @ViewChild(BBDListComponent)

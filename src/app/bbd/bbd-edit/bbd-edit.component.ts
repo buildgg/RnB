@@ -3,10 +3,12 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {BBDMockData} from '../bbd-mock-data';
 import {BBD} from '../../shared/models/bbd.model';
 import {BudgetPosition} from '../../shared/models/budget-position.model';
-import {ButtonAnchor} from '../../shared/models/button/button-anchor.model';
-import {UpdateButtonAnchor} from '../../shared/models/button/update-button-anchor.model';
-import {DeleteButtonAnchor} from '../../shared/models/button/delete-button-anchor.model';
 import {Observable} from 'rxjs/Observable';
+import {ButtonAnchor} from '../../shared/models/view-model/button/button-anchor.model';
+import {UpdateButtonAnchor} from '../../shared/models/view-model/button/update-button-anchor.model';
+import {DeleteButtonAnchor} from '../../shared/models/view-model/button/delete-button-anchor.model';
+import {ViewButtonAnchor} from '../../shared/models/view-model/button/view-button-anchor.model';
+
 
 const tableHeads: string[] = ['', 'Номер', 'Бюджетная дата', 'Реальная дата бюджета', 'Описание', 'ЦО', 'Подразделение',
     'Количество', 'Ед.изм.', 'Статья бюджета', 'Ориентировочная сумма', 'Сумма договора', 'Оплачено', 'Закрыто', 'Состояние', 'Операции'];
@@ -24,13 +26,18 @@ export class BBDEditComponent implements OnInit {
 
     @Input()
     public bbdView: BBD;
+    
     tableHeadList: string[] = tableHeads;
+    
     bbdPositionList: BudgetPosition[];
     selectedBBDPosition: BudgetPosition;
+    
     isVisibleList: boolean = true;
+
     updateButton: ButtonAnchor = new UpdateButtonAnchor();
     deleteButton: ButtonAnchor = new DeleteButtonAnchor();
-
+    viewButton: ButtonAnchor = new ViewButtonAnchor();
+    
     constructor(private fb: FormBuilder) {
     }
 

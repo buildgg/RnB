@@ -10,7 +10,7 @@ export class NavListComponent {
   isVisible: boolean = false;
 
   navListSelected(item) {
-    console.log(item.name);
+    console.log( <{name: string, path: string, classI: string}> item.name );
 
   }
 

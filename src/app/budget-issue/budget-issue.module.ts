@@ -9,9 +9,7 @@ import {IssueMockData} from './issue-mock-data';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueEditComponent } from './issue-edit/issue-edit.component';
 import {RbMaterialModule} from '../shared/components/rb-material/rb-material.module';
-import {MatSortModule, MatTableModule} from '@angular/material';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+
 
 @NgModule({
   imports: [

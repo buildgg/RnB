@@ -7,6 +7,8 @@ import {IssueListComponent} from './issue-list/issue-list.component';
 import {ColumnTable} from '../shared/models/view-model/column-table';
 import {DropDownMenu} from '../shared/models/view-model/drop-down-menu.model';
 import {ViewButtonAnchor} from '../shared/models/view-model/button/view-button-anchor.model';
+import {RbMatTableComponent} from '../shared/components/rb-material/rb-mat-table/rb-mat-table.component';
+import {AddButtonAnchor} from '../shared/models/view-model/button/add-button-anchor.model';
 
 const columnsExample: ColumnTable[] = [
   {columnDef: 'description', headerName: 'Описание'},
@@ -39,6 +41,10 @@ export class BudgetIssueComponent implements OnInit {
   updateButton: ButtonAnchor = new UpdateButtonAnchor();
   deleteButton: ButtonAnchor = new DeleteButtonAnchor();
   viewButton: ButtonAnchor = new ViewButtonAnchor();
+  addButton: ButtonAnchor = new AddButtonAnchor();
+
+  filterValue: any;
+
 
   isVisibleList: boolean = true;
 
@@ -49,6 +55,9 @@ export class BudgetIssueComponent implements OnInit {
   @ViewChild(IssueListComponent)
   issueListComponent: IssueListComponent;
 
+ /* @ViewChild(RbMatTableComponent)
+  matTable: RbMatTableComponent;*/
+
   constructor(private issueMockService: IssueMockData) {}
 
   ngOnInit() {
@@ -56,7 +65,8 @@ export class BudgetIssueComponent implements OnInit {
   }
 
   applyFilter(value) {
-
+    console.log('matTable = ' + value);
+    this.filterValue = value;
   }
 
   makeOperation(operation) {

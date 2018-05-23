@@ -14,12 +14,7 @@
   display: inline-block;
   margin-left: 10px;
 }
-.mat-filter {
-/*  width: 256px;
-  min-height: 64px;
-  padding: 8px 24px 0;*/
- /* width: 60%;*/
-}
+
 .button-plus {
   position: absolute;
   top: 30%;

@@ -1,5 +1,4 @@
-<div class="mat-filter">
-  <mat-form-field>
-    <input matInput (keyup)="onApplyFilter($event.target.value)" placeholder="Filter">
-  </mat-form-field>
-</div>
+<mat-form-field>
+  <input matInput (keyup.enter)="onApplyFilter($event.target.value)"
+         [placeholder]="placeHolder">
+</mat-form-field>

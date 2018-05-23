@@ -1,10 +1,9 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild} from '@angular/core';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
-import {ColumnTable} from '../../../models/view-model/column-table';
-import {DataSource, SelectionModel} from '@angular/cdk/collections';
-import {Issue} from '../../../models/issue.model';
-import {Observable} from 'rxjs/index';
+
+import {SelectionModel} from '@angular/cdk/collections';
 import {ButtonAnchor} from '../../../models/view-model/button/button-anchor.model';
+import {ColumnTable} from '../../../models/view-model/column-table';
 
 @Component({
   selector: 'rb-mat-table',
@@ -12,7 +11,7 @@ import {ButtonAnchor} from '../../../models/view-model/button/button-anchor.mode
   styleUrls: ['./rb-mat-table.component.css']
 })
 
-export class RbMatTableComponent implements OnInit{
+export class RbMatTableComponent implements OnInit, OnChanges{
 
   @Input() columns: ColumnTable[];
   @Input() dataList;
@@ -22,6 +21,8 @@ export class RbMatTableComponent implements OnInit{
   @Output() clickDelete = new EventEmitter;
   @Input() viewButton: ButtonAnchor;
   @Output() clickView = new EventEmitter;
+  @Input() filterValue: string;
+
 
   dataSource;
   displayedColumns: string[] = [];
@@ -35,6 +36,9 @@ export class RbMatTableComponent implements OnInit{
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
+  ngOnChanges() {
+    this.applyFilter(this.filterValue);
+  }
 
   onSelectedChange(row, valueCheck) {
     this.selection.toggle(row);
@@ -42,9 +46,12 @@ export class RbMatTableComponent implements OnInit{
   }
 
   applyFilter(filterValue: string) {
-    filterValue = filterValue.trim();
-    filterValue = filterValue.toLowerCase();
-    this.dataSource.filter = filterValue;
+    console.log('applyFilter RbMatTableComponent = ' + filterValue);
+    if (filterValue != null) {
+      filterValue = filterValue.trim();
+      filterValue = filterValue.toLowerCase();
+      this.dataSource.filter = filterValue;
+    }
   }
 
   isAllSelected() {

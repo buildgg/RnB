@@ -27,7 +27,9 @@ import { RbMatFilterComponent } from './rb-mat-filter/rb-mat-filter.component';
 
   ],
   declarations: [RbMatTableComponent, RbMatFilterComponent],
-  exports: [RbMatTableComponent,
+  exports: [
+    RbMatTableComponent,
+    RbMatFilterComponent,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,

@@ -1,96 +1,49 @@
 <div *ngIf="isVisibleList; else issueEdit">
 
   <div class="box">
-  <div><rb-drop-down-menu [nameDropDown]="menuOperationName"
-                          [dropDownArray]="menuOperation"
-                          (selectedItemMenu)="makeOperation($event)">
-  </rb-drop-down-menu></div>
-  <div><rb-drop-down-menu [nameDropDown]="menuOperationName2"
-                          [dropDownArray]="menuOperation"
-                          (selectedItemMenu)="makeOperation($event)">
-  </rb-drop-down-menu>
-  </div>
+    <div>
+      <rb-drop-down-menu [nameDropDown]="menuOperationName"
+                         [dropDownArray]="menuOperation"
+                         (selectedItemMenu)="makeOperation($event)">
+      </rb-drop-down-menu>
+    </div>
+    <div>
+      <rb-drop-down-menu [nameDropDown]="menuOperationName2"
+                         [dropDownArray]="menuOperation"
+                         (selectedItemMenu)="makeOperation($event)">
+      </rb-drop-down-menu>
+    </div>
+
+
     <div class="mat-filter">
-      <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Фильтр">
-      </mat-form-field>
+     <!-- <mat-form-field>
+        <input matInput (keyup.enter)="applyFilter($event.target.value)"
+               placeholder="Фильтр нажмите Enter">
+      </mat-form-field>-->
+      <rb-mat-filter (applyFilter)="applyFilter($event)">
+      </rb-mat-filter>
     </div>
-  <div class="button-plus">
-    <rb-button [anchorRouterLink]="'/'"
-               [srcImg]="'/assets/img/plus48.png'"
-               [titleHover]="'Добавить'">
-    </rb-button>
-  </div>
-  </div>
-
-  <!-- <div class="rb-caption">
-
-   &lt;!&ndash;   <rb-filters class="col-md-10"></rb-filters>
-      <rb-operations class="col-md-2"></rb-operations>&ndash;&gt;
-
-   &lt;!&ndash;   <rb-filters class="flex-container"></rb-filters>
-      <rb-operations class="flex-container"></rb-operations>&ndash;&gt;
-      <div class="box">
-      &lt;!&ndash;  <div><rb-filters></rb-filters></div>
-        <div><rb-operations></rb-operations></div>&ndash;&gt;
-        <div><rb-drop-down-menu [nameDropDown]="menuOperationName"
-                          [dropDownArray]="menuOperation"
-                          (selectedItemMenu)="makeOperation($event)">
-        </rb-drop-down-menu></div>
-        <div><rb-drop-down-menu [nameDropDown]="menuOperationName2"
-                          [dropDownArray]="menuOperation"
-                          (selectedItemMenu)="makeOperation($event)"
-        ></rb-drop-down-menu></div>
+    <div class="button-plus">
+      <rb-button [anchorRouterLink]=addButton.anchorRouterLink
+                 [srcImg]=addButton.srcImg
+                 [titleHover]=addButton.titleHover>
+      </rb-button>
     </div>
-
-  </div>-->
-<!--  <issue-list
-    [tableHeadList]="tableHeadList"
-    [issueList$]="issueList$"
+  </div>
+  <rb-mat-table
+    [columns]="columns"
+    [dataList]="issueList$"
     [updateButton]="updateButton"
+    (clickUpdate)="onClickUpdate($event)"
     [deleteButton]="deleteButton"
-    (actionButtonUpdate)="onActionButtonUpdate($event)"
-    (actionButtonDelete)="onActionButtonDelete($event)">
-  </issue-list>-->
-<!--  <rb-mat-table
-    [dataSource]="issueList$"
-    [displayedColumns]="tableHeadList">
-  </rb-mat-table>-->
-<rb-mat-table
-  [columns]="columns"
-  [dataList]="issueList$"
-  [updateButton]="updateButton"
-  (clickUpdate)="onClickUpdate($event)"
-  [deleteButton]="deleteButton"
-  (clickDelete)="onClickDelete($event)"
-  [viewButton]="viewButton"
-  (clickView)="onClickView($event)"
->
-</rb-mat-table>
+    (clickDelete)="onClickDelete($event)"
+    [viewButton]="viewButton"
+    (clickView)="onClickView($event)"
+    [filterValue]="filterValue">
+  </rb-mat-table>
 </div>
-
 
 <ng-template #issueEdit>
   <issue-edit></issue-edit>
 </ng-template>
-<!-- <div class="rb-caption">
-
-   &lt;!&ndash;   <rb-filters class="col-md-10"></rb-filters>
-      <rb-operations class="col-md-2"></rb-operations>&ndash;&gt;
-
-   &lt;!&ndash;   <rb-filters class="flex-container"></rb-filters>
-      <rb-operations class="flex-container"></rb-operations>&ndash;&gt;
-      <div class="box">
-      &lt;!&ndash;  <div><rb-filters></rb-filters></div>
-        <div><rb-operations></rb-operations></div>&ndash;&gt;
-        <div><rb-drop-down-menu [nameDropDown]="menuOperationName"
-                          [dropDownArray]="menuOperation"
-                          (selectedItemMenu)="makeOperation($event)">
-        </rb-drop-down-menu></div>
-        <div><rb-drop-down-menu [nameDropDown]="menuOperationName2"
-                          [dropDownArray]="menuOperation"
-                          (selectedItemMenu)="makeOperation($event)"
-        ></rb-drop-down-menu></div>
-    </div>
-
-  </div>-->
+<!---->

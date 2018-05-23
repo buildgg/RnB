@@ -4,7 +4,7 @@ import {HomeScreenComponent} from './home-screen.component';
 import {BudgetIssueComponent} from '../budget-issue/budget-issue.component';
 import {AuthGuard} from '../auth/auth-guard.service';
 import {routesAdminPage} from '../admin-page/admin-page-routing.module';
-import {routesBBD} from '../bbd/bbd-routing.module';
+import {BBDComponent} from '../bbd/bbd.component';
 
 export const routesHomeScreen: Routes = [
   {
@@ -12,8 +12,7 @@ export const routesHomeScreen: Routes = [
     canActivate: [AuthGuard],
     children: [
       {path: 'budget-issue', component: BudgetIssueComponent},
-      {path: 'bbd',
-          children: [...routesBBD]},
+      {path: 'bbd', component: BBDComponent},
       {path: 'admin-page',
         children: [...routesAdminPage]
       }

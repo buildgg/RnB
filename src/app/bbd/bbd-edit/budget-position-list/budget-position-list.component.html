@@ -1,3 +1,57 @@
-<p>
-  budget-position-list works!
-</p>
+<table class="<!--table table-sm  table-bordered-->">
+  <thead>
+  <tr>
+    <th scope="col" *ngFor="let head of tableHeadList">{{head}}</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let data of bbdPositionList">
+    <td>
+      <input type="checkbox" name="collection" value="1" #valueCheck
+             [checked]="checked"
+             (change)="onChangeCheck(data.$id, valueCheck)">
+    </td>
+    <td>
+      {{data.$id}}
+    </td>
+    <td>{{data.budgetDate}}</td>
+    <td>{{data.realBudgetDate}}</td>
+    <td>{{data.comments}}</td>
+
+    <td>{{data.mngResponsCenter}}</td>
+    <td>{{data.division}}</td>
+    <td>{{data.count}}</td>
+    <td>{{data.measure}}</td>
+    <td>{{data.budgetArticle}}</td>
+    <td class="amount">{{data.approximateAmount}}</td>
+    <td class="amount">{{data.amount}}</td>
+    <td class="amount">{{data.payedAmount}}</td>
+    <td class="amount">{{data.utilizedAmount}}</td>
+    <td>{{data.budgetPositionState}}</td>
+    <td>
+      <!--<a title= "Изменить"
+         class="ml-md-2 mr-md-2 mt-md-1"
+         routerLink="/home-screen/bbd/edit"
+         (click)="onActionButtonUpdate(data)">
+        <img src="assets/img/update2.png"/>
+      </a>
+      <a title= "Удалить"
+         class="ml-md-2 mr-md-2 mt-md-1"
+         (click)="onActionButtonDelete(data)">
+        <img src="assets/img/delete10.png"/>
+      </a>-->
+
+      <rb-button [srcImg]="updateButton.srcImg"
+                 [titleHover]="updateButton.titleHover"
+                 [anchorRouterLink]="updateButton.anchorRouterLink"
+                 (actionButton)="onActionButtonUpdate(data)">
+      </rb-button>
+      <rb-button [srcImg]="deleteButton.srcImg"
+                 [titleHover]="deleteButton.titleHover"
+                 [anchorRouterLink]="deleteButton.anchorRouterLink"
+                 (actionButton)="onActionButtonDelete(data)">
+      </rb-button>
+    </td>
+  </tr>
+  </tbody>
+</table>

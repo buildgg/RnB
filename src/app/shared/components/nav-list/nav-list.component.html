@@ -18,30 +18,97 @@
     <li class="li-hover">
       <a (click)="isVisible = !isVisible"
          class="a-label dropdown-toggle"
-         routerLink="/home-screen/admin-page"
-         href="">
+         routerLink="/home-screen/admin-page" >
         <i class='fa fa-cog'></i>
-        Администрирование
+          Администрирование
       </a>
     </li>
+
+<!--      Блок отображения подпунктов Admin-page-->
+
     <div *ngIf="isVisible" class="hideAdmin">
       <li>
-        <a (click)="navListSelected(item)"
-           routerLink="/home-screen/admin-page"
+        <a
+           routerLink="/home-screen/admin-page/user"
            routerLinkActive="active"
-           class="a-label" href="#">
-          Присвоение ролей
+           class="a-label">
+            Присвоение ролей
         </a>
       </li>
       <li>
-        <a (click)="navListSelected(item)"
-           routerLink="/home-screen/admin-page"
+        <a
+           routerLink="/home-screen/admin-page/role"
            routerLinkActive="active"
-           class="a-label"
-           href="#">
-          Роли
+           class="a-label">
+            Роли
         </a>
       </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/issue-status"
+               routerLinkActive="active"
+               class="a-label">
+                  Статусы заявок
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/bbd-status"
+               routerLinkActive="active"
+               class="a-label">
+                Статусы бюджетных договоров
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/user-operation"
+               routerLinkActive="active"
+               class="a-label">
+                Пользовательские операции
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/user-operation-logic"
+               routerLinkActive="active"
+               class="a-label">
+                Настройка логики операций
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/access-filter"
+               routerLinkActive="active"
+               class="a-label">
+                Доступы к фильтрам
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/access-operation"
+               routerLinkActive="active"
+               class="a-label">
+                Доступы к операциям
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/access-area"
+               routerLinkActive="active"
+               class="a-label">
+                Доступы к областям
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/routing-criteria"
+               routerLinkActive="active"
+               class="a-label">
+                Критерии маршуртизации
+            </a>
+        </li>
+
+
     </div>
   </ul>
 </div>

@@ -162,10 +162,12 @@ const bbd: BBD[] = [
 export class BBDMockData {
     private bbdList: BBD[] = bbd;
 
-    getBBD(): Observable<BBD[]> {
+    /*getBBD(): Observable<BBD[]> {
         return Observable.from([this.bbdList]);
+    }*/
+    getBBD(){
+        return this.bbdList;
     }
-
     getBBDbyID(id: string): BBD {
         return this.bbdList.find(
             value => {

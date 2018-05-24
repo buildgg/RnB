@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'rb-mat-filter',
@@ -6,9 +6,11 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./rb-mat-filter.component.css']
 })
 export class RbMatFilterComponent {
+  @Input() placeHolder = 'Фильтр нажмите Enter';
   @Output() applyFilter = new EventEmitter;
 
   onApplyFilter(value) {
+    console.log(' RbMatFilterComponent = ' + value);
     this.applyFilter.emit(value);
   }
 

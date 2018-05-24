@@ -117,7 +117,7 @@ const issues: Issue[] = [
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
-    collectionName: '№ 22м',
+    collectionName: '№ 223м',
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',

@@ -17,7 +17,7 @@ export const USERS: User[] = [
 
 @Injectable()
 export class AuthService {
-  isLoggedIn = true;
+  isLoggedIn = false;
   redirectUrl: string;
   currentUser: User = new User(null, null, null, null, null);
 

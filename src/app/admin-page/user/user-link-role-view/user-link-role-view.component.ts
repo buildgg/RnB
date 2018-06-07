@@ -3,8 +3,8 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {UserClassProxy} from '../../../shared/proxy-data-source/userClassProxy';
 import {RoleClassProxy} from '../../../shared/proxy-data-source/roleClassProxy';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Role} from '../../../shared/models/role.model';
 import {User} from '../../../shared/models/user.model';
+
 
 
 @Component({
@@ -14,7 +14,7 @@ import {User} from '../../../shared/models/user.model';
 })
 export class UserLinkRoleViewComponent implements OnInit {
 
-    userLinkRoleViewForm: FormGroup;
+    userLinkRoleViewFormGroup: FormGroup;
     @Input() user: User;
     @Output() viewedUser = new EventEmitter<User>();
 
@@ -26,7 +26,7 @@ export class UserLinkRoleViewComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.userLinkRoleViewForm = this.formBuilder.group({
+        this.userLinkRoleViewFormGroup = this.formBuilder.group({
             'user': [this.user.name],
             'role': [this.user.rolename]
         });

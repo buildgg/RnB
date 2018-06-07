@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {User} from '../../../shared/models/user.model';
-import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {UserClassProxy} from '../../../shared/proxy-data-source/userClassProxy';
 import {Role} from '../../../shared/models/role.model';
 import {RoleClassProxy} from '../../../shared/proxy-data-source/roleClassProxy';
@@ -25,8 +25,9 @@ export class UserLinkRoleEditFormComponent implements OnInit {
     ngOnInit() {
         this.userEditForm = this.formBuilder.group({
             'user': [this.user.name],
-            'role': [this.roles] // ПРОБЛЕМА - в списке не вібрана нужная роль
+            'role': new FormControl(this.roles[2])
         });
+       // this.userEditForm.patchValue({['role']: this.user.rolename});
     }
 
 

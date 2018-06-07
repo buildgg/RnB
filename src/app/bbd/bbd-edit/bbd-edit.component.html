@@ -55,7 +55,7 @@
     </form>
 </div>
 
-<div *ngIf="isVisibleList; else bbdPositionEdit">
+<!--<div *ngIf="isVisibleList; else bbdPositionEdit">
     <budget-position-list
             [tableHeadList]="tableHeadList"
             [bbdPositionList]="bbdPositionList"
@@ -64,8 +64,20 @@
             (actionButtonUpdate)="onActionButtonUpdate($event)"
             (actionButtonDelete)="onActionButtonDelete($event)">
     </budget-position-list>
+</div>-->
+<div *ngIf="isVisibleList; else bbdPositionEdit">
+    <rb-mat-table
+            [columns]="columns"
+            [dataList]="bbdPositionList"
+            [updateButton]="updateButton"
+            (clickUpdate)="onClickUpdate($event)"
+            [deleteButton]="deleteButton"
+            (clickDelete)="onClickDelete($event)"
+            [viewButton]="viewButton"
+            (clickView)="onClickView($event)"
+    >
+    </rb-mat-table>
 </div>
-
 <ng-template #bbdPositionEdit>
     <budget-position-edit
             [bbdPositionView]="selectedBBDPosition">

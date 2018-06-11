@@ -8,11 +8,24 @@ import {ButtonAnchor} from '../../shared/models/view-model/button/button-anchor.
 import {UpdateButtonAnchor} from '../../shared/models/view-model/button/update-button-anchor.model';
 import {DeleteButtonAnchor} from '../../shared/models/view-model/button/delete-button-anchor.model';
 import {ViewButtonAnchor} from '../../shared/models/view-model/button/view-button-anchor.model';
+import {ColumnTable} from '../../shared/models/view-model/column-table';
 
-
-const tableHeads: string[] = ['', 'Номер', 'Бюджетная дата', 'Реальная дата бюджета', 'Описание', 'ЦО', 'Подразделение',
-    'Количество', 'Ед.изм.', 'Статья бюджета', 'Ориентировочная сумма', 'Сумма договора', 'Оплачено', 'Закрыто', 'Состояние', 'Операции'];
-
+const columnsBBDPosition: ColumnTable[] = [
+    {columnDef: '$id', headerName: 'Номер'},
+    {columnDef: 'budgetDate', headerName: 'Бюджетная дата'},
+    {columnDef: 'realBudgetDate', headerName: 'Реальная дата бюджета'},
+    {columnDef: 'comments', headerName: 'Описание'},
+    {columnDef: 'mngResponsCenter', headerName: 'ЦО'},
+    {columnDef: 'division', headerName: 'Подразделение'},
+    {columnDef: 'count', headerName: 'Количество'},
+    {columnDef: 'measure', headerName: 'Ед.изм.'},
+    {columnDef: 'budgetArticle', headerName: 'Статья бюджета'},
+    {columnDef: 'approximateAmount', headerName: 'Ориентировочная сумма'},
+    {columnDef: 'amount', headerName: 'Сумма'},
+    {columnDef: 'payedAmount', headerName: 'Оплачено'},
+    {columnDef: 'utilizedAmount', headerName: 'Закрыто'},
+    {columnDef: 'budgetPositionState', headerName: 'Состояние'}
+];
 @Component({
     moduleId: module.id,
     selector: 'bbd-edit',
@@ -27,12 +40,14 @@ export class BBDEditComponent implements OnInit {
     @Input()
     public bbdView: BBD;
     
-    tableHeadList: string[] = tableHeads;
+    // tableHeadList: string[] = tableHeads;
     
     bbdPositionList: BudgetPosition[];
     selectedBBDPosition: BudgetPosition;
     
     isVisibleList: boolean = true;
+
+    columns: ColumnTable[] = columnsBBDPosition;
 
     updateButton: ButtonAnchor = new UpdateButtonAnchor();
     deleteButton: ButtonAnchor = new DeleteButtonAnchor();
@@ -77,14 +92,20 @@ export class BBDEditComponent implements OnInit {
 
     }
 
-    onActionButtonUpdate(data) {
+    onClickUpdate(data) {
         // this.selectedBBD = this.bbdMockService.getBBDbyID(data.$id);
         console.log('Edit ' + data.$id);
         this.toggleVisibleList();
     }
 
-    onActionButtonDelete(data) {
+    onClickDelete(data) {
         console.log('Delete ' + data.$id);
+    }
+
+    onClickView(data) {
+        // this.selectedBBD = this.bbdMockService.getBBDbyID(data.$id);
+        console.log('View ' + data.$id);
+        this.toggleVisibleList();
     }
 
     toggleVisibleList() {

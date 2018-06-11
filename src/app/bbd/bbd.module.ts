@@ -11,6 +11,7 @@ import {BBDMockData} from './bbd-mock-data';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BudgetPositionListComponent} from './bbd-edit/budget-position-list/budget-position-list.component';
 import {BudgetPositionEditComponent} from './bbd-edit/budget-position-edit/budget-position-edit.component';
+import {RbMaterialModule} from '../shared/components/rb-material/rb-material.module';
 
 @NgModule({
     imports: [
@@ -18,7 +19,8 @@ import {BudgetPositionEditComponent} from './bbd-edit/budget-position-edit/budge
         LayoutModule,
         BBDRoutingModule,
         ComponentsModule,
-        ReactiveFormsModule
+        ReactiveFormsModule,
+        RbMaterialModule
     ],
     declarations: [BBDComponent, BBDListComponent, BBDEditComponent, BudgetPositionListComponent, BudgetPositionEditComponent],
     providers: [BBDMockData]

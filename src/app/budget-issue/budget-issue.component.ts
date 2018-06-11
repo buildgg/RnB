@@ -1,14 +1,13 @@
-import {AfterContentChecked, Component, OnChanges, OnInit, ViewChild} from '@angular/core';
-import {IssueMockData} from './issue-mock-data';
+import {Component, OnInit} from '@angular/core';
 import {ButtonAnchor} from '../shared/models/view-model/button/button-anchor.model';
 import {UpdateButtonAnchor} from '../shared/models/view-model/button/update-button-anchor.model';
 import {DeleteButtonAnchor} from '../shared/models/view-model/button/delete-button-anchor.model';
-import {IssueListComponent} from './issue-list/issue-list.component';
 import {ColumnTable} from '../shared/models/view-model/column-table';
 import {DropDownMenu} from '../shared/models/view-model/drop-down-menu.model';
 import {ViewButtonAnchor} from '../shared/models/view-model/button/view-button-anchor.model';
-import {RbMatTableComponent} from '../shared/components/rb-material/rb-mat-table/rb-mat-table.component';
 import {AddButtonAnchor} from '../shared/models/view-model/button/add-button-anchor.model';
+import {IssueService} from './issue.service';
+import {Issue} from '../shared/models/issue.model';
 
 const columnsExample: ColumnTable[] = [
   {columnDef: 'description', headerName: 'Описание'},
@@ -35,33 +34,28 @@ const operations: DropDownMenu[] = [
 export class BudgetIssueComponent implements OnInit {
 
   columns: ColumnTable[] = columnsExample;
-  issueList$;
-  /*: Observable<Issue[]>*/
-
+  issueList: Issue[];
   updateButton: ButtonAnchor = new UpdateButtonAnchor();
   deleteButton: ButtonAnchor = new DeleteButtonAnchor();
   viewButton: ButtonAnchor = new ViewButtonAnchor();
   addButton: ButtonAnchor = new AddButtonAnchor();
 
   filterValue: any;
-
-
   isVisibleList: boolean = true;
 
   menuOperation = operations;
   menuOperationName = 'Операции';
-  menuOperationName2 = 'Фильтры';
+  menuFilterName = 'Фильтры';
 
-  @ViewChild(IssueListComponent)
-  issueListComponent: IssueListComponent;
+  issueRow: Issue;
 
- /* @ViewChild(RbMatTableComponent)
-  matTable: RbMatTableComponent;*/
+/*  @ViewChild(IssueListComponent)
+  issueListComponent: IssueListComponent;*/
 
-  constructor(private issueMockService: IssueMockData) {}
+  constructor(private issueService: IssueService) {}
 
   ngOnInit() {
-    this.issueList$ = this.issueMockService.getIssues();
+    this.issueService.getAllIssues().subscribe(value => this.issueList = value);
   }
 
   applyFilter(value) {
@@ -73,25 +67,18 @@ export class BudgetIssueComponent implements OnInit {
     console.log(' operation = ' + operation.name);
   }
 
-  getSelectedIssue() {
+/*  getSelectedIssue() {
     this.issueListComponent.getSelectedIdArray();
-  }
-
-  onActionButtonUpdate(data) {
-    console.log(data.$id);
-    this.toggleVisibleList();
-  }
-
-  onActionButtonDelete($event) {
-    console.log('Delete');
-  }
+  }*/
 
   toggleVisibleList() {
     this.isVisibleList = !this.isVisibleList;
   }
 
   onClickUpdate(data) {
-    console.log(data + ' onClickUpdate');
+    this.toggleVisibleList();
+    this.issueRow = data;
+
   }
 
   onClickDelete(data) {

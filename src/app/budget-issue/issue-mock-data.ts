@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {Issue} from '../shared/models/issue.model';
 import {Observable} from 'rxjs';
 
-const issues: Issue[] = [
+export const issues: Issue[] = [
   {
     description: 'Очень необходимо два офисных стулья',
     count: 4,
@@ -137,13 +137,15 @@ const issues: Issue[] = [
   }
 ];
 
+/*
 @Injectable()
 export class IssueMockData {
   private issuesList: Issue[] = issues;
 
-  getIssues()/*: Observable<Issue[]>*/ {
+  getIssues()/!*: Observable<Issue[]>*!/ {
     return this.issuesList;
-   /* Observable.from([this.issuesList]);*/
+   /!* Observable.from([this.issuesList]);*!/
   }
+*/
 
-}
+

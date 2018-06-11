@@ -1,3 +1,50 @@
-<p>
-  issue-edit works!
-</p>
+<form [formGroup]="issueGroup" (ngSubmit)="accept(issueGroup)">
+  <div class="form-group">
+    <label>Описание</label>
+    <input class="form-control" formControlName="description">
+
+    <label>Количество</label>
+    <input class="form-control" formControlName="count">
+
+    <label for="budgetArticleType" class="center-block">Тип статьи -></label>
+    <input id="budgetArticleType" class="form-control" formControlName="budgetArticleType">
+
+
+    <label for="issuer" class="center-block">Инициатор -></label>
+    <input id="issuer" class="form-control" formControlName="issuer">
+
+    <label for="responsiblePerson" class="center-block">Текущий ответственный -></label>
+    <input id="responsiblePerson" class="form-control" formControlName="responsiblePerson">
+
+    <label for="collectionName" class="center-block">Свод-> </label>
+    <input id="collectionName" class="form-control" formControlName="collectionName">
+
+    <label for="date" class="center-block">Дата</label>
+    <input type="date" id="date" class="form-control" formControlName="date">
+
+    <label for="issueNo" class="center-block">Номер заявки</label>
+    <input id="issueNo" class="form-control" formControlName="issueNo">
+
+    <label for="state" class="center-block">Состояние -></label>
+    <input id="state" class="form-control" formControlName="state">
+  </div>
+
+  <!--  <input type="button"
+           class="btn btn-primary btn-lg"
+           (click)="goBack()"
+           value="Отменить" />
+
+    <input type="submit"
+           class="btn btn-primary btn-lg"
+           value="Применить"
+
+           [disabled]="shopItemForm.invalid" />-->
+  <rb-mat-drop-down
+    [dropDownList]="options"
+    [placeHolder]="'Список'"
+    [widthCss]="'80%'"
+    (selectedItem)="onSelectedItem($event)">
+  </rb-mat-drop-down>
+
+  <p>Form value: {{ issueGroup.value | json }}</p>
+</form>

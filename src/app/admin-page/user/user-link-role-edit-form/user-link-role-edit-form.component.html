@@ -9,8 +9,7 @@
 
     <div class="form-group">
         <label>Роли :</label>
-        <select class="form-control" formControlName="role">
-            <option [ngValue]="null"> --- ВЫБЕРИТЕ РОЛЬ</option>
+        <select formControlName="role">
             <option *ngFor="let role of roles" [ngValue]="role">
                 {{role.name}}
             </option>

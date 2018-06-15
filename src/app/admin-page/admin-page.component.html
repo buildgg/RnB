@@ -1,10 +1,9 @@
-<router-outlet>
 <nav>
 <!--
   <a routerLink="/home-screen/admin-page/user">User</a>
   <a routerLink="/home-screen/admin-page/role">Role</a>
 -->
-  <button class="btn btn-default"
+<!--  <button class="btn btn-default"
           (click)="onClickUser()">
     Присвоение ролей пользователям
   </button>
@@ -62,9 +61,58 @@
   </button>
 
 
-</nav>
+</nav>-->
+  <div class="row" *ngIf="isVisible">
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Привязка ролей к пользователям АБС Б2</h5>
+        <p class="card-text">лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум </p>
+        <a routerLink="/home-screen/admin-page/user"
+           routerLinkActive="active"
+           class="a-label">
+          <i class="fa fa-book fa-px"></i>
+          Привязка ролей
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Роли системы R&B</h5>
+        <p class="card-text">лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум </p>
+        <a routerLink="/home-screen/admin-page/role"
+           routerLinkActive="active"
+           class="a-label">
+          <i class="fa fa-book fa-px"></i>
+          Роли системы R&B
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Статусы заявок</h5>
+        <p class="card-text">лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум лорем ипсум </p>
+        <a routerLink="/home-screen/admin-page/issue-status"
+           routerLinkActive="active"
+           class="a-label">
+          <i class="fa fa-book fa-px"></i>
+          Статусы заявок системы R&B
+        </a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+
 <nav>
   <p> </p>
-<!--<router-outlet></router-outlet>-->
+<router-outlet></router-outlet>
 </nav>
-</router-outlet>

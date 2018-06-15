@@ -2,9 +2,8 @@ import {Component, OnChanges, OnInit} from '@angular/core';
 import {AuthService} from '../../../auth/auth.service';
 
 const NAV_LIST = [
-  {name: 'Заявки инициаторов', path: '/home-screen/budget-issue'},
-  {name: 'Базовые договора', path: '/home-screen/bbd'},
-  {name: 'Администрирование', path: '/home-screen/admin-page'}
+  {name: 'Заявки инициаторов', path: '/home-screen/budget-issue', classI: 'fa fa-book fa-px'},
+  {name: 'Базовые договора', path: '/home-screen/bbd', classI: 'fa fa-handshake-o'}
   ];
 
 @Component({

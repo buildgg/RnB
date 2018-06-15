@@ -1,17 +1,14 @@
-button {
+a {
   text-decoration: none;
   border: none;
-  color: #FFFFFF;
+  color: #085cb1;
   padding: 7px;
   cursor: pointer;
-  border-radius: 7px;
-  background-color: #4179b2;
-  font-weight: 400;
-  font-size: 18px;
-
+  font-weight: 500;
+  font-size: 15px;
+  font-family: "Segoe UI";
 }
-button:hover {
-  background-color: #498CCE;
-  border-radius: 7px;
-  color: #FFFFFF;
+a:hover {
+  font-weight: bolder;
+  text-decoration: none;
 }

@@ -1,4 +1,57 @@
-<div class="rb-caption" align="center">
-<!--    <button routerLink='/home-screen/budget-base-document/list'>Показать ББД!</button>-->
+<div *ngIf="isVisibleList; else bbdEdit">
+
+    <!--<div class="rb-caption container">
+        <div class="row">
+            <rb-filters class="col-md-10"></rb-filters>
+            <rb-operations class="col-md-2"></rb-operations>
+        </div>
+    </div>-->
+    <div class="box">
+        <div><rb-drop-down-menu [nameDropDown]="menuOperationName"
+                                [dropDownArray]="menuOperation"
+                                (selectedItemMenu)="makeOperation($event)">
+        </rb-drop-down-menu></div>
+        <div><rb-drop-down-menu [nameDropDown]="menuOperationName2"
+                                [dropDownArray]="menuOperation"
+                                (selectedItemMenu)="makeOperation($event)">
+        </rb-drop-down-menu>
+        </div>
+        <div class="mat-filter">
+            <mat-form-field>
+                <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Фильтр">
+            </mat-form-field>
+        </div>
+        <div class="button-plus">
+            <rb-button [anchorRouterLink]="'/'"
+                       [srcImg]="'/assets/img/plus48.png'"
+                       [titleHover]="'Добавить'">
+            </rb-button>
+        </div>
+    </div>
+
+    <!--<bbd-list
+            [tableHeadList]="tableHeadList"
+            [bbdList$]="bbdList$"
+            [updateButton]="updateButton"
+            [deleteButton]="deleteButton"
+            (actionButtonUpdate)="onActionButtonUpdate($event)"
+            (actionButtonDelete)="onActionButtonDelete($event)">
+    </bbd-list>-->
+    <rb-mat-table
+            [columns]="columns"
+            [dataList]="bbdList$"
+            [updateButton]="updateButton"
+            (clickUpdate)="onClickUpdate($event)"
+            [deleteButton]="deleteButton"
+            (clickDelete)="onClickDelete($event)"
+            [viewButton]="viewButton"
+            (clickView)="onClickView($event)"
+    >
+    </rb-mat-table>
 </div>
-<router-outlet></router-outlet>
+
+<ng-template #bbdEdit>
+    <bbd-edit
+            [bbdView]="selectedBBD">
+    </bbd-edit>
+</ng-template>

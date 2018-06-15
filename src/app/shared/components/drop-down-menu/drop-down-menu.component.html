@@ -1,0 +1,18 @@
+<div class="dropdown">
+  <button class="dropdown-toggle button-dropdown"
+          type="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+          (click)="toggleMenu($event)"
+          #buttonDropMenu>
+    {{nameDropDown}}
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenu" [class.show]="isShow">
+    <button class="dropdown-item" type="button"
+            *ngFor="let item of dropDownArray"
+            (click)="onSelected(item)">
+      {{item.name}}
+    </button>
+  </div>
+</div>

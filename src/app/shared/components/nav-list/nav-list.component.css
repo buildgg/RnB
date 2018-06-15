@@ -1,39 +1,89 @@
-.list-wrap {
-  padding: 8px;
-  background: white;
+/*.list-wrap {
+!*  padding: 6px;*!
+  background: #085cb1;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);
-  margin-top: 20px;
-  margin-left: 20px;
-  font-weight: bolder;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-/*  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;*/
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-family: "Segoe UI";
 }
 ul {
    list-style: none;
-   margin: 0;
-   padding: 0;
+!*   margin: 0;*!
+   padding: 1px;
  }
 li {
-  margin: 12px 0 12px 8px;
-  padding-bottom: 5px;
+  margin: 10px 0 0px 5px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #FFFFFF;
 }
 a.a-label {
   text-decoration: none;
-  /*display: block;*/
-  font-size: 18px;
-  color: #3A6699;
+!*  display: block;*!
+  color: #FFFFFF;
   padding: 8px;
-/*  position: relative;*/
- /* transition: .3s linear;*/
+  position: relative;
+!*  transition: .2s linear;*!
   cursor: pointer;
 }
-a.a-label:hover {
-   background: rgba(73, 140, 206, 0.84);
-   color: white;
-   border-radius: 7px;
- }
+!*a.a-label:hover {
+   font-weight: bolder;
+   background-color: #0877e1;
+ }*!
 a.a-label.active {
-  background: rgba(73, 140, 206, 0.84);
+  font-weight: bolder;
+}
+li a.a-label:hover{
+  font-weight: bolder;
+  background-color: #0877e1;
+}*/
+ul {
+  list-style-type: none;
+/*  margin: 0;*/
+  padding: 0;
+  flex: 0 0 17%;
+/*  background-color: #f1f1f1;*/
+ /* padding: 6px;*/
+  background: #085cb1;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 16px;
+  font-family: "Segoe UI";
+ /* box-shadow: 1px 1px 8px #1771CB;*/
+}
+
+li a {
+  display: block;
+  color: #FFFFFF;
+  padding: 10px 10px 10px 12px;
+  text-decoration: none;
+  text-align: left;
+}
+
+li {
+  text-align: center;
+  border-bottom: 1px solid #FFFFFF;
+}
+
+/*li:last-child {
+  border-bottom: none;
+}*/
+
+li a.active {
   color: white;
-  border-radius: 7px;
+  font-weight: bolder;
+/*  background-color: #0876D7;*/
+}
+
+li a:hover {
+ /* background-color: #0876D7;*/
+  color: white;
+  font-weight: bolder;
+  background: #085cb1;
+}
+/*
+:not(.active)*/
+.hideAdmin {
+  background: #086dc7;
 }

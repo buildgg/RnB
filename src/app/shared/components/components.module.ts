@@ -10,7 +10,10 @@ import { RbTableComponent } from './rb-table/rb-table.component';
 import { RbButtonComponent } from './rb-button/rb-button.component';
 import { RbFiltersComponent } from './rb-filters/rb-filters.component';
 import { RbOperationsComponent } from './rb-operations/rb-operations.component';
-import {SortService} from './sortable-column/sort-service';
+import {BrowserModule} from '@angular/platform-browser';
+import {RbDropDownMenuComponent} from './drop-down-menu/drop-down-menu.component';
+import { RbLinkComponent } from './rb-link/rb-link.component';
+
 
 export const COMPONENTS = [
   NavHeaderComponent,
@@ -20,11 +23,14 @@ export const COMPONENTS = [
   RbTableComponent,
   RbFiltersComponent,
   RbButtonComponent,
-  RbOperationsComponent
+  RbOperationsComponent,
+  RbDropDownMenuComponent,
+  RbLinkComponent
 ];
 
 @NgModule({
   imports: [
+    BrowserModule,
     CommonModule,
     RouterModule
   ],
@@ -37,8 +43,9 @@ export const COMPONENTS = [
     RbTableComponent,
     RbButtonComponent,
     RbFiltersComponent,
-    RbOperationsComponent],
-  exports: [COMPONENTS],
-  providers: [SortService]
+    RbOperationsComponent,
+    RbDropDownMenuComponent,
+    RbLinkComponent],
+  exports: [COMPONENTS]
 })
 export class ComponentsModule { }

@@ -1,20 +1,43 @@
 <div *ngIf="isVisibleList; else issueEdit">
-  <div class="rb-caption container">
-    <div class="row">
-      <rb-filters class="col-md-10"></rb-filters>
-      <rb-operations class="col-md-2"></rb-operations>
+
+  <div class="box">
+    <div>
+      <rb-drop-down-menu [nameDropDown]="menuOperationName"
+                         [dropDownArray]="menuOperation"
+                         (selectedItemMenu)="makeOperation($event)">
+      </rb-drop-down-menu>
+    </div>
+    <div>
+      <rb-drop-down-menu [nameDropDown]="menuFilterName"
+                         [dropDownArray]="menuOperation"
+                         (selectedItemMenu)="makeOperation($event)">
+      </rb-drop-down-menu>
+    </div>
+    <div class="mat-filter">
+      <rb-mat-filter (applyFilter)="applyFilter($event)">
+      </rb-mat-filter>
+    </div>
+    <div class="button-plus">
+      <rb-button [anchorRouterLink]=addButton.anchorRouterLink
+                 [srcImg]=addButton.srcImg
+                 [titleHover]=addButton.titleHover>
+      </rb-button>
     </div>
   </div>
-  <issue-list
-    [tableHeadList]="tableHeadList"
-    [issueList$]="issueList$"
+  <rb-mat-table
+    [columns]="columns"
+    [dataList]="issueList"
     [updateButton]="updateButton"
+    (clickUpdate)="onClickUpdate($event)"
     [deleteButton]="deleteButton"
-    (actionButtonUpdate)="onActionButtonUpdate($event)"
-    (actionButtonDelete)="onActionButtonDelete($event)">
-  </issue-list>
+    (clickDelete)="onClickDelete($event)"
+    [viewButton]="viewButton"
+    (clickView)="onClickView($event)"
+    [filterValue]="filterValue">
+  </rb-mat-table>
 </div>
 
 <ng-template #issueEdit>
-  <issue-edit></issue-edit>
+  <issue-edit [issueRow]="issueRow"></issue-edit>
 </ng-template>
+<!---->

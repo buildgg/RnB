@@ -1,15 +1,120 @@
 <div class="list-wrap">
   <ul class="nav-list">
-    <li *ngFor="let item of navList">
+    <li *ngFor="let item of navList" class="li-hover">
+<!--    <rb-link
+      [routerLink]="[item.path]"
+      [classCss]="'a-label'">
+      <i [class]=[item.classI]></i>
+      {{item.name}}
+    </rb-link>-->
       <a (click)="navListSelected(item)"
         [routerLink]="[item.path]"
          routerLinkActive="active"
          class="a-label" href="#">
-        <img class="img_logo" src="/assets/img/nav-list-logo24.png" alt=""/>
+        <i [class]=[item.classI]></i>
         {{item.name}}
       </a>
-
     </li>
+    <li class="li-hover">
+      <a (click)="isVisible = !isVisible"
+         class="a-label dropdown-toggle"
+         routerLink="/home-screen/admin-page" >
+        <i class='fa fa-cog'></i>
+          Администрирование
+      </a>
+    </li>
+
+<!--      Блок отображения подпунктов Admin-page-->
+
+    <div *ngIf="isVisible" class="hideAdmin">
+      <li>
+        <a
+           routerLink="/home-screen/admin-page/user"
+           routerLinkActive="active"
+           class="a-label">
+            Присвоение ролей
+        </a>
+      </li>
+      <li>
+        <a
+           routerLink="/home-screen/admin-page/role"
+           routerLinkActive="active"
+           class="a-label">
+            Роли
+        </a>
+      </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/issue-status"
+               routerLinkActive="active"
+               class="a-label">
+                  Статусы заявок
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/bbd-status"
+               routerLinkActive="active"
+               class="a-label">
+                Статусы бюджетных договоров
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/user-operation"
+               routerLinkActive="active"
+               class="a-label">
+                Пользовательские операции
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/user-operation-logic"
+               routerLinkActive="active"
+               class="a-label">
+                Настройка логики операций
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/access-filter"
+               routerLinkActive="active"
+               class="a-label">
+                Доступы к фильтрам
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/access-operation"
+               routerLinkActive="active"
+               class="a-label">
+                Доступы к операциям
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/access-area"
+               routerLinkActive="active"
+               class="a-label">
+                Доступы к областям
+            </a>
+        </li>
+        <li>
+            <a
+               routerLink="/home-screen/admin-page/routing-criteria"
+               routerLinkActive="active"
+               class="a-label">
+                Критерии маршуртизации
+            </a>
+        </li>
+
+
+    </div>
   </ul>
 </div>
 
+
+<!--<img class="img_logo" src="/assets/img/nav-list-logo24.png" alt=""/>-->
+<!--<i class="fas fa-clipboard-list"></i>-->
+<!--   <i class="fas fa-clipboard-list fa-1x" aria-hidden="true"> routerLinkActive="active"</i>
+   <i class="fa fa-american-sign-language-interpreting fa-1x" aria-hidden="true"> </i>-->

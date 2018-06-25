@@ -11,9 +11,16 @@ export const routesHomeScreen: Routes = [
     path: '', component: HomeScreenComponent,
     canActivate: [AuthGuard],
     children: [
-      {path: 'budget-issue', component: BudgetIssueComponent},
+      {path: 'budget-issue', component: BudgetIssueComponent}
+       /* loadChildren: 'app/budget-issue/budget-issue.module#BudgetIssueModule'*/
+      ,
+      /*,*/
+
       {path: 'bbd', component: BBDComponent},
       {path: 'admin-page',
+        /*loadChildren: 'app/customers/customers.module#CustomersModule',*/
+       /* loadChildren: 'app/admin-page/admin-page.module#AdminPageModule'
+        ,*/
         children: [...routesAdminPage]
       }
     ]

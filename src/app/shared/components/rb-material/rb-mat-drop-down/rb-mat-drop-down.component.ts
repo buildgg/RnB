@@ -25,7 +25,10 @@ export class RbMatDropDownComponent implements OnInit {
       .valueChanges
       .pipe(
         startWith(''),
-        map(val => this.filter(val))
+        map(val =>
+        this.filter(val)
+
+        )
       );
   }
 

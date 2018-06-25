@@ -1,33 +1,80 @@
+<h4>Редактирование заявки</h4>
 <form [formGroup]="issueGroup" (ngSubmit)="accept(issueGroup)">
-  <div class="form-group">
-    <label>Описание</label>
-    <input class="form-control" formControlName="description">
 
-    <label>Количество</label>
-    <input class="form-control" formControlName="count">
+  <div class="rb-form">
+    <div class="box-field">
+      <label for="budgetType">Тип статьи</label>
+      <rb-look-up id="budgetType"
+        [lookUpArray]="options"
+        (valueLookUp)="onValueLookUp($event)">
+      </rb-look-up>
+    </div>
 
-    <label for="budgetArticleType" class="center-block">Тип статьи -></label>
-    <input id="budgetArticleType" class="form-control" formControlName="budgetArticleType">
+    <div class="box-field">
+      <label for="count">Количество</label>
+      <input type="text"
+             id="count"
+             formControlName="count"
+             class="input-field count">
+    </div>
 
+    <div class="box-field">
+      <label for="issuer">Инициатор</label>
+      <rb-look-up id="issuer"
+                  [lookUpArray]="issuer"
 
-    <label for="issuer" class="center-block">Инициатор -></label>
-    <input id="issuer" class="form-control" formControlName="issuer">
+                  (valueLookUp)="onValueLookUpIssuer($event)"
+                  class="rb-issuer"
+      >
+      </rb-look-up>
+    </div>
 
-    <label for="responsiblePerson" class="center-block">Текущий ответственный -></label>
-    <input id="responsiblePerson" class="form-control" formControlName="responsiblePerson">
+    <div class="box-field">
+      <label for="responsiblePerson">Текущий ответственный -></label>
+      <input id="responsiblePerson" class="input-field" formControlName="responsiblePerson">
+    </div>
 
-    <label for="collectionName" class="center-block">Свод-> </label>
-    <input id="collectionName" class="form-control" formControlName="collectionName">
+    <div class="box-field">
+      <label for="collectionName">Свод-></label>
+      <input id="collectionName" class="input-field" formControlName="collectionName">
+    </div>
 
-    <label for="date" class="center-block">Дата</label>
-    <input type="date" id="date" class="form-control" formControlName="date">
+    <div class="box-field">
+      <label for="date">Дата</label>
+      <input type="date" id="date" class="input-field" formControlName="date">
+    </div>
 
-    <label for="issueNo" class="center-block">Номер заявки</label>
-    <input id="issueNo" class="form-control" formControlName="issueNo">
+    <div class="box-field">
+      <label for="issueNo">Номер заявки</label>
+      <input id="issueNo" class="input-field" formControlName="issueNo">
+    </div>
 
-    <label for="state" class="center-block">Состояние -></label>
-    <input id="state" class="form-control" formControlName="state">
+    <div class="box-field">
+      <label for="state">Состояние</label>
+      <input id="state" class="input-field" formControlName="state">
+    </div>
+    <div class="box-field">
+      <label for="description">Описание</label>
+      <textarea id="description"
+                name="description"
+                formControlName="description"
+                placeholder="Описание"
+                class="input-field description" rows="3">
+      </textarea>
+    </div>
+
+    <div class="box-field">
+      <label for="description">список</label>
+      <rb-mat-drop-down
+        [dropDownList]="options"
+        [placeHolder]="'Список'"
+        [widthCss]="'100%'"
+        (selectedItem)="onSelectedItem($event)">
+      </rb-mat-drop-down>
+    </div>
   </div>
+  <p>Form value: {{ issueGroup.value | json }}</p>
+
 
   <!--  <input type="button"
            class="btn btn-primary btn-lg"
@@ -39,12 +86,7 @@
            value="Применить"
 
            [disabled]="shopItemForm.invalid" />-->
-  <rb-mat-drop-down
-    [dropDownList]="options"
-    [placeHolder]="'Список'"
-    [widthCss]="'80%'"
-    (selectedItem)="onSelectedItem($event)">
-  </rb-mat-drop-down>
 
-  <p>Form value: {{ issueGroup.value | json }}</p>
 </form>
+<!-- [styleInput]="styleInput"
+                  [styleList]="styleList"-->

@@ -24,6 +24,8 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   @Output() clickView = new EventEmitter;
   @Input() filterValue: string;
 
+  @Input() selectedRowId = 0;
+
 
   dataSource;
   displayedColumns: string[] = [];
@@ -77,5 +79,11 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   onActionButtonView(element) {
     this.clickView.emit(element);
   }
-
+  onSelectedRow(row){
+    console.log('Action! = ' + row.id);
+    this.selectedRowId = row.id;
+  }
+  isSelected(id) {
+    return this.selectedRowId === id;
+  }
 }

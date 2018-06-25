@@ -1,11 +1,9 @@
-import {Injectable} from '@angular/core';
 import {Issue} from '../shared/models/issue.model';
-import {Observable} from 'rxjs';
 
 export const issues: Issue[] = [
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 4,
+    count: '4',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -13,11 +11,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите',
-    $id: '1'
+    id: '1'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 2,
+    count: '2',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Марко Лукич Кропивни',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -25,11 +23,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите',
-    $id: '2'
+    id: '2'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 3,
+    count: '3',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Марко Лукич Кропивни',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -37,11 +35,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите',
-    $id: '3'
+    id: '3'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 5,
+    count: '5',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -49,11 +47,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите',
-    $id: '4'
+    id: '4'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 3,
+    count: '3',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -61,11 +59,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите',
-    $id: '5'
+    id: '5'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 2,
+    count: '2',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -73,11 +71,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: '6'
+    id: '6'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 4,
+    count: '4',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -85,11 +83,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: '7'
+    id: '7'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 4,
+    count: '4',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -97,11 +95,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: '8'
+    id: '8'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 4,
+    count: '4',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -109,11 +107,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: '9'
+    id: '9'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 4,
+    count: '4',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -121,11 +119,11 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: '10'
+    id: '10'
   },
   {
     description: 'Очень необходимо два офисных стулья',
-    count: 4,
+    count: '4',
     budgetArticleType: 'канцелярские товары',
     issuer: 'Распорядитель IT',
     responsiblePerson: 'Хамза Хакимзаде Ния',
@@ -133,7 +131,7 @@ export const issues: Issue[] = [
     date: '01.02.2017',
     issueNo: '433',
     state: '"ОТКЛ.Распорядите rerty 555555555',
-    $id: '11'
+    id: '11'
   }
 ];
 

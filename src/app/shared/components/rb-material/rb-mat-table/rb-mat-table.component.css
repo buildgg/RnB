@@ -30,3 +30,6 @@
 .mat-cell:last-child {
   padding-right: 5px;
 }
+.selected{
+  background-color: rgba(8, 148, 255, 0.16);
+}

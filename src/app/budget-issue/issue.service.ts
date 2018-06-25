@@ -12,7 +12,7 @@ export class IssueService {
   }
 
   getIssueById(id: string): Observable<Issue> {
-    return of(issues.find(value => value.$id === id));
+    return of(issues.find(value => value.id === id));
     }
 
 }

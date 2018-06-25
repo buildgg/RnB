@@ -1,1 +1,53 @@
+.rb-form {
+  width:70%;
+  background-color: #dddddd;
+}
+
+label {
+  display: block;
+  margin: 0px;
+  /*display: inline-block;*/
+}
+.input-field {
+  /*width: 100% !important;*/
+  width: 100%;
+  border: 1px solid #ced4da;
+  padding: .375rem .75rem;
+  border-radius: 1px;
+}
+.box-field {
+  margin: 15px;
+}
+.description {
+  resize: none;
+}
+h4 {
+  margin-left: 15px;
+}
+/*.rb-issuer :host(.input-field){
+  width: 60%;
+  background-color: crimson;
+}*/
+/*.rb-issuer {
+  width: 30%;
+  background-color: darkviolet;
+}*/
+
+
+/*
+.box-field {
+  margin-bottom: 15px;
+}
+.description {
+  width: 70%;
+  resize: none;
+}
+.budgetArticleType {
+  width: 50% !important;
+}
+!*  rgba(8, 106, 185, 0.99);*!
+*/
+
+
+
 

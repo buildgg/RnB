@@ -1,6 +1,7 @@
 <h4>Редактирование заявки</h4>
-<form [formGroup]="issueGroup" (ngSubmit)="accept(issueGroup)">
 
+<form [formGroup]="issueGroup" (ngSubmit)="accept(issueGroup)">
+  <p>Form value: {{ issueGroup.value | json }}</p>
   <div class="rb-form">
     <div class="box-field">
       <label for="budgetType">Тип статьи</label>
@@ -22,10 +23,9 @@
       <label for="issuer">Инициатор</label>
       <rb-look-up id="issuer"
                   [lookUpArray]="issuer"
-
-                  (valueLookUp)="onValueLookUpIssuer($event)"
-                  class="rb-issuer"
-      >
+                  [styleInput]="styleInput"
+                  [styleList]="styleList"
+                  (valueLookUp)="onValueLookUpIssuer($event)">
       </rb-look-up>
     </div>
 
@@ -63,7 +63,7 @@
       </textarea>
     </div>
 
-    <div class="box-field">
+<!--    <div class="box-field">
       <label for="description">список</label>
       <rb-mat-drop-down
         [dropDownList]="options"
@@ -71,9 +71,9 @@
         [widthCss]="'100%'"
         (selectedItem)="onSelectedItem($event)">
       </rb-mat-drop-down>
-    </div>
+    </div>-->
   </div>
-  <p>Form value: {{ issueGroup.value | json }}</p>
+
 
 
   <!--  <input type="button"
@@ -88,5 +88,3 @@
            [disabled]="shopItemForm.invalid" />-->
 
 </form>
-<!-- [styleInput]="styleInput"
-                  [styleList]="styleList"-->

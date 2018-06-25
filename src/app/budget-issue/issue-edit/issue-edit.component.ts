@@ -59,7 +59,7 @@ export class IssueEditComponent implements OnInit {
   options = options2;
   issueGroup: FormGroup;
   issuer = issuerArray;
-  styleList = {
+/*  styleList = {
     'background-color': 'lime',
     'font-size': '20px',
     'font-weight': 'bold',
@@ -70,7 +70,7 @@ export class IssueEditComponent implements OnInit {
     'font-size': '20px',
     'font-weight': 'bold',
     'width': '40%'
-  };
+  };*/
 
 
 
@@ -101,6 +101,9 @@ export class IssueEditComponent implements OnInit {
   onSelectedItem(value) {
     console.log('v: ' + value);
     this.issueGroup.patchValue({'myControl': value});
+  }
+  accept(issueGroup) {
+
   }
 
 }

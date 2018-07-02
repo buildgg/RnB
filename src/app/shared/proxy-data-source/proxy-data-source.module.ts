@@ -10,7 +10,10 @@ import {UserStaticData} from '../staticDataMockup/userStaticData';
   imports: [
     CommonModule
   ],
-  declarations: [BBDProxyService, RoleClassProxy, UserClassProxy],
-    providers: [ UserClassProxy, RoleClassProxy, RnbRealTimeFireBaseService, UserStaticData ]
+  declarations: [],
+    providers: [ UserClassProxy,
+      RoleClassProxy,
+      RnbRealTimeFireBaseService,
+      UserStaticData, BBDProxyService, RoleClassProxy, UserClassProxy ]
 })
 export class ProxyDataSourceModule { }

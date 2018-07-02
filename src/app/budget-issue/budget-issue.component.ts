@@ -6,8 +6,8 @@ import {ColumnTable} from '../shared/models/view-model/column-table';
 import {DropDownMenu} from '../shared/models/view-model/drop-down-menu.model';
 import {ViewButtonAnchor} from '../shared/models/view-model/button/view-button-anchor.model';
 import {AddButtonAnchor} from '../shared/models/view-model/button/add-button-anchor.model';
-import {IssueService} from './issue.service';
 import {Issue} from '../shared/models/issue.model';
+import {DataService} from '../core/data.service';
 
 const columnsExample: ColumnTable[] = [
   {columnDef: 'description', headerName: 'Описание'},
@@ -49,13 +49,81 @@ export class BudgetIssueComponent implements OnInit {
 
   issueRow: Issue;
 
-/*  @ViewChild(IssueListComponent)
-  issueListComponent: IssueListComponent;*/
+  /*  @ViewChild(IssueListComponent)
+    issueListComponent: IssueListComponent;*/
 
-  constructor(private issueService: IssueService) {}
+  constructor(private ds: DataService) {}
 
   ngOnInit() {
-    this.issueService.getAllIssues().subscribe(value => this.issueList = value);
+    this.ds.getData<Issue>(this.ds.issuerUrl).subscribe(
+      (x: any) => this.issueList = x.issuers
+    );
+
+/*    this.http.get<Issue[]>('https://api.myjson.com/bins/7nb1a').subscribe(
+      val => {
+        this.issueList = val as Issue[];
+      }
+    );*/
+
+
+/*    this.http.get<Issue[]>('assets/mock/issuers.json').subscribe(
+      val => {
+        this.issueList = val;
+        console.log('val = ' + val);
+      }
+    );*/
+/*    this.http.get<Issue[]>('https://api.myjson.com/bins/7nb1a').subscribe(
+      val => {
+        this.issueList = val as Issue[];
+        console.log('val = ' + val[0].description);
+      }
+    );*/
+   /* this.issueService.getAllIssues().subscribe(
+      value => {
+        this.issueList = value;
+        console.log('value= ' + value);
+      }
+    );
+*/
+
+/*    this.ds.getData<Issue>(this.ds.issuerUrl).subscribe(
+      (x: Issue[]) => {
+        this.issueList = x as Issue[];
+        console.log('trset ' + this.issueList);
+      }
+
+    );*/
+
+
+/*  issuerUrl = 'assets/mock/issuers.json';
+  constructor(private http: HttpClient) { }
+
+  getData<T> (url: string):  Observable<T[]> {
+    return this.http.get<T[]>(url);
+  }
+*
+* */
+
+  /*    this.issueService.getAllIssues().subscribe(
+        value => {
+          this.issueList = value;
+          console.log(value);
+        }
+      );*/
+/*  new Issue(item.description,
+          item.count,
+          item.count,
+          item.budgetArticleType,
+          item.issuer,
+          item.responsiblePerson,
+          item.collectionName,
+          item.date,
+          item.issueNo,
+          item.state,
+          item.id*/
+
+
+
   }
 
   applyFilter(value) {
@@ -67,9 +135,9 @@ export class BudgetIssueComponent implements OnInit {
     console.log(' operation = ' + operation.name);
   }
 
-/*  getSelectedIssue() {
-    this.issueListComponent.getSelectedIdArray();
-  }*/
+  /*  getSelectedIssue() {
+      this.issueListComponent.getSelectedIdArray();
+    }*/
 
   toggleVisibleList() {
     this.isVisibleList = !this.isVisibleList;

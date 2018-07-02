@@ -13,6 +13,7 @@ import {AuthModule} from './auth/auth.module';
 import {AdminPageModule} from './admin-page/admin-page.module';
 import {AppRoutingModule} from './app-routing.module';
 import {BBDModule} from './bbd/bbd.module';
+import {CoreModule} from './core/core.module';
 
 
 
@@ -29,7 +30,8 @@ import {BBDModule} from './bbd/bbd.module';
     BBDModule,
     AuthModule,
     AdminPageModule,
-    AppRoutingModule
+    AppRoutingModule,
+    CoreModule
   ],
   bootstrap: [AppComponent]
 

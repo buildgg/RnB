@@ -23,7 +23,6 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   @Input() viewButton: ButtonAnchor;
   @Output() clickView = new EventEmitter;
   @Input() filterValue: string;
-
   @Input() selectedRowId = 0;
 
 
@@ -35,11 +34,11 @@ export class RbMatTableComponent implements OnInit, OnChanges{
 
   ngOnInit() {
     this.displayedColumns = ['select'].concat(this.columns.map(value => value.columnDef).concat(['actions']));
+  }
+  ngOnChanges() {
     this.dataSource = new MatTableDataSource(this.dataList);
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
-  }
-  ngOnChanges() {
     this.applyFilter(this.filterValue);
   }
 
@@ -49,7 +48,6 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   }
 
   applyFilter(filterValue: string) {
-    console.log('applyFilter RbMatTableComponent = ' + filterValue);
     if (filterValue != null) {
       filterValue = filterValue.trim();
       filterValue = filterValue.toLowerCase();

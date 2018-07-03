@@ -49,9 +49,6 @@ export class BudgetIssueComponent implements OnInit {
 
   issueRow: Issue;
 
-  /*  @ViewChild(IssueListComponent)
-    issueListComponent: IssueListComponent;*/
-
   constructor(private ds: DataService) {}
 
   ngOnInit() {

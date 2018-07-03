@@ -88,7 +88,7 @@ export class IssueEditComponent implements OnInit {
   constructor(private fb: FormBuilder, private ds: DataService) {}
 
   ngOnInit() {
-    this.ds.getData(this.ds.issuerUrl).subscribe(
+    this.ds.getData<string>(this.ds.issuerUrl).subscribe(
       (val: any) => this.budgetType = val.budgetArticleType
     );
 

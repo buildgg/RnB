@@ -11,7 +11,10 @@ export const routesHomeScreen: Routes = [
     path: '', component: HomeScreenComponent,
     canActivate: [AuthGuard],
     children: [
-      {path: 'budget-issue', component: BudgetIssueComponent}
+      {path: 'budget-issue',
+ /*       loadChildren: 'app/budget-issue/budget-issue.module#BudgetIssueModule'*/
+        component: BudgetIssueComponent
+      }
        /* loadChildren: 'app/budget-issue/budget-issue.module#BudgetIssueModule'*/
       ,
       /*,*/

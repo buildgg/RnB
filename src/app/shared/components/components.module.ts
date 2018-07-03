@@ -10,7 +10,6 @@ import { RbTableComponent } from './rb-table/rb-table.component';
 import { RbButtonComponent } from './rb-button/rb-button.component';
 import { RbFiltersComponent } from './rb-filters/rb-filters.component';
 import { RbOperationsComponent } from './rb-operations/rb-operations.component';
-import {BrowserModule} from '@angular/platform-browser';
 import {RbDropDownMenuComponent} from './drop-down-menu/drop-down-menu.component';
 import { RbLinkComponent } from './rb-link/rb-link.component';
 import { RbLookUpComponent } from './rb-look-up/rb-look-up.component';
@@ -33,7 +32,6 @@ export const COMPONENTS = [
 
 @NgModule({
   imports: [
-    BrowserModule,
     CommonModule,
     RouterModule
   ],

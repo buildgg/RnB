@@ -8,11 +8,10 @@
          (keyup)="find($event.target.value)"
          [ngStyle]="styleInput"
   >
-
   <div class="dropdown">
     <div class="dropdown-content" *ngIf="visible"  [ngStyle]="styleList">
       <a *ngFor="let option of filterLookUp$ | async let i = index"
-         (click)="selectItem(option, i)">
+         (click)="selectItem(option, +i)">
         {{option}}
       </a>
     </div>

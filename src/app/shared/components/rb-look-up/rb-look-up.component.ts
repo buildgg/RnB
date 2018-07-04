@@ -1,37 +1,15 @@
-import {
-  AfterViewChecked, Component, ElementRef, EventEmitter, HostListener, Input, OnInit, Output, Renderer2,
-  ViewChild, ViewEncapsulation
-} from '@angular/core';
-import {FormControl} from '@angular/forms';
+import {AfterViewChecked, Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, Output, Renderer2} from '@angular/core';
 import {distinctUntilChanged, map, startWith} from 'rxjs/internal/operators';
 import {Observable, Subject} from 'rxjs/index';
-
-const dropDownList = ['first', 'second', 'next', 'fire', 'angular',
-  'AfterContentInit',
-  'Component',
-  'ContentChildren',
-  'ElementRef',
-  'Input',
-  'QueryList',
-  'TemplateRef',
-  'ViewChild',
-  'ViewEncapsulation',
-  'ChangeDetectorRef',
-  'ChangeDetectionStrategy',
-  'EventEmitter',
-  'Output',
-  'InjectionToken',
-  'Inject'
-];
 
 @Component({
   selector: 'rb-look-up',
   templateUrl: './rb-look-up.component.html',
   styleUrls: ['./rb-look-up.component.css']
 })
-export class RbLookUpComponent implements OnInit, AfterViewChecked {
+export class RbLookUpComponent implements AfterViewChecked, OnChanges {
 
-  @Input() lookUpArray;
+  @Input() lookUpArray: string[];
   @Input() styleList;
   @Input() styleInput;
   @Output() valueLookUp = new EventEmitter();
@@ -57,15 +35,22 @@ export class RbLookUpComponent implements OnInit, AfterViewChecked {
 
   constructor(private eRef: ElementRef, private render: Renderer2) {}
 
-  ngOnInit() {
+  ngOnChanges() {
     this.filterLookUp$ = this.searchFilter
       .pipe(
         startWith(''),
         distinctUntilChanged(),
         map(value => this.filter(value))
       );
+  }
 
-    this.filterLookUp$.subscribe(val => this.filerValue = val);
+  find(val) {
+    this.searchFilter.next(val);
+  }
+
+  filter(changeValue: string): string[] {
+    return this.lookUpArray
+      .filter(val => val.toLowerCase().includes(changeValue.toLowerCase()));
   }
 
   ngAfterViewChecked() {
@@ -82,6 +67,8 @@ export class RbLookUpComponent implements OnInit, AfterViewChecked {
       return;
     }
     if (event.keyCode === 13 && this.hoverItem !== -1) {
+
+      this.filterLookUp$.subscribe(value => this.filerValue = value);
 
       const item = this.filerValue[this.hoverItem];
       this.selectItem(item, this.hoverItem);
@@ -205,16 +192,6 @@ export class RbLookUpComponent implements OnInit, AfterViewChecked {
 
   isMaxItem() {
     return this.hoverItem === this.maxItem - 1;
-  }
-
-
-  find(val) {
-    this.searchFilter.next(val);
-  }
-
-  filter(changeValue: string): string[] {
-    return this.lookUpArray
-      .filter(val => val.toLowerCase().includes(changeValue.toLowerCase()));
   }
 
   open() {

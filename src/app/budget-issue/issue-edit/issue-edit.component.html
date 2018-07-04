@@ -6,7 +6,7 @@
     <div class="box-field">
       <label for="budgetType">Тип статьи</label>
       <rb-look-up id="budgetType"
-        [lookUpArray]="options"
+        [lookUpArray]="budgetType"
         (valueLookUp)="onValueLookUp($event)">
       </rb-look-up>
     </div>
@@ -23,8 +23,6 @@
       <label for="issuer">Инициатор</label>
       <rb-look-up id="issuer"
                   [lookUpArray]="issuer"
-                  [styleInput]="styleInput"
-                  [styleList]="styleList"
                   (valueLookUp)="onValueLookUpIssuer($event)">
       </rb-look-up>
     </div>

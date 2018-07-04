@@ -7,9 +7,13 @@ import {RnbRealTimeFireBaseService} from '../serviceFireBase/realTimeFireBase';
 import {UserStaticData} from '../staticDataMockup/userStaticData';
 
 @NgModule({
-  imports: [
-    CommonModule
-  ],
-    providers: [ UserClassProxy, RoleClassProxy, RnbRealTimeFireBaseService, UserStaticData, BBDProxyService ]
+    imports: [
+        CommonModule
+    ],
+    declarations: [],
+    providers: [ UserClassProxy,
+        RoleClassProxy,
+        RnbRealTimeFireBaseService,
+        UserStaticData, BBDProxyService, RoleClassProxy, UserClassProxy ]
 })
 export class ProxyDataSourceModule { }

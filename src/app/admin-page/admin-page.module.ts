@@ -3,9 +3,9 @@ import {CommonModule} from '@angular/common';
 import {AdminPageRoutingModule} from './admin-page-routing.module';
 import {LayoutModule} from '../shared/containers/layout/layout.module';
 import {AdminPageComponent} from './admin-page.component';
-//import {UserComponent} from './user/user.component';
+import {UserComponent} from './user/user.component';
 import {RoleComponent} from './role/role.component';
-//import {UserLinkRoleEditFormComponent} from './user/user-link-role-edit-form/user-link-role-edit-form.component';
+import {UserLinkRoleEditFormComponent} from './user/user-link-role-edit-form/user-link-role-edit-form.component';
 import {RoleEditFormComponent} from './role/role-edit-form/role-edit-form.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {ComponentsModule} from '../shared/components/components.module';
@@ -19,8 +19,9 @@ import {RnbRealTimeFireBaseService} from '../shared/serviceFireBase/realTimeFire
 import {environment} from '../../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 import {AngularFireDatabaseModule} from 'angularfire2/database';
+import { UserLinkRoleListComponent } from './user/user-link-role-list/user-link-role-list.component';
+import {UserLinkRoleViewComponent} from './user/user-link-role-view/user-link-role-view.component';
 import {UserStaticData} from '../shared/staticDataMockup/userStaticData';
-import {UserModule} from './user/user.module';
 
 
 
@@ -34,13 +35,12 @@ import {UserModule} from './user/user.module';
         LayoutModule,
         ReactiveFormsModule,
         ComponentsModule,
-        UserModule,
         /*****  FireBase  ****/
         AngularFireDatabaseModule,
         AngularFireModule.initializeApp(environment.firebaseConfig)
     ],
-    declarations: [AdminPageComponent,  RoleComponent, RoleEditFormComponent],
-    exports: [AdminPageComponent,  RoleComponent ],
+    declarations: [AdminPageComponent, UserComponent, RoleComponent, UserLinkRoleEditFormComponent, RoleEditFormComponent, UserLinkRoleListComponent, UserLinkRoleViewComponent],
+    exports: [AdminPageComponent, UserComponent, RoleComponent ],
     providers: [ UserClassProxy, RoleClassProxy, RnbRealTimeFireBaseService, UserStaticData ]
 })
 export class AdminPageModule {

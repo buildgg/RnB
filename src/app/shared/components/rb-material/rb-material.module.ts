@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatAutocompleteModule,
   MatCheckboxModule,
@@ -15,11 +13,11 @@ import { RbMatFilterComponent } from './rb-mat-filter/rb-mat-filter.component';
 import { RbMatDropDownComponent } from './rb-mat-drop-down/rb-mat-drop-down.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
     CommonModule,
-    BrowserModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatTableModule,

@@ -11,7 +11,6 @@ export class NavListComponent {
 
   navListSelected(item) {
     console.log( <{name: string, path: string, classI: string}> item.name );
-
   }
 
 }

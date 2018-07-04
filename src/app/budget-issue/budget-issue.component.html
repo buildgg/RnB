@@ -8,18 +8,12 @@
       </rb-drop-down-menu>
     </div>
     <div>
-      <rb-drop-down-menu [nameDropDown]="menuOperationName2"
+      <rb-drop-down-menu [nameDropDown]="menuFilterName"
                          [dropDownArray]="menuOperation"
                          (selectedItemMenu)="makeOperation($event)">
       </rb-drop-down-menu>
     </div>
-
-
     <div class="mat-filter">
-     <!-- <mat-form-field>
-        <input matInput (keyup.enter)="applyFilter($event.target.value)"
-               placeholder="Фильтр нажмите Enter">
-      </mat-form-field>-->
       <rb-mat-filter (applyFilter)="applyFilter($event)">
       </rb-mat-filter>
     </div>
@@ -32,18 +26,20 @@
   </div>
   <rb-mat-table
     [columns]="columns"
-    [dataList]="issueList$"
+    [dataList]="issueList"
     [updateButton]="updateButton"
     (clickUpdate)="onClickUpdate($event)"
     [deleteButton]="deleteButton"
     (clickDelete)="onClickDelete($event)"
     [viewButton]="viewButton"
     (clickView)="onClickView($event)"
-    [filterValue]="filterValue">
+    [filterValue]="filterValue"
+
+  >
   </rb-mat-table>
 </div>
 
 <ng-template #issueEdit>
-  <issue-edit></issue-edit>
+  <issue-edit [issueRow]="issueRow"></issue-edit>
 </ng-template>
 <!---->

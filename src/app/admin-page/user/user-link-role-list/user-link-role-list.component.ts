@@ -9,9 +9,6 @@ import {User} from '../../../shared/models/user.model';
 })
 export class UserLinkRoleListComponent implements OnInit {
 
-
-  //   usersClassProxy: UserClassProxy;
-
     @Output() selectedUserToView = new EventEmitter<User>();
     @Output() selectedUserToEdit = new EventEmitter<User>();
     @Input() users: User[];

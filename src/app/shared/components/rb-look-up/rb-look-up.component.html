@@ -1,0 +1,20 @@
+<div class="rb-dropdown-menu">
+  <input type="text"
+         class="input-field rb-lookUp"
+         (click)="open()"
+         [value]="value"
+         autocomplete="off"
+         (keyup)="onKeyUpItem($event)"
+         (keyup)="find($event.target.value)"
+         [ngStyle]="styleInput"
+  >
+
+  <div class="dropdown">
+    <div class="dropdown-content" *ngIf="visible"  [ngStyle]="styleList">
+      <a *ngFor="let option of filterLookUp$ | async let i = index"
+         (click)="selectItem(option, i)">
+        {{option}}
+      </a>
+    </div>
+  </div>
+</div>

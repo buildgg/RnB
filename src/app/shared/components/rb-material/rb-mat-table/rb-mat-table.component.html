@@ -14,7 +14,8 @@
         <mat-checkbox (click)="$event.stopPropagation()"
                       (change)="$event ? onSelectedChange(row, valueCheck) : null"
                       [checked]="selection.isSelected(row)"
-                      #valueCheck [ngClass]="'rb-header-checked'"
+                      #valueCheck
+                      [ngClass]="'rb-header-checked'"
                       color="primary"
 
         >
@@ -39,7 +40,8 @@
         <rb-button [anchorRouterLink]=updateButton.anchorRouterLink
                    [srcImg]=updateButton.srcImg
                    [titleHover]=updateButton.titleHover
-                   (actionButton)=onActionButtonUpdate(element)>
+                   (actionButton)=onActionButtonUpdate(element)
+                   >
         </rb-button>
         <rb-button [anchorRouterLink]=deleteButton.anchorRouterLink
                    [srcImg]=deleteButton.srcImg
@@ -58,7 +60,10 @@
 
 <input type="number">
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+    [class.selected]="isSelected(row.id)"
+
+    ></tr>
   </table>
 </div>
 <mat-paginator #paginator
@@ -66,3 +71,5 @@
                [pageSizeOptions]="[5, 10, 15]"
                [showFirstLastButtons]="true">
 </mat-paginator>
+<!--(click) = onSelectedRow(row)
+[ngClass]="{'selectedRow': selectedRowId == row.id}"-->

@@ -1,0 +1,86 @@
+.dropdown-content a {
+  color: black;
+  /* padding: 12px 16px;*/
+  text-decoration: none;
+  display: block;
+  padding: 10px 0 10px 10px;
+  height: 40px;
+  /*  margin: 10px*/
+}
+.dropdown-content a:hover {
+  background-color: rgba(8, 148, 255, 0.16);
+}
+.rb-lookUp {
+  /*  background:  scroll 7px 7px;!* no-repeat scroll 3px 3px*!;*/
+  background-image: url('assets/img/down-allow.png');
+  background-color: #FFFFFF;
+  background-position: 98% 10px;
+  background-repeat: no-repeat;
+  /* background: rgba(8, 106, 185, 0.99);*/
+}
+
+.dropdown {
+  /*  position: relative;
+    display: inline-block;*/
+ /* width: 70%;*/
+  position: relative;
+}
+.dropdown-content {
+  background-color: #f9f9f9;
+  /*box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);*/
+ /* box-shadow: 0px 8px 16px 0px rgba(8, 148, 255, 0.2);*/
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  max-height: 200px;
+  overflow-y:auto;
+  overflow-x: auto;
+
+/*  overflow-y:auto;
+  overflow-x:auto;*/
+ /* */
+  /*  padding: 10px;
+    margin: 10px*/
+  /*  border: none;
+    outline: 0;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+    vertical-align: bottom;
+    text-align: inherit;*/
+
+  /*  display: none;*/
+  /*min-width: 160px;*/
+  /*min-width: 100%;*/
+
+}
+
+/*.rb-dropdown-menu {
+  width: 100%;
+}*/
+/*.rb-form {
+  width:70%;
+  background-color: #dddddd;
+}*/
+
+label {
+  display: block;
+  margin: 0px;
+  /*display: inline-block;*/
+}
+.input-field {
+  /*width: 100% !important;*/
+  border: 1px solid #ced4da;
+  padding: .375rem .75rem;
+  border-radius: 1px;
+  width: 100%;
+}
+.box-field {
+  margin: 15px;
+}
+.selected {
+  background-color: rgba(8, 148, 255, 0.16);
+   /* #1771CB;*/
+}
+

@@ -13,6 +13,8 @@ import { RbOperationsComponent } from './rb-operations/rb-operations.component';
 import {BrowserModule} from '@angular/platform-browser';
 import {RbDropDownMenuComponent} from './drop-down-menu/drop-down-menu.component';
 import { RbLinkComponent } from './rb-link/rb-link.component';
+import { RbLookUpComponent } from './rb-look-up/rb-look-up.component';
+import { LookUpDirective } from './rb-look-up/look-up.directive';
 
 
 export const COMPONENTS = [
@@ -25,7 +27,8 @@ export const COMPONENTS = [
   RbButtonComponent,
   RbOperationsComponent,
   RbDropDownMenuComponent,
-  RbLinkComponent
+  RbLinkComponent,
+  RbLookUpComponent
 ];
 
 @NgModule({
@@ -45,7 +48,9 @@ export const COMPONENTS = [
     RbFiltersComponent,
     RbOperationsComponent,
     RbDropDownMenuComponent,
-    RbLinkComponent],
+    RbLinkComponent,
+    RbLookUpComponent,
+    LookUpDirective],
   exports: [COMPONENTS]
 })
 export class ComponentsModule { }

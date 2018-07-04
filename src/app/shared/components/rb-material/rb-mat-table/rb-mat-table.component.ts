@@ -4,6 +4,7 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
 import {ButtonAnchor} from '../../../models/view-model/button/button-anchor.model';
 import {ColumnTable} from '../../../models/view-model/column-table';
+import {AngularFireList} from 'angularfire2/database';
 
 @Component({
   selector: 'rb-mat-table',
@@ -22,6 +23,8 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   @Input() viewButton: ButtonAnchor;
   @Output() clickView = new EventEmitter;
   @Input() filterValue: string;
+
+  @Input() selectedRowId = 0;
 
 
   dataSource;
@@ -76,5 +79,11 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   onActionButtonView(element) {
     this.clickView.emit(element);
   }
-
+  onSelectedRow(row){
+    console.log('Action! = ' + row.id);
+    this.selectedRowId = row.id;
+  }
+  isSelected(id) {
+    return this.selectedRowId === id;
+  }
 }

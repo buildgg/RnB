@@ -5,11 +5,12 @@ import { BudgetIssueRoutingModule } from './budget-issue-routing.module';
 import {BudgetIssueComponent} from './budget-issue.component';
 import {LayoutModule} from '../shared/containers/layout/layout.module';
 import {ComponentsModule} from '../shared/components/components.module';
-import {IssueMockData} from './issue-mock-data';
 import { IssueListComponent } from './issue-list/issue-list.component';
 import { IssueEditComponent } from './issue-edit/issue-edit.component';
 import {RbMaterialModule} from '../shared/components/rb-material/rb-material.module';
-
+import {IssueService} from './issue.service';
+import {ReactiveFormsModule} from '@angular/forms';
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({
   imports: [
@@ -17,12 +18,14 @@ import {RbMaterialModule} from '../shared/components/rb-material/rb-material.mod
     BudgetIssueRoutingModule,
     LayoutModule,
     ComponentsModule,
-    RbMaterialModule
+    RbMaterialModule,
+    ReactiveFormsModule,
+    MatAutocompleteModule
   ],
   declarations: [
     BudgetIssueComponent,
     IssueListComponent,
     IssueEditComponent],
-  providers: [IssueMockData]
+  providers: [IssueService]
 })
 export class BudgetIssueModule { }

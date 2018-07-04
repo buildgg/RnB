@@ -12,6 +12,7 @@ export class RbMatFilterComponent {
   onApplyFilter(value) {
     console.log(' RbMatFilterComponent = ' + value);
     this.applyFilter.emit(value);
+   
   }
 
 }

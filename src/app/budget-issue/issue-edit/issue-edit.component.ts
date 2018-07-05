@@ -3,6 +3,7 @@ import {Issue} from '../../shared/models/issue.model';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {DataService} from '../../core/data.service';
 import {Observable} from 'rxjs/index';
+import {animate, state, style, transition, trigger} from '@angular/animations';
 
 const options2 = ['first', 'second', 'next', 'fire', 'angular',
   'AfterContentInit',
@@ -54,6 +55,20 @@ const issuerArray = ['Azusa',
   selector: 'issue-edit',
   templateUrl: './issue-edit.component.html',
   styleUrls: ['./issue-edit.component.css']
+/*  animations:
+    [
+      trigger('triggerBackgroundChange',
+        [
+          state ('first', style({'background-color': 'yellow'})),
+          state ('second', style({'background-color': 'red'})),
+          transition ('first => second', animate(2000))
+        ])
+    ]*/
+  // make slide in/out animation available to this component
+/*  animations: [slideInOutAnimation],
+
+  // attach the slide in/out animation to the host (root) element of this component
+  host: { '[@slideInOutAnimation]': '' }*/
 })
 export class IssueEditComponent implements OnInit {
   @Input() issueRow: Issue;
@@ -61,6 +76,10 @@ export class IssueEditComponent implements OnInit {
   options;
   issueGroup: FormGroup;
   issuer = issuerArray;
+  color = 'first';
+  changeColor() {
+    this.color === 'second' ? this.color = 'first' : this.color = 'second';
+  }
 /*
   styleList = {
     'background-color': 'lime',

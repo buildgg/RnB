@@ -1,13 +1,34 @@
+<div class="rb-to-footer">
 <rb-nav-header [user]="userName"
+               (logout)="onLogout()">
+</rb-nav-header>
+
+<div class="rb-content-box">
+  <div class="nav-list rb-box">
+    <rb-nav-list
+      [navList]="navList"
+      (selectedItem)="onSelectedItem($event)">
+    </rb-nav-list>
+  </div>
+  <div class="rb-content rb-box">
+    <ng-content>
+    </ng-content>
+  </div>
+
+</div>
+</div>
+<rb-footer>
+</rb-footer>
+
+
+<!--<rb-nav-header [user]="userName"
                (logout)="onLogout()">
 
 </rb-nav-header>
-<!--<rb-nav-root [navRootsName]="navRootName"
-             [navRootsPath]="navRootPath">
-</rb-nav-root>-->
 
 <div class="container-fluid">
 <div class="row">
+  <div class="rb-content">
  <div class="nav-list col-lg-3">
     <rb-nav-list
       [navList]="navList"
@@ -18,7 +39,12 @@
     <ng-content>
     </ng-content>
   </div>
+  </div>
 </div>
 </div>
-<rb-footer></rb-footer>
+<rb-footer></rb-footer>-->
 
+
+<!--<rb-nav-root [navRootsName]="navRootName"
+             [navRootsPath]="navRootPath">
+</rb-nav-root>-->

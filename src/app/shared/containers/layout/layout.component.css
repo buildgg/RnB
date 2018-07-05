@@ -1,23 +1,22 @@
-rb-layout /deep/ {
+rb-layout {
   background-color: #e9ecef;
 }
-
-.rb-content /deep/ {
-  box-shadow: 2px 2px 8px #1771CB;
-  padding: 10px;
-/*  -ms-flex: 0 0 66.666667%;*/
-  background-color: #FFFFFF;
-  margin: 10px 0px 0px 0px;
-  flex: 0 0 82%;
-  max-width: 100%;
-
-}
-.container-fluid {
-  padding-left: 5px;
+.rb-content-box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .nav-list {
-  flex: 0 0 17%;
-  max-width: 17%;
-  padding-right: 10px;
-  padding-left: 10px;
+  width: 16%;
+}
+.rb-content {
+  box-shadow: 2px 2px 8px #1771CB;
+  padding: 10px;
+  background-color: #FFFFFF;
+  margin: 10px;
+  width: 82.5%;
+  min-height: 100%;
+}
+.rb-to-footer {
+  min-height: calc(100vh - 60px);
 }

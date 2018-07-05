@@ -1,5 +1,5 @@
-<h4>Редактирование заявки</h4>
-
+<h4 >Редактирование заявки</h4>
+<!--[@triggerBackgroundChange]='color' (click)="changeColor()"-->
 <form [formGroup]="issueGroup" (ngSubmit)="accept(issueGroup)">
   <p>Form value: {{ issueGroup.value | json }}</p>
   <div class="rb-form">
@@ -60,6 +60,7 @@
                 class="input-field description" rows="3">
       </textarea>
     </div>
+
 
 <!--    <div class="box-field">
       <label for="description">список</label>

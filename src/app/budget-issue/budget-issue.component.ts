@@ -28,7 +28,11 @@ const operations: DropDownMenu[] = [
 @Component({
   selector: 'budget-issue',
   templateUrl: './budget-issue.component.html',
-  styleUrls: ['./budget-issue.component.css']
+  styleUrls: ['./budget-issue.component.css']/*,
+  animations: [fadeInAnimation],
+
+  // attach the fade in animation to the host (root) element of this component
+  host: { '[@fadeInAnimation]': '' }*/
 })
 
 export class BudgetIssueComponent implements OnInit {
@@ -46,79 +50,79 @@ export class BudgetIssueComponent implements OnInit {
   menuOperation = operations;
   menuOperationName = 'Операции';
   menuFilterName = 'Фильтры';
-
   issueRow: Issue;
 
-  constructor(private ds: DataService) {}
+
+  constructor(private ds: DataService) {
+  }
 
   ngOnInit() {
     this.ds.getData<Issue>(this.ds.issuerUrl).subscribe(
       (x: any) => this.issueList = x.issuers
     );
 
-/*    this.http.get<Issue[]>('https://api.myjson.com/bins/7nb1a').subscribe(
-      val => {
-        this.issueList = val as Issue[];
+    /*    this.http.get<Issue[]>('https://api.myjson.com/bins/7nb1a').subscribe(
+          val => {
+            this.issueList = val as Issue[];
+          }
+        );*/
+
+
+    /*    this.http.get<Issue[]>('assets/mock/issuers.json').subscribe(
+          val => {
+            this.issueList = val;
+            console.log('val = ' + val);
+          }
+        );*/
+    /*    this.http.get<Issue[]>('https://api.myjson.com/bins/7nb1a').subscribe(
+          val => {
+            this.issueList = val as Issue[];
+            console.log('val = ' + val[0].description);
+          }
+        );*/
+    /* this.issueService.getAllIssues().subscribe(
+       value => {
+         this.issueList = value;
+         console.log('value= ' + value);
+       }
+     );
+ */
+
+    /*    this.ds.getData<Issue>(this.ds.issuerUrl).subscribe(
+          (x: Issue[]) => {
+            this.issueList = x as Issue[];
+            console.log('trset ' + this.issueList);
+          }
+
+        );*/
+
+
+    /*  issuerUrl = 'assets/mock/issuers.json';
+      constructor(private http: HttpClient) { }
+
+      getData<T> (url: string):  Observable<T[]> {
+        return this.http.get<T[]>(url);
       }
-    );*/
+    *
+    * */
 
-
-/*    this.http.get<Issue[]>('assets/mock/issuers.json').subscribe(
-      val => {
-        this.issueList = val;
-        console.log('val = ' + val);
-      }
-    );*/
-/*    this.http.get<Issue[]>('https://api.myjson.com/bins/7nb1a').subscribe(
-      val => {
-        this.issueList = val as Issue[];
-        console.log('val = ' + val[0].description);
-      }
-    );*/
-   /* this.issueService.getAllIssues().subscribe(
-      value => {
-        this.issueList = value;
-        console.log('value= ' + value);
-      }
-    );
-*/
-
-/*    this.ds.getData<Issue>(this.ds.issuerUrl).subscribe(
-      (x: Issue[]) => {
-        this.issueList = x as Issue[];
-        console.log('trset ' + this.issueList);
-      }
-
-    );*/
-
-
-/*  issuerUrl = 'assets/mock/issuers.json';
-  constructor(private http: HttpClient) { }
-
-  getData<T> (url: string):  Observable<T[]> {
-    return this.http.get<T[]>(url);
-  }
-*
-* */
-
-  /*    this.issueService.getAllIssues().subscribe(
-        value => {
-          this.issueList = value;
-          console.log(value);
-        }
-      );*/
-/*  new Issue(item.description,
-          item.count,
-          item.count,
-          item.budgetArticleType,
-          item.issuer,
-          item.responsiblePerson,
-          item.collectionName,
-          item.date,
-          item.issueNo,
-          item.state,
-          item.id*/
-
+    /*    this.issueService.getAllIssues().subscribe(
+          value => {
+            this.issueList = value;
+            console.log(value);
+          }
+        );*/
+    /*  new Issue(item.description,
+              item.count,
+              item.count,
+              item.budgetArticleType,
+              item.issuer,
+              item.responsiblePerson,
+              item.collectionName,
+              item.date,
+              item.issueNo,
+              item.state,
+              item.id*/
 
 
   }
@@ -141,7 +145,7 @@ export class BudgetIssueComponent implements OnInit {
   }
 
   onClickUpdate(data) {
-    this.toggleVisibleList();
+     this.toggleVisibleList();
     this.issueRow = data;
 
   }

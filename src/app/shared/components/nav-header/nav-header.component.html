@@ -1,20 +1,16 @@
-<header class="navbar navbar-expand flex-column flex-md-row nav-header">
-  <a class="navbar-brand mr-0 mr-md-2" aria-label="R&B">
-    <img class="img_logo" src="/assets/img/logo_48_3.png"/>
-  </a>
-
-  <ul class="navbar-nav ml-md-auto ">
-    <li class="nav-item">
-      <img src="/assets/img/userAccept8.png"/>
-    </li>
-  </ul>
-
-  <span class="mb-2 mb-md-0 ml-md-2">Пользователь:</span>
-  <span class="mb-3 mb-md-0 ml-md-2 mr-md-3">{{user}}</span>
-
- <a title="Выйти" class="mb-3 mb-md-0 ml-md-2 mr-md-2" routerLink="/sign-in" (click)="onLogout()">
-  <img class="img_logo" src="/assets/img/logout31.png"/>
- </a>
-  <a class="a-exit ml-md-2 a-label" routerLink="/sign-in" (click)="onLogout()">Выйти</a>
-
+<header class="header">
+  <div class="rb-header-logo">
+    <img src="/assets/img/logo_48_3.png"/>
+  </div>
+  <div class="rb-header-user-logo">
+    <img src="/assets/img/userAccept8.png"/>
+      <span>Пользователь: {{user}}</span>
+  </div>
+  <div class="rb-header-exit">
+      <img class="img_logo"
+           src="/assets/img/logout31.png"
+           routerLink="/sign-in"
+           (click)="onLogout()"/>
+    <a routerLink="/sign-in" (click)="onLogout()"><span>Выйти</span></a>
+  </div>
 </header>

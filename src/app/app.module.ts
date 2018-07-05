@@ -14,6 +14,7 @@ import {AdminPageModule} from './admin-page/admin-page.module';
 import {AppRoutingModule} from './app-routing.module';
 import {BBDModule} from './bbd/bbd.module';
 import {CoreModule} from './core/core.module';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 
@@ -31,7 +32,8 @@ import {CoreModule} from './core/core.module';
     AuthModule,
     AdminPageModule,
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 

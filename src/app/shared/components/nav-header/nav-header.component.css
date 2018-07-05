@@ -1,4 +1,58 @@
 header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-bottom: 2px solid  #085cb1;
+  padding-bottom: 3px;
+  color: #085cb1;
+  background-color: #FFFFFF;
+  height: 60px;
+  width: 100%;
+}
+.rb-header-logo {
+  margin: 6px 10px;
+  flex: 7 0 0;
+}
+.rb-header-user-logo {
+  margin: 6px;
+  width: auto;
+}
+.rb-header-user-logo img {
+  padding-right: 5px;
+}
+.rb-header-exit {
+  margin: 6px 15px;
+  cursor: pointer;
+  width: auto;
+}
+.rb-header-exit img {
+  padding-right: 5px;
+}
+a {
+  text-decoration: none;
+  color: #085cb1;
+  cursor: pointer;
+  /*font-weight: 500;*/
+}
+a:hover {
+  font-weight: bolder;
+/*  background: rgba(73, 140, 206, 0.84);
+  color: white;
+  border-radius: 7px;*/
+}
+
+
+
+
+/*.rb-header-user-logo > img {
+  padding-right: 5px;
+}*/
+
+
+/*.rb-header-user {
+  margin: 16px 30px 0px 10px;
+}*/
+/*header {
   font-size: 16px;
   border-bottom: 2px solid  #085cb1;
   padding-bottom: 3px;
@@ -6,11 +60,12 @@ header {
   font-family: "Segoe UI";
   font-weight: 500;
   background-color: #FFFFFF;
+  height: 60px;*/
  /* background-color: rgba(8, 148, 255, 0.16);*/
 /*  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.19);*/
-}
+/*}
 .img_logo {
- /* font-size: 3.0em;*/
+ !* font-size: 3.0em;*!
   padding-left: 10%;
 }
 a.a-label {
@@ -20,10 +75,10 @@ a.a-label {
   cursor: pointer;
   font-family: "Segoe UI";
   font-weight: 500;
-}
-a.a-label:hover {
+}*/
+/*a.a-label:hover {
   font-weight: bolder;
-/*  background: rgba(73, 140, 206, 0.84);
+!*  background: rgba(73, 140, 206, 0.84);
   color: white;
-  border-radius: 7px;*/
-}
+  border-radius: 7px;*!
+}*/

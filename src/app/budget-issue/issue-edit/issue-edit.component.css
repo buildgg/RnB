@@ -1,6 +1,10 @@
 .rb-form {
-  width:70%;
+  width: 50%;
   background-color: #dddddd;
+/*  overflow-y:auto;
+  overflow-x: auto;
+  max-height: 610px;
+  position: relative;*/
 }
 
 label {

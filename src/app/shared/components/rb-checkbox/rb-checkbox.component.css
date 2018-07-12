@@ -1,0 +1,50 @@
+.rb-checkbox-container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 18px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.rb-checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 21px;
+  width: 21px;
+  border: solid 2px #D2D2D2;
+  opacity: 1;
+
+}
+/* On mouse-over, add a grey background color */
+.rb-checkbox-container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.rb-checkbox-container input:checked ~ .checkmark {
+  background-color: #3f51b5;
+  border: none;
+}
+
+.checkmark:after {
+  content: "\2714";
+  position: absolute;
+  display: none;
+  color: white;
+  left: 3.5px;
+  top: -3px;
+}
+
+.rb-checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}

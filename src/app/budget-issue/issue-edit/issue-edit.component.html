@@ -7,7 +7,8 @@
       <label for="budgetType">Тип статьи</label>
       <rb-look-up id="budgetType"
         [lookUpArray]="budgetType"
-        (valueLookUp)="onValueLookUp($event)">
+        formControlName="budgetArticleType"
+      >
       </rb-look-up>
     </div>
 
@@ -22,8 +23,7 @@
     <div class="box-field">
       <label for="issuer">Инициатор</label>
       <rb-look-up id="issuer"
-                  [lookUpArray]="issuer"
-                  (valueLookUp)="onValueLookUpIssuer($event)">
+                  [lookUpArray]="issuer">
       </rb-look-up>
     </div>
 

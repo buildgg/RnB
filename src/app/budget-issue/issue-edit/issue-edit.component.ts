@@ -77,9 +77,9 @@ export class IssueEditComponent implements OnInit {
   issueGroup: FormGroup;
   issuer = issuerArray;
   color = 'first';
-  changeColor() {
-    this.color === 'second' ? this.color = 'first' : this.color = 'second';
-  }
+
+
+
 /*
   styleList = {
     'background-color': 'lime',
@@ -96,13 +96,13 @@ export class IssueEditComponent implements OnInit {
 */
 
 
-
+/*
   onValueLookUp($event) {
     console.log('onValueLookUp value = ' + $event);
   }
   onValueLookUpIssuer($event) {
     console.log('onValueLookUpIssuer value = ' + $event);
-  }
+  }*/
 
   constructor(private fb: FormBuilder, private ds: DataService) {}
 
@@ -123,7 +123,7 @@ export class IssueEditComponent implements OnInit {
     this.issueGroup = this.fb.group({
       description: '333',
       count: '2',
-      budgetArticleType: '',
+      budgetArticleType: 'Bab',
       issuer: '',
       responsiblePerson: '',
       collectionName: '',

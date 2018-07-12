@@ -14,6 +14,9 @@ import {RbDropDownMenuComponent} from './drop-down-menu/drop-down-menu.component
 import { RbLinkComponent } from './rb-link/rb-link.component';
 import { RbLookUpComponent } from './rb-look-up/rb-look-up.component';
 import { LookUpDirective } from './rb-look-up/look-up.directive';
+import { RbModalBoxComponent } from './rb-modal-box/rb-modal-box.component';
+import {ReactiveFormsModule} from '@angular/forms';
+import { RbCheckboxComponent } from './rb-checkbox/rb-checkbox.component';
 
 
 export const COMPONENTS = [
@@ -27,13 +30,16 @@ export const COMPONENTS = [
   RbOperationsComponent,
   RbDropDownMenuComponent,
   RbLinkComponent,
-  RbLookUpComponent
+  RbLookUpComponent,
+  RbModalBoxComponent,
+  RbCheckboxComponent
 ];
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   declarations: [
     PageNotFoundComponent,
@@ -48,7 +54,9 @@ export const COMPONENTS = [
     RbDropDownMenuComponent,
     RbLinkComponent,
     RbLookUpComponent,
-    LookUpDirective],
+    LookUpDirective,
+    RbModalBoxComponent,
+    RbCheckboxComponent],
   exports: [COMPONENTS]
 })
 export class ComponentsModule { }

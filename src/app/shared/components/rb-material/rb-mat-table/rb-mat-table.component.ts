@@ -4,7 +4,6 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
 import {ButtonAnchor} from '../../../models/view-model/button/button-anchor.model';
 import {ColumnTable} from '../../../models/view-model/column-table';
-import {AngularFireList} from 'angularfire2/database';
 
 @Component({
   selector: 'rb-mat-table',

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
 import {ButtonAnchor} from '../shared/models/view-model/button/button-anchor.model';
 import {UpdateButtonAnchor} from '../shared/models/view-model/button/update-button-anchor.model';
 import {DeleteButtonAnchor} from '../shared/models/view-model/button/delete-button-anchor.model';
@@ -35,7 +35,7 @@ const operations: DropDownMenu[] = [
   host: { '[@fadeInAnimation]': '' }*/
 })
 
-export class BudgetIssueComponent implements OnInit {
+export class BudgetIssueComponent implements OnInit, AfterViewInit{
 
   columns: ColumnTable[] = columnsExample;
   issueList: Issue[];
@@ -52,11 +52,30 @@ export class BudgetIssueComponent implements OnInit {
   menuFilterName = 'Фильтры';
   issueRow: Issue;
 
+  ctx = {sec: 900};
+
+  @ViewChild('defaultTabButtons')
+  private testTabB: TemplateRef<any>;
+
+  @ViewChild('testTRV', {read: ElementRef})
+  testRef: ElementRef;
+
+  @ViewChild('testButtons', {read: ViewContainerRef})
+  testContainerButtons: ViewContainerRef;
+
+
+  ngAfterViewInit(): void {
+    const view = this.testTabB.createEmbeddedView(null);
+    this.testContainerButtons.insert(view);
+    console.log(this.testRef.nativeElement.textContent);
+    console.log(this.testTabB.elementRef.nativeElement.textContent);
+  }
 
   constructor(private ds: DataService) {
   }
 
   ngOnInit() {
+
     this.ds.getData<Issue>(this.ds.issuerUrl).subscribe(
       (x: any) => this.issueList = x.issuers
     );

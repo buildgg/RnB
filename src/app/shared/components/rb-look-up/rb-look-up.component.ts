@@ -1,18 +1,27 @@
 import {AfterViewChecked, Component, ElementRef, EventEmitter, HostListener, Input, OnChanges, Output, Renderer2} from '@angular/core';
 import {distinctUntilChanged, map, startWith} from 'rxjs/internal/operators';
 import {Observable, Subject} from 'rxjs/index';
+import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
+import {element} from 'protractor';
 
 @Component({
   selector: 'rb-look-up',
   templateUrl: './rb-look-up.component.html',
-  styleUrls: ['./rb-look-up.component.css']
+  styleUrls: ['./rb-look-up.component.css'],
+  providers: [{
+    provide: NG_VALUE_ACCESSOR,
+    useExisting: RbLookUpComponent,
+    multi: true
+  }]
+
 })
-export class RbLookUpComponent implements AfterViewChecked, OnChanges {
+export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlValueAccessor {
 
   @Input() lookUpArray: string[];
   @Input() styleList;
   @Input() styleInput;
-  @Output() valueLookUp = new EventEmitter();
+/*  @Output() valueLookUp = new EventEmitter();*/
+
   value = '';
   visible: boolean = false;
   filterLookUp$: Observable<any>;
@@ -32,6 +41,21 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges {
   private searchFilter = new Subject();
   private filerValue: string;
 
+  onChange = (_: any) => {};
+  onTouched = () => {};
+
+  writeValue(value: any ): void {
+    if (value !== null && value !== undefined) {
+      this.value = value;
+    }
+  }
+
+  registerOnChange(fn: any ): void {
+    this.onChange = fn;
+  }
+  registerOnTouched(fn) {
+    this.onTouched = fn;
+  }
 
   constructor(private eRef: ElementRef, private render: Renderer2) {}
 
@@ -207,7 +231,7 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges {
     this.value = option;
     this.selectedItem = index;
     this.close();
-    this.valueLookUp.emit(this.value);
+   /* this.valueLookUp.emit(this.value);*/
   }
 
   /*mouseOverItem(index) {

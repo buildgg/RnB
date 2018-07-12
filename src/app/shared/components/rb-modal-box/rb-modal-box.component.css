@@ -1,0 +1,149 @@
+/* The Modal (background) */
+.rb-modal {
+  /*display: none; !* Hidden by default *!*/
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+ /* box-shadow: 2px 2px 8px #1771CB;*/
+}
+
+/* Modal Content/Box */
+.rb-modal-content {
+  background-color: #fefefe;
+  /*margin: 10% auto; !* 15% from the top and centered *!*/
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 35%; /* Could be more or less, depending on screen size */
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  color: #798794;
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rb-modal-box-button {
+  /*background-color:   #4C84FF;*/
+  background-color:   #637280;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 7px;
+  font-weight: 400;
+  font-size: 16px;
+  width: 135px;
+}
+.rb-modal-box-button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+.rb-modal-box-button span:after {
+  /*content: '\00bb';*/
+  content: '\27A4';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -18px;
+  transition: 0.3s;
+}
+.rb-modal-box-button:hover span {
+  padding-right: 18px;
+  font-weight: 600;
+}
+
+.rb-modal-box-button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+legend {
+  font-size: 18px;
+  margin: 0;
+
+}
+.rb-modal-box-input {
+  font-size: 16px;
+  color: #798794;
+  padding: 3px;
+
+}
+.rb-modal-box-input span {
+    padding: 7px;
+}
+.rb-modal-box-input input {
+  border: solid 1px #c3daeb;
+  padding: 5px;
+}
+
+.rb-modal-box-button-accept {
+  /*background-color:   #4C84FF;*/
+  background-color:   #637280;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 7px;
+  font-size: 16px;
+  width: 30%;
+  margin: 10px;
+}
+
+.rb-modal-box-button-accept:hover {
+  font-weight: 600;
+  background-color: #7E8E9D;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+.rb-modal-box-button-cancel{
+  border: none;
+  color: #637280;
+  text-align: center;
+  padding: 7px;
+  font-size: 16px;
+  width: 30%;
+  margin: 10px;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+.rb-modal-box-button-cancel:hover {
+  font-weight: 600;
+}
+.description{
+  width: 80%;
+}

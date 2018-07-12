@@ -1,0 +1,10 @@
+<label class="rb-checkbox-container">{{labelCheckBox}}
+  <input type="checkbox"
+         #valueCheck
+         [checked]="checked"
+         (change)="onChange($event.target.checked)"
+         (blur)="onTouched()"
+  >
+  <span class="checkmark"></span>
+</label>
+

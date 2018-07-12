@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: column;
   min-width: 300px;
-  overflow: auto;
-  max-height: 700px;
+  /*overflow: auto;*/
+/*  max-height: 700px;*/
   text-align: center;
+  overflow-x: auto;
 
 }
 .mat-table {
@@ -33,3 +34,8 @@
 .selected{
   background-color: rgba(8, 148, 255, 0.16);
 }
+/*
+.mat-checkbox-background {
+  background-color: #dddddd;
+}
+*/

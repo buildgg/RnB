@@ -6,12 +6,11 @@
          autocomplete="off"
          (keyup)="onKeyUpItem($event)"
          (keyup)="find($event.target.value)"
-         [ngStyle]="styleInput"
          (change)="onChange($event.target.checked)"
          (blur)="onTouched()"
   >
   <div class="dropdown">
-    <div class="dropdown-content" *ngIf="visible"  [ngStyle]="styleList">
+    <div class="dropdown-content" *ngIf="visible" >
       <a *ngFor="let option of filterLookUp$ | async let i = index"
          (click)="selectItem(option, +i)">
         {{option}}
@@ -19,3 +18,5 @@
     </div>
   </div>
 </div>
+<!--
+[ngStyle]="styleList"  [ngStyle]="styleInput"-->

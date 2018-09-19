@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import {CoreModule} from './core.module';
 import {HttpClient} from '@angular/common/http';
-import {Observable} from 'rxjs/index';
+import {Observable, Subject} from 'rxjs/index';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  configUrl = 'assets/config/config.json';
+
+  issuerState = new Subject();
   issuerUrl = 'assets/mock/issuers.json';
-  budgetArticleTypeUrl = 'assets/mock/budgetArticleType.json';
+
   constructor(private http: HttpClient) { }
 
   getData<T> (url: string):  Observable<T[]> {

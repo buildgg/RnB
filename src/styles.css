@@ -29,22 +29,8 @@ th {
 /*  background-color: rgba(8, 148, 255, 0.16);*/
 }
 
-/*th {
-  border-bottom: 2px solid #1771cb;
-  text-align: center;
-
-}
-td {
-  border-bottom: 1px solid #dddddd;
-  margin: 3px;
-  text-align: center;
-}*/
 tr:hover {
  /* background-color: rgba(144, 219, 248, 0.15);*/
    background-color: rgba(8, 148, 255, 0.16);
 
 }
-/*td.amount{
-  text-align: right;
-}*/
-

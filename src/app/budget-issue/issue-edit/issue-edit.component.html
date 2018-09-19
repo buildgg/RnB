@@ -1,57 +1,63 @@
-<h4 >Редактирование заявки</h4>
-<!--[@triggerBackgroundChange]='color' (click)="changeColor()"-->
-<form [formGroup]="issueGroup" (ngSubmit)="accept(issueGroup)">
-  <p>Form value: {{ issueGroup.value | json }}</p>
-  <div class="rb-form">
-    <div class="box-field">
-      <label for="budgetType">Тип статьи</label>
-      <rb-look-up id="budgetType"
-        [lookUpArray]="budgetType"
-        formControlName="budgetArticleType"
+<h4 class="edit-caption" >Редактирование заявки</h4>
+<div class="rb-container" >
+<form [formGroup]="issueGroup" (ngSubmit)="accept(issueGroup)"
+      *ngIf="isLoadedData(); else loading" class="rb-form">
+    <div class="box-field column-box-30">
+      <label for="issueNo">Номер заявки</label>
+      <input id="issueNo" class="input-field"
+             formControlName="issueNo">
+    </div>
+
+    <div class="box-field column-box-30">
+      <label for="date">Дата</label>
+      <input type="date" id="date"
+             class="input-field"
+             formControlName="date"
       >
+    </div>
+    <div class="box-field column-box-30">
+      <label for="count">Количество</label>
+      <input id="count"
+             formControlName="count"
+             class="input-field count"
+             >
+    </div>
+
+    <div class="box-field column-box-30">
+      <label for="responsiblePerson">Текущий ответственный</label>
+      <rb-look-up id="responsiblePerson"
+                  [lookUpArray]="responsiblePerson"
+                  formControlName="responsiblePerson">
       </rb-look-up>
     </div>
 
-    <div class="box-field">
-      <label for="count">Количество</label>
-      <input type="text"
-             id="count"
-             formControlName="count"
-             class="input-field count">
-    </div>
-
-    <div class="box-field">
+    <div class="box-field column-box-30">
       <label for="issuer">Инициатор</label>
       <rb-look-up id="issuer"
-                  [lookUpArray]="issuer">
+                  [lookUpArray]="issuer"
+                  formControlName="issuer">
       </rb-look-up>
     </div>
 
-    <div class="box-field">
-      <label for="responsiblePerson">Текущий ответственный -></label>
-      <input id="responsiblePerson" class="input-field" formControlName="responsiblePerson">
-    </div>
-
-    <div class="box-field">
-      <label for="collectionName">Свод-></label>
-      <input id="collectionName" class="input-field" formControlName="collectionName">
-    </div>
-
-    <div class="box-field">
-      <label for="date">Дата</label>
-      <input type="date" id="date" class="input-field" formControlName="date">
-    </div>
-
-    <div class="box-field">
-      <label for="issueNo">Номер заявки</label>
-      <input id="issueNo" class="input-field" formControlName="issueNo">
-    </div>
-
-    <div class="box-field">
+    <div class="box-field column-box-30">
       <label for="state">Состояние</label>
       <input id="state" class="input-field" formControlName="state">
     </div>
-    <div class="box-field">
+
+    <div class="box-field column-box-45">
+      <label for="budgetType">Тип статьи</label>
+      <rb-look-up id="budgetType"
+        [lookUpArray]="budgetType"
+        formControlName="budgetArticleType">
+      </rb-look-up>
+    </div>
+    <div class="box-field column-box-45">
+      <label for="collectionName">Свод</label>
+      <input id="collectionName" class="input-field"
+             formControlName="collectionName">
+    </div>
+
+    <div class="box-field column-box-90">
       <label for="description">Описание</label>
       <textarea id="description"
                 name="description"
@@ -61,29 +67,32 @@
       </textarea>
     </div>
 
+    <button  class="rb-modal-box-button-cancel"
+            (click)="close()">
+      Отменить
+    </button>
+    <button type="submit"
+      class="rb-modal-box-button-accept">
+      Применить
+    </button>
 
-<!--    <div class="box-field">
-      <label for="description">список</label>
-      <rb-mat-drop-down
-        [dropDownList]="options"
-        [placeHolder]="'Список'"
-        [widthCss]="'100%'"
-        (selectedItem)="onSelectedItem($event)">
-      </rb-mat-drop-down>
-    </div>-->
-  </div>
-
-
-
-  <!--  <input type="button"
-           class="btn btn-primary btn-lg"
-           (click)="goBack()"
-           value="Отменить" />
-
-    <input type="submit"
-           class="btn btn-primary btn-lg"
-           value="Применить"
-
-           [disabled]="shopItemForm.invalid" />-->
-
+  <p>
+    Form Status: {{ issueGroup.status }}
+  </p>
 </form>
+
+<ng-template #loading>
+  <rb-spinner></rb-spinner>
+</ng-template>
+
+<!--<p>Form value: {{ issueGroup.value | json }}</p>-->
+<div class="rb-errors">
+  <h5>Ошибок не об</h5>
+<!--  <div *ngIf="issueGroup.controls.budgetArticleType.invalid">
+  <div *ngIf="issueGroup.controls.budgetArticleType.errors.required">
+    collectionName is required.
+  </div>
+  </div>-->
+
+</div>
+</div>

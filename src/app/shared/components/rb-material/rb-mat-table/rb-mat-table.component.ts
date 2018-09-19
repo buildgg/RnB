@@ -22,7 +22,7 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   @Input() viewButton: ButtonAnchor;
   @Output() clickView = new EventEmitter;
   @Input() filterValue: string;
-  @Input() selectedRowId = 0;
+  @Input() selectedRowId;
 
 
   dataSource;
@@ -75,12 +75,5 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   }
   onActionButtonView(element) {
     this.clickView.emit(element);
-  }
-  onSelectedRow(row){
-    console.log('Action! = ' + row.id);
-    this.selectedRowId = row.id;
-  }
-  isSelected(id) {
-    return this.selectedRowId === id;
   }
 }

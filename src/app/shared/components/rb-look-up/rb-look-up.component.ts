@@ -18,8 +18,8 @@ import {element} from 'protractor';
 export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlValueAccessor {
 
   @Input() lookUpArray: string[];
-  @Input() styleList;
-  @Input() styleInput;
+/*  @Input() styleList;
+  @Input() styleInput;*/
 /*  @Output() valueLookUp = new EventEmitter();*/
 
   value = '';
@@ -51,6 +51,7 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
   }
 
   registerOnChange(fn: any ): void {
+    console.log('registerOnChange');
     this.onChange = fn;
   }
   registerOnTouched(fn) {

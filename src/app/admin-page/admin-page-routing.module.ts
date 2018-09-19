@@ -10,8 +10,9 @@ export const routesAdminPage: Routes = [
   path: '',
   component: AdminPageComponent,
   canActivate: [AuthGuard],
-  children: [{path: 'user', children: [...routesAdminPageUser]},
-      {path: 'role', children: [...routesAdminPageRole]},
+  children: [
+    {path: 'user', children: [...routesAdminPageUser]},
+    {path: 'role', children: [...routesAdminPageRole]},
   ]
   }
   ];

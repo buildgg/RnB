@@ -17,6 +17,7 @@ import { LookUpDirective } from './rb-look-up/look-up.directive';
 import { RbModalBoxComponent } from './rb-modal-box/rb-modal-box.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { RbCheckboxComponent } from './rb-checkbox/rb-checkbox.component';
+import { RbSpinnerComponent } from './rb-spinner/rb-spinner.component';
 
 
 export const COMPONENTS = [
@@ -32,7 +33,8 @@ export const COMPONENTS = [
   RbLinkComponent,
   RbLookUpComponent,
   RbModalBoxComponent,
-  RbCheckboxComponent
+  RbCheckboxComponent,
+  RbSpinnerComponent
 ];
 
 @NgModule({
@@ -56,7 +58,9 @@ export const COMPONENTS = [
     RbLookUpComponent,
     LookUpDirective,
     RbModalBoxComponent,
-    RbCheckboxComponent],
+    RbCheckboxComponent,
+    RbSpinnerComponent
+    ],
   exports: [COMPONENTS]
 })
 export class ComponentsModule { }

@@ -1,21 +1,18 @@
-<div *ngIf="isVisibleList; else issueEdit">
+<div *ngIf = "isLoadedData(); else loading">
 
   <div class="box">
     <div>
-      <rb-drop-down-menu [nameDropDown]="menuOperationName"
-                         [dropDownArray]="menuOperation"
+      <rb-drop-down-menu [nameDropDown]="'Операции'"
+                         [dropDownArray]="operations"
                          (selectedItemMenu)="makeOperation($event)">
       </rb-drop-down-menu>
     </div>
     <div>
-<!--      <rb-drop-down-menu [nameDropDown]="menuFilterName"
-                         [dropDownArray]="menuOperation"
-                         (selectedItemMenu)="makeOperation($event)">
-      </rb-drop-down-menu>-->
       <rb-modal-box></rb-modal-box>
     </div>
     <div class="mat-filter">
-      <rb-mat-filter (applyFilter)="applyFilter($event)">
+      <rb-mat-filter
+        (applyFilter)="applyFilter($event)">
       </rb-mat-filter>
     </div>
     <div class="button-plus">
@@ -34,11 +31,16 @@
     (clickDelete)="onClickDelete($event)"
     [viewButton]="viewButton"
     (clickView)="onClickView($event)"
-    [filterValue]="filterValue">
+    [filterValue]="filterValue"
+    [selectedRowId] = "selectedRowId">
   </rb-mat-table>
 </div>
 
-<ng-template #issueEdit>
+<ng-template #loading>
+ <rb-spinner></rb-spinner>
+</ng-template>
+
+<!--<ng-template #issueEdit>
   <issue-edit [issueRow]="issueRow"></issue-edit>
 </ng-template>
 
@@ -58,4 +60,8 @@
   </button>
 </ng-template>
 <ng-container #testButtons></ng-container>
-<span #testTRV>I am a span</span>
+<span #testTRV>I am a span</span>-->
+<!--      <rb-drop-down-menu [nameDropDown]="menuFilterName"
+                         [dropDownArray]="menuOperation"
+                         (selectedItemMenu)="makeOperation($event)">
+      </rb-drop-down-menu>-->

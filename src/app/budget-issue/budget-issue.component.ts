@@ -1,153 +1,63 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, TemplateRef, ViewChild, ViewContainerRef} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from '@angular/router';
+import { map } from 'rxjs/operators';
+import {of} from 'rxjs';
+
 import {ButtonAnchor} from '../shared/models/view-model/button/button-anchor.model';
-import {UpdateButtonAnchor} from '../shared/models/view-model/button/update-button-anchor.model';
-import {DeleteButtonAnchor} from '../shared/models/view-model/button/delete-button-anchor.model';
+import * as Button from '../shared/models/view-model/button/index';
 import {ColumnTable} from '../shared/models/view-model/column-table';
-import {DropDownMenu} from '../shared/models/view-model/drop-down-menu.model';
-import {ViewButtonAnchor} from '../shared/models/view-model/button/view-button-anchor.model';
-import {AddButtonAnchor} from '../shared/models/view-model/button/add-button-anchor.model';
 import {Issue} from '../shared/models/issue.model';
-import {DataService} from '../core/data.service';
-
-const columnsExample: ColumnTable[] = [
-  {columnDef: 'description', headerName: 'Описание'},
-  {columnDef: 'count', headerName: 'Количество'},
-  {columnDef: 'budgetArticleType', headerName: 'Категория статьи'},
-  {columnDef: 'issuer', headerName: 'Инициатор'},
-  {columnDef: 'responsiblePerson', headerName: 'Ответственный'},
-  {columnDef: 'collectionName', headerName: 'Свод'},
-  {columnDef: 'date', headerName: 'Дата'}
-];
-
-const operations: DropDownMenu[] = [
-  {id: '111', name: 'сделать Свод'},
-  {id: '222', name: 'отвязать от Свода'},
-  {id: '333', name: 'первести в состояние'}
-];
+import {DropDownMenu} from '../shared/models/view-model/drop-down-menu.model';
+import {IssueService} from './issue.service';
 
 @Component({
   selector: 'budget-issue',
   templateUrl: './budget-issue.component.html',
-  styleUrls: ['./budget-issue.component.css']/*,
-  animations: [fadeInAnimation],
-
-  // attach the fade in animation to the host (root) element of this component
-  host: { '[@fadeInAnimation]': '' }*/
+  styleUrls: ['./budget-issue.component.css']
 })
 
-export class BudgetIssueComponent implements OnInit, AfterViewInit{
+export class BudgetIssueComponent implements OnInit{
 
-  columns: ColumnTable[] = columnsExample;
+  columns: ColumnTable[];
   issueList: Issue[];
-  updateButton: ButtonAnchor = new UpdateButtonAnchor();
-  deleteButton: ButtonAnchor = new DeleteButtonAnchor();
-  viewButton: ButtonAnchor = new ViewButtonAnchor();
-  addButton: ButtonAnchor = new AddButtonAnchor();
+  operations: DropDownMenu[];
 
-  filterValue: any;
-  isVisibleList: boolean = true;
+  updateButton: ButtonAnchor = new Button.UpdateButton();
+  deleteButton: ButtonAnchor = new Button.DeleteButton();
+  viewButton: ButtonAnchor = new Button.ViewButton();
+  addButton: ButtonAnchor = new Button.AddButton();
 
-  menuOperation = operations;
-  menuOperationName = 'Операции';
-  menuFilterName = 'Фильтры';
-  issueRow: Issue;
+  filterValue: string;
+  selectedRowId: string;
 
-  ctx = {sec: 900};
-
-  @ViewChild('defaultTabButtons')
-  private testTabB: TemplateRef<any>;
-
-  @ViewChild('testTRV', {read: ElementRef})
-  testRef: ElementRef;
-
-  @ViewChild('testButtons', {read: ViewContainerRef})
-  testContainerButtons: ViewContainerRef;
-
-
-  ngAfterViewInit(): void {
-    const view = this.testTabB.createEmbeddedView(null);
-    this.testContainerButtons.insert(view);
-    console.log(this.testRef.nativeElement.textContent);
-    console.log(this.testTabB.elementRef.nativeElement.textContent);
-  }
-
-  constructor(private ds: DataService) {
-  }
+  constructor(private issueService: IssueService,
+              private router: Router,
+              private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
 
-    this.ds.getData<Issue>(this.ds.issuerUrl).subscribe(
-      (x: any) => this.issueList = x.issuers
+    this.activatedRoute.paramMap.subscribe(param => this.selectedRowId = param.get('id'));
+
+    this.issueService.getIssues().subscribe(
+      (val: Issue[]) => this.issueList = val
     );
 
-    /*    this.http.get<Issue[]>('https://api.myjson.com/bins/7nb1a').subscribe(
-          val => {
-            this.issueList = val as Issue[];
-          }
-        );*/
+    this.issueService.getColumnsTable().subscribe(
+      (val: ColumnTable[]) => this.columns = val
+    );
 
-
-    /*    this.http.get<Issue[]>('assets/mock/issuers.json').subscribe(
-          val => {
-            this.issueList = val;
-            console.log('val = ' + val);
-          }
-        );*/
-    /*    this.http.get<Issue[]>('https://api.myjson.com/bins/7nb1a').subscribe(
-          val => {
-            this.issueList = val as Issue[];
-            console.log('val = ' + val[0].description);
-          }
-        );*/
-    /* this.issueService.getAllIssues().subscribe(
-       value => {
-         this.issueList = value;
-         console.log('value= ' + value);
-       }
-     );
- */
-
-    /*    this.ds.getData<Issue>(this.ds.issuerUrl).subscribe(
-          (x: Issue[]) => {
-            this.issueList = x as Issue[];
-            console.log('trset ' + this.issueList);
-          }
-
-        );*/
-
-
-    /*  issuerUrl = 'assets/mock/issuers.json';
-      constructor(private http: HttpClient) { }
-
-      getData<T> (url: string):  Observable<T[]> {
-        return this.http.get<T[]>(url);
-      }
-    *
-    * */
-
-    /*    this.issueService.getAllIssues().subscribe(
-          value => {
-            this.issueList = value;
-            console.log(value);
-          }
-        );*/
-    /*  new Issue(item.description,
-              item.count,
-              item.count,
-              item.budgetArticleType,
-              item.issuer,
-              item.responsiblePerson,
-              item.collectionName,
-              item.date,
-              item.issueNo,
-              item.state,
-              item.id*/
+    this.issueService.getOperations().subscribe(
+      (val: DropDownMenu[]) => this.operations = val
+    );
 
 
   }
 
-  applyFilter(value) {
-    console.log('matTable = ' + value);
+  isLoadedData() {
+    return this.columns !== undefined && this.issueList !== undefined;
+  }
+
+  applyFilter(value){
     this.filterValue = value;
   }
 
@@ -155,18 +65,9 @@ export class BudgetIssueComponent implements OnInit, AfterViewInit{
     console.log(' operation = ' + operation.name);
   }
 
-  /*  getSelectedIssue() {
-      this.issueListComponent.getSelectedIdArray();
-    }*/
-
-  toggleVisibleList() {
-    this.isVisibleList = !this.isVisibleList;
-  }
-
   onClickUpdate(data) {
-     this.toggleVisibleList();
-    this.issueRow = data;
-
+    this.selectedRowId = data.id;
+    this.router.navigate(['../edit', data.id], {relativeTo: this.activatedRoute});
   }
 
   onClickDelete(data) {
@@ -176,4 +77,5 @@ export class BudgetIssueComponent implements OnInit, AfterViewInit{
   onClickView(data) {
     console.log(data + ' onClickUpdate');
   }
+
 }

@@ -3,7 +3,7 @@
     {
       "description": "Очень необходимо два офисных стулья для чень необходимо",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -15,7 +15,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "2",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на МНА",
       "issuer": "Марко Лукич Кропивни",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -27,7 +27,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "3",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на материалы",
       "issuer": "Марко Лукич Кропивни",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -39,7 +39,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "5",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на материалы",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -51,7 +51,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "3",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на МНА",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -63,7 +63,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "2",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на МНА",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -75,7 +75,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType":  "Расходы на ЗП",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -87,7 +87,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType":  "Расходы на ЗП",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 24м",
@@ -99,7 +99,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на материалы",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -111,7 +111,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на материалы",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 223м",
@@ -123,7 +123,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на МНА",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -135,7 +135,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на МНА",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -147,7 +147,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на ОС",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -159,7 +159,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на ОС",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -171,7 +171,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на ЗП",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -183,7 +183,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на материалы",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -195,7 +195,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на МНА",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -207,7 +207,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на ОС",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",
@@ -219,7 +219,7 @@
     {
       "description": "Очень необходимо два офисных стулья",
       "count": "4",
-      "budgetArticleType": "канцелярские товары",
+      "budgetArticleType": "Расходы на ЗП",
       "issuer": "Распорядитель IT",
       "responsiblePerson": "Хамза Хакимзаде Ния",
       "collectionName": "№ 22м",

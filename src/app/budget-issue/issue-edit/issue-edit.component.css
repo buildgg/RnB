@@ -137,3 +137,34 @@ label {
   order: 2;
   margin: 0 0 10px 20px;
 }
+.rb-modal-box-button-accept:disabled,
+.rb-modal-box-button-accept:hover:disabled{
+  background: #dddddd;
+  cursor: default !important;
+  font-weight: 400 !important;
+}
+
+.rb-errors-item {
+  color: #ec3587;
+  font-weight: 600;
+ }
+.rb-errors-item p::before {
+  content: ">> ";
+  color:  #1771cb;
+  font-weight: 800;
+}
+.rb-title-error {
+  color: #FFFFFF;
+  background-color: #ec3587;
+  padding: 5px 5px 7px 15px;
+  margin-left: 15px;
+}
+/*
+.ng-valid[required], .ng-valid.required  {
+  border-left: 5px solid #42A948; !* green *!
+}
+
+.ng-invalid:not(form)  {
+  border-left: 5px solid #a94442; !* red *!
+}
+*/

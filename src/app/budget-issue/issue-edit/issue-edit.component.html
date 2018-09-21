@@ -1,6 +1,6 @@
 <h4 class="edit-caption" >Редактирование заявки</h4>
 <div class="rb-container" >
-<form [formGroup]="issueGroup" (ngSubmit)="accept(issueGroup)"
+<form [formGroup]="issueGroup"
       *ngIf="isLoadedData(); else loading" class="rb-form">
     <div class="box-field column-box-30">
       <label for="issueNo">Номер заявки</label>
@@ -68,13 +68,16 @@
     </div>
 
     <button  class="rb-modal-box-button-cancel"
-            (click)="close()">
+            (click)="closeEdit()"
+    type="button"
+    >
       Отменить
     </button>
-    <button type="submit"
-      class="rb-modal-box-button-accept">
-      Применить
-    </button>
+    <button class="rb-modal-box-button-accept"
+            type="button"
+            (click)="accept(issueGroup)"
+            [disabled]="issueGroup.invalid"
+            >Применить</button>
 
   <p>
     Form Status: {{ issueGroup.status }}
@@ -85,14 +88,46 @@
   <rb-spinner></rb-spinner>
 </ng-template>
 
-<!--<p>Form value: {{ issueGroup.value | json }}</p>-->
-<div class="rb-errors">
-  <h5>Ошибок не об</h5>
-<!--  <div *ngIf="issueGroup.controls.budgetArticleType.invalid">
-  <div *ngIf="issueGroup.controls.budgetArticleType.errors.required">
-    collectionName is required.
+  <div class="rb-errors">
+    <div *ngIf="issueGroup.invalid">
+      <h5 class="rb-title-error">Возникли ошибки</h5>
+      <div class="rb-errors-item"
+           *ngIf="issueGroup.get('issueNo').hasError('required')
+           && issueGroup.get('issueNo').touched">
+        <p>Поле "номер заявки" должно быть заполнено</p>
+      </div>
+      <div class="rb-errors-item"
+           *ngIf="issueGroup.get('date').hasError('required')
+           && issueGroup.get('date').touched">
+        <p>Поле "Дата" должно быть заполнено</p>
+      </div>
+      <div class="rb-errors-item"
+           *ngIf="issueGroup.get('count').hasError('required')
+           && issueGroup.get('count').touched">
+        <p>Поле "Количество" должно быть заполнено</p>
+      </div>
+      <div class="rb-errors-item"
+           *ngIf="issueGroup.get('responsiblePerson').hasError('required')
+           && issueGroup.get('responsiblePerson').touched">
+        <p>Поле "Текущий ответственный" должно быть заполнено</p>
+      </div>
+      <div class="rb-errors-item"
+           *ngIf="issueGroup.get('issuer').hasError('required')
+           && issueGroup.get('issuer').touched">
+        <p>Поле "Инициатор" должно быть заполнено</p>
+      </div>
+      <div class="rb-errors-item"
+           *ngIf="issueGroup.get('state').hasError('required')
+           && issueGroup.get('state').touched">
+        <p>Поле "Состояние" должно быть заполнено</p>
+      </div>
+      <div class="rb-errors-item"
+           *ngIf="issueGroup.get('budgetArticleType').hasError('required')
+           && issueGroup.get('budgetArticleType').touched">
+        <p>Поле "Тип статьи" должно быть заполнено</p>
+      </div>
+    </div>
   </div>
-  </div>-->
 
 </div>
-</div>
+<!--<p>Form value: {{ issueGroup.value | json }}</p>-->

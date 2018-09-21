@@ -18,11 +18,11 @@ import {element} from 'protractor';
 export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlValueAccessor {
 
   @Input() lookUpArray: string[];
-/*  @Input() styleList;
-  @Input() styleInput;*/
+  @Input() styleList;
+  @Input() styleInput;
 /*  @Output() valueLookUp = new EventEmitter();*/
 
-  value = '';
+  value: string;
   visible: boolean = false;
   filterLookUp$: Observable<any>;
 
@@ -44,14 +44,20 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
   onChange = (_: any) => {};
   onTouched = () => {};
 
+  onBlur(value) {
+    console.log(` -- onBlur() -- ${value}`);
+  this.setItem(value);
+  this.onTouched();
+  this.value = value;
+
+  }
+
   writeValue(value: any ): void {
-    if (value !== null && value !== undefined) {
-      this.value = value;
-    }
+    console.log(` -- writeValue() -- ${value}`);
+    this.value = value;
   }
 
   registerOnChange(fn: any ): void {
-    console.log('registerOnChange');
     this.onChange = fn;
   }
   registerOnTouched(fn) {
@@ -61,6 +67,8 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
   constructor(private eRef: ElementRef, private render: Renderer2) {}
 
   ngOnChanges() {
+
+
     this.filterLookUp$ = this.searchFilter
       .pipe(
         startWith(''),
@@ -87,6 +95,8 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
   }
 
   onKeyUpItem(event) {
+
+    this.find(event.target.value);
     if (event.keyCode === 27) {
       this.close();
       return;
@@ -96,11 +106,20 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
       this.filterLookUp$.subscribe(value => this.filerValue = value);
 
       const item = this.filerValue[this.hoverItem];
-      this.selectItem(item, this.hoverItem);
-      return;
+      /*this.selectItem(item, this.hoverItem);*/
+
+      this.selectedItem = this.hoverItem;
+      this.setItem(item);
+      this.close();
+     /* return;*/
     }
 
     if (event.keyCode === 40) {
+
+console.log(` -- First --
+              keyCode: ${event.keyCode} 
+              this.visible: ${this.visible} 
+              this.hoverItem: ${this.hoverItem}`);
 
       if (this.visible && this.hoverItem === -1) {
         this.hoverItem = 0;
@@ -212,7 +231,6 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
   addClassToElem(hoverItem) {
     const elem = this.getElementByIndex(hoverItem);
     this.render.addClass(elem, 'selected');
-
   }
 
   isMaxItem() {
@@ -228,34 +246,18 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
     this.resetScrolling();
   }
 
-  selectItem(option, index) {
+  selectItemClick(option, index) {
+    this.setItem(option);
     this.value = option;
     this.selectedItem = index;
     this.close();
-   /* this.valueLookUp.emit(this.value);*/
+
   }
 
-  /*mouseOverItem(index) {
-    if (index == null) {
-      return;
-    }
-    this.hoverItem = index;
-    }*/
-
-/*    const scrollHeight = this.getElementByIndex(this.hoverItem).scrollHeight;
-    this.currentPosition = (this.hoverItem + 1) * scrollHeight;
-    this.scrollFrom = this.currentPosition;
-    this.scrollTo = this.scrollFrom + (scrollHeight * 4);*/
-
-   /* this.addClassToElem(this.hoverItem);*/
-
-/*    console.log(`----Mouse-----`);
-    console.log(`minWindowHeight = ${this.minWindowHeight} -- maxWindowHeight = ${this.maxWindowHeight}`);
-    console.log(`currentPosition = ${this.currentPosition}`);
-    console.log(`hoverItem ${this.hoverItem}`);
-    console.log(`scrollFrom = ${this.scrollFrom} -- scrollTo = ${this.scrollTo}`);
-    console.log(`-----------------\n`);*/
-
+  setItem(value) {
+    this.writeValue(value);
+    this.onChange(value);
+  }
 
   mouseLeaveItem(index) {
     if (index == null) {
@@ -264,6 +266,7 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
     const elem = this.getElementByIndex(index);
     this.clearElement(elem);
   }
+
   @HostListener('document:click', ['$event'])
   clickOutLookUp(event) {
     if (!this.eRef.nativeElement.contains(event.target)) {
@@ -277,3 +280,26 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
     this.initKeyType = false;
   }
 }
+
+
+
+/*mouseOverItem(index) {
+   if (index == null) {
+     return;
+   }
+   this.hoverItem = index;
+   }*/
+
+/*    const scrollHeight = this.getElementByIndex(this.hoverItem).scrollHeight;
+    this.currentPosition = (this.hoverItem + 1) * scrollHeight;
+    this.scrollFrom = this.currentPosition;
+    this.scrollTo = this.scrollFrom + (scrollHeight * 4);*/
+
+/* this.addClassToElem(this.hoverItem);*/
+
+/*    console.log(`----Mouse-----`);
+    console.log(`minWindowHeight = ${this.minWindowHeight} -- maxWindowHeight = ${this.maxWindowHeight}`);
+    console.log(`currentPosition = ${this.currentPosition}`);
+    console.log(`hoverItem ${this.hoverItem}`);
+    console.log(`scrollFrom = ${this.scrollFrom} -- scrollTo = ${this.scrollTo}`);
+    console.log(`-----------------\n`);*/

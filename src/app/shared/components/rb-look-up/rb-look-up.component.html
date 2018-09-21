@@ -5,18 +5,20 @@
          [value]="value"
          autocomplete="off"
          (keyup)="onKeyUpItem($event)"
-         (keyup)="find($event.target.value)"
-         (change)="onChange($event.target.checked)"
-         (blur)="onTouched()"
+         [ngStyle]="styleInput"
+         (blur)="onBlur($event.target.value)"
   >
   <div class="dropdown">
-    <div class="dropdown-content" *ngIf="visible" >
+    <div class="dropdown-content" *ngIf="visible" [ngStyle]="styleList">
       <a *ngFor="let option of filterLookUp$ | async let i = index"
-         (click)="selectItem(option, +i)">
+         (click)="selectItemClick(option, +i)">
         {{option}}
       </a>
     </div>
   </div>
 </div>
 <!--
-[ngStyle]="styleList"  [ngStyle]="styleInput"-->
+[ngStyle]="styleList"  [ngStyle]="styleInput"  (keyup)="find($event.target.value)"-->
+<!--         (change)="onChange($event.target.checked)"
+ (keyup)="find($event.target.value)"
+         (blur)="onTouched()"-->

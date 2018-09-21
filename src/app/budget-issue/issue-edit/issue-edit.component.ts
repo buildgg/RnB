@@ -83,9 +83,10 @@ export class IssueEditComponent implements OnInit {
       );
     this.issueService.updateIssue(issue);
     console.log('issueGroup.value.budgetArticleType = ' + issueGroup.value.budgetArticleType);
+
     this.router.navigate(['../../', {id: issueGroup.value.id}], {relativeTo: this.route});
   }
-  close() {
+  closeEdit() {
     this.router.navigate(['../../'], {relativeTo: this.route});
   }
 

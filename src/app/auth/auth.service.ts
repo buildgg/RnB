@@ -5,9 +5,6 @@ import { tap, filter, first } from 'rxjs/operators';
 import { from } from 'rxjs';
 
 
-
-
-
 export const USERS: User[] = [
     new User('10', 'admin', '123321', '10', 'Тестовая Роль1'),
     new User('20', 'boss', '123321', '11', 'Тестовая Роль2'),

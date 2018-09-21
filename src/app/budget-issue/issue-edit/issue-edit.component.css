@@ -149,7 +149,7 @@ label {
   font-weight: 600;
  }
 .rb-errors-item p::before {
-  content: ">> ";
+  content: "* ";
   color:  #1771cb;
   font-weight: 800;
 }

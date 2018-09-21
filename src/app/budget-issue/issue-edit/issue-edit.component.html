@@ -1,22 +1,30 @@
-<h4 class="edit-caption" >Редактирование заявки</h4>
+<h4 class="edit-caption" *ngIf="changeModeEdit(); else add">
+  Редактирование заявки
+</h4>
+<ng-template #add>
+  <h4 class="edit-caption">
+    Добавление заявки
+  </h4>
+</ng-template>
+
 <div class="rb-container" >
 <form [formGroup]="issueGroup"
       *ngIf="isLoadedData(); else loading" class="rb-form">
     <div class="box-field column-box-30">
-      <label for="issueNo">Номер заявки</label>
+      <label for="issueNo">Номер заявки *</label>
       <input id="issueNo" class="input-field"
              formControlName="issueNo">
     </div>
 
     <div class="box-field column-box-30">
-      <label for="date">Дата</label>
+      <label for="date">Дата *</label>
       <input type="date" id="date"
              class="input-field"
              formControlName="date"
       >
     </div>
     <div class="box-field column-box-30">
-      <label for="count">Количество</label>
+      <label for="count">Количество *</label>
       <input id="count"
              formControlName="count"
              class="input-field count"
@@ -24,7 +32,7 @@
     </div>
 
     <div class="box-field column-box-30">
-      <label for="responsiblePerson">Текущий ответственный</label>
+      <label for="responsiblePerson">Текущий ответственный *</label>
       <rb-look-up id="responsiblePerson"
                   [lookUpArray]="responsiblePerson"
                   formControlName="responsiblePerson">
@@ -32,7 +40,7 @@
     </div>
 
     <div class="box-field column-box-30">
-      <label for="issuer">Инициатор</label>
+      <label for="issuer">Инициатор *</label>
       <rb-look-up id="issuer"
                   [lookUpArray]="issuer"
                   formControlName="issuer">
@@ -40,12 +48,12 @@
     </div>
 
     <div class="box-field column-box-30">
-      <label for="state">Состояние</label>
+      <label for="state">Состояние *</label>
       <input id="state" class="input-field" formControlName="state">
     </div>
 
     <div class="box-field column-box-45">
-      <label for="budgetType">Тип статьи</label>
+      <label for="budgetType">Тип статьи *</label>
       <rb-look-up id="budgetType"
         [lookUpArray]="budgetType"
         formControlName="budgetArticleType">
@@ -78,10 +86,6 @@
             (click)="accept(issueGroup)"
             [disabled]="issueGroup.invalid"
             >Применить</button>
-
-  <p>
-    Form Status: {{ issueGroup.status }}
-  </p>
 </form>
 
 <ng-template #loading>
@@ -89,12 +93,10 @@
 </ng-template>
 
   <div class="rb-errors">
-    <div *ngIf="issueGroup.invalid">
-      <h5 class="rb-title-error">Возникли ошибки</h5>
       <div class="rb-errors-item"
            *ngIf="issueGroup.get('issueNo').hasError('required')
            && issueGroup.get('issueNo').touched">
-        <p>Поле "номер заявки" должно быть заполнено</p>
+        <p>Поле "Номер заявки" должно быть заполнено</p>
       </div>
       <div class="rb-errors-item"
            *ngIf="issueGroup.get('date').hasError('required')
@@ -126,8 +128,6 @@
            && issueGroup.get('budgetArticleType').touched">
         <p>Поле "Тип статьи" должно быть заполнено</p>
       </div>
-    </div>
   </div>
-
 </div>
-<!--<p>Form value: {{ issueGroup.value | json }}</p>-->
+

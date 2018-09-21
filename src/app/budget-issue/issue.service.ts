@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {BehaviorSubject, Observable} from 'rxjs';
+import {BehaviorSubject, Observable, Subject} from 'rxjs';
 import {map} from 'rxjs/operators';
 
 import {Issue} from '../shared/models/issue.model';
@@ -14,7 +14,7 @@ export class IssueService {
   issuerUrl = 'assets/mock/issuers.json';
   issueList = new BehaviorSubject(null);
   arrayIssue: Issue[];
-
+  idChanged = new BehaviorSubject(null);
   firstStart: boolean = true;
 
 
@@ -92,5 +92,11 @@ export class IssueService {
       ))
       .subscribe(v => this.arrayIssue = v);
     this.issueList.next(this.arrayIssue);
+  }
+
+  insertIssue(issue: Issue) {
+    this.arrayIssue.unshift(issue);
+    this.issueList.next(this.arrayIssue);
+
   }
 }

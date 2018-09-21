@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { map } from 'rxjs/operators';
 import {of} from 'rxjs';
@@ -16,7 +16,7 @@ import {IssueService} from './issue.service';
   styleUrls: ['./budget-issue.component.css']
 })
 
-export class BudgetIssueComponent implements OnInit{
+export class BudgetIssueComponent implements OnInit, OnDestroy{
 
   columns: ColumnTable[];
   issueList: Issue[];
@@ -50,7 +50,17 @@ export class BudgetIssueComponent implements OnInit{
       (val: DropDownMenu[]) => this.operations = val
     );
 
+    this.issueService.idChanged.subscribe(
+      val => {
+        this.selectedRowId = val;
+        console.log('val = ' + val);
+      }
+   );
 
+  }
+
+  ngOnDestroy() {
+    this.selectedRowId = null;
   }
 
   isLoadedData() {
@@ -68,6 +78,11 @@ export class BudgetIssueComponent implements OnInit{
   onClickUpdate(data) {
     this.selectedRowId = data.id;
     this.router.navigate(['../edit', data.id], {relativeTo: this.activatedRoute});
+  }
+
+  onClickAdd() {
+    console.log(' onClickAdd()');
+    this.router.navigate(['../add'], {relativeTo: this.activatedRoute});
   }
 
   onClickDelete(data) {

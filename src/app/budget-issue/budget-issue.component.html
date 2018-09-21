@@ -18,7 +18,8 @@
     <div class="button-plus">
       <rb-button [anchorRouterLink]=addButton.anchorRouterLink
                  [srcImg]=addButton.srcImg
-                 [titleHover]=addButton.titleHover>
+                 [titleHover]=addButton.titleHover
+                 (actionButton)="onClickAdd()">
       </rb-button>
     </div>
   </div>

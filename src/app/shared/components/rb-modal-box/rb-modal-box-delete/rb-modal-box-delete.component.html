@@ -1,0 +1,16 @@
+<div class="rb-modal" *ngIf="visible">
+  <div class="rb-modal-content">
+   <h5>Вы собираетесь удалить заявку?</h5>
+    <button type="button"
+            class="rb-modal-box-button-cancel"
+            (click)="cancel()">
+      Отменить
+    </button>
+    <button type="button"
+            class="rb-modal-box-button-accept"
+            (click)="apply()">
+      Применить
+    </button>
+  </div>
+
+</div>

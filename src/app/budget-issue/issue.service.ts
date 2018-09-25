@@ -99,4 +99,9 @@ export class IssueService {
     this.issueList.next(this.arrayIssue);
 
   }
+
+  deleteIssue (id: number) {
+    this.arrayIssue = this.arrayIssue.filter(value => +value.id !== +id);
+    this.issueList.next(this.arrayIssue);
+  }
 }

@@ -1,7 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { map } from 'rxjs/operators';
-import {of} from 'rxjs';
+import { take } from 'rxjs/operators';
+import { Subject } from 'rxjs';
 
 import {ButtonAnchor} from '../shared/models/view-model/button/button-anchor.model';
 import * as Button from '../shared/models/view-model/button/index';
@@ -9,6 +9,9 @@ import {ColumnTable} from '../shared/models/view-model/column-table';
 import {Issue} from '../shared/models/issue.model';
 import {DropDownMenu} from '../shared/models/view-model/drop-down-menu.model';
 import {IssueService} from './issue.service';
+import {RbModalBoxDeleteComponent} from '../shared/components/rb-modal-box/rb-modal-box-delete/rb-modal-box-delete.component';
+
+
 
 @Component({
   selector: 'budget-issue',
@@ -21,6 +24,11 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
   columns: ColumnTable[];
   issueList: Issue[];
   operations: DropDownMenu[];
+
+  @ViewChild(RbModalBoxDeleteComponent)
+  modelBoxDelete: RbModalBoxDeleteComponent;
+  isDeleteRow = new Subject();
+
 
   updateButton: ButtonAnchor = new Button.UpdateButton();
   deleteButton: ButtonAnchor = new Button.DeleteButton();
@@ -85,12 +93,22 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
     this.router.navigate(['../add'], {relativeTo: this.activatedRoute});
   }
 
-  onClickDelete(data) {
-    console.log(data + ' onClickUpdate');
+  onClickDelete(data: Issue) {
+    this.modelBoxDelete.open();
+    this.isDeleteRow.pipe(take(1)).subscribe(
+      val => {
+        if (val) {
+        this.issueService.deleteIssue(data.id);
+        }
+      }
+    );
   }
 
   onClickView(data) {
     console.log(data + ' onClickUpdate');
+  }
+  onIsDeleteRow(data): void {
+   this.isDeleteRow.next(data);
   }
 
 }

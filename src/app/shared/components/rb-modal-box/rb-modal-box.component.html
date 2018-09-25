@@ -1,4 +1,5 @@
-<button class="rb-modal-box-button" (click)="open()"><span>Фильтровать</span></button>
+<button class="rb-modal-box-button" (click)="open()">
+  <span>Фильтровать</span></button>
 <div class="rb-modal" *ngIf="visible">
   <div class="rb-modal-content">
     <form [formGroup]="filterGroup">
@@ -58,21 +59,20 @@
         <label for="description">
           <span>Описание</span>
         </label>
-          <input id="description" name="description"
-                 class="description" formControlName="description"/>
+        <input id="description" name="description"
+               class="description" formControlName="description"/>
       </div>
-      <button type="submit"
-              class="rb-modal-box-button-cancel"
-              (click)="close()">
-        Отменить
-      </button>
-      <button type="submit"
-              class="rb-modal-box-button-accept"
-              (click)="apply(filterGroup)">
-        Применить
-      </button>
-
     </form>
+    <button type="submit"
+            class="rb-modal-box-button-cancel"
+            (click)="close()">
+      Отменить
+    </button>
+    <button type="submit"
+            class="rb-modal-box-button-accept"
+            (click)="apply(filterGroup)">
+      Применить
+    </button>
   </div>
 
 </div>

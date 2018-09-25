@@ -35,6 +35,8 @@
     [filterValue]="filterValue"
     [selectedRowId] = "selectedRowId">
   </rb-mat-table>
+  <rb-modal-box-delete (isDeleteRow)="onIsDeleteRow($event)">
+  </rb-modal-box-delete>
 </div>
 
 <ng-template #loading>

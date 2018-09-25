@@ -1,0 +1,80 @@
+/* The Modal (background) */
+.rb-modal {
+  /*display: none; !* Hidden by default *!*/
+  display: block;
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  /* box-shadow: 2px 2px 8px #1771CB;*/
+}
+
+/* Modal Content/Box */
+.rb-modal-content {
+  background-color: #fefefe;
+  /*margin: 10% auto; !* 15% from the top and centered *!*/
+  margin: 20% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 25%; /* Could be more or less, depending on screen size */
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+  color: #798794;
+}
+
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+.rb-modal-box-button-accept {
+  /*background-color:   #4C84FF;*/
+  background-color:   #637280;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 7px;
+  font-size: 16px;
+  width: 30%;
+  margin: 10px;
+}
+
+.rb-modal-box-button-accept:hover {
+  font-weight: 600;
+  background-color: #7E8E9D;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+.rb-modal-box-button-cancel{
+  border: none;
+  color: #637280;
+  text-align: center;
+  padding: 7px;
+  font-size: 16px;
+  width: 30%;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+  margin: 5%;
+}
+.rb-modal-box-button-cancel:hover {
+  font-weight: 600;
+}
+.description{
+  width: 80%;
+}

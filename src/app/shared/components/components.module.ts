@@ -19,6 +19,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import { RbCheckboxComponent } from './rb-checkbox/rb-checkbox.component';
 import { RbSpinnerComponent } from './rb-spinner/rb-spinner.component';
 import { RbModalBoxDeleteComponent } from './rb-modal-box/rb-modal-box-delete/rb-modal-box-delete.component';
+import { RbModalUniversalComponent } from './rb-modal-box/rb-modal-universal/rb-modal-universal.component';
+import { RbModalFilterComponent } from './rb-modal-box/rb-modal-filter/rb-modal-filter.component';
 
 
 export const COMPONENTS = [
@@ -36,7 +38,9 @@ export const COMPONENTS = [
   RbModalBoxComponent,
   RbCheckboxComponent,
   RbSpinnerComponent,
-  RbModalBoxDeleteComponent
+  RbModalBoxDeleteComponent,
+  RbModalUniversalComponent,
+  RbModalFilterComponent
 ];
 
 @NgModule({
@@ -62,7 +66,9 @@ export const COMPONENTS = [
     RbModalBoxComponent,
     RbCheckboxComponent,
     RbSpinnerComponent,
-    RbModalBoxDeleteComponent
+    RbModalBoxDeleteComponent,
+    RbModalUniversalComponent,
+    RbModalFilterComponent
     ],
   exports: [COMPONENTS]
 })

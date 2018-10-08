@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 
 @Component({
   selector: 'rb-button',
@@ -12,7 +12,6 @@ export class RbButtonComponent {
   @Output() actionButton = new EventEmitter();
 
   onClickButton () {
-    console.log('Button!! ');
     this.actionButton.emit();
   }
 

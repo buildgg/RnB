@@ -1,0 +1,43 @@
+<rb-modal-universal [visible]="visible">
+  <h5>Подробное описание заявки с кодом {{issue?.issueNo}}</h5>
+  <table class="rb-table">
+    <tr>
+      <td class="rb-table-description">Количество</td>
+      <td>{{issue?.count}}</td>
+    </tr>
+    <tr>
+      <td class="rb-table-description">Категория статьи</td>
+      <td>{{issue?.budgetArticleType}}</td>
+    </tr>
+    <tr>
+      <td class="rb-table-description">Описание</td>
+      <td>{{issue?.description}}</td>
+    </tr>
+    <tr>
+      <td class="rb-table-description">Инициатор</td>
+      <td>{{issue?.issuer}}</td>
+    </tr>
+    <tr>
+      <td class="rb-table-description">Ответственный</td>
+      <td>{{issue?.responsiblePerson}}</td>
+    </tr>
+    <tr>
+      <td class="rb-table-description">Свод</td>
+      <td>{{issue?.collectionName}}</td>
+    </tr>
+    <tr>
+      <td class="rb-table-description">Дата</td>
+      <td>{{issue?.date}}</td>
+    </tr>
+    <tr>
+      <td class="rb-table-description">Состояние</td>
+      <td>{{issue?.state}}</td>
+    </tr>
+  </table>
+
+  <button type="button"
+          class="rb-modal-box-button-cancel rb-modal-box-button-close"
+          (click)="close()">
+    Закрыть
+  </button>
+</rb-modal-universal>

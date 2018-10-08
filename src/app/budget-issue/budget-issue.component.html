@@ -8,7 +8,7 @@
       </rb-drop-down-menu>
     </div>
     <div>
-      <rb-modal-box></rb-modal-box>
+      <rb-modal-filter></rb-modal-filter>
     </div>
     <div class="mat-filter">
       <rb-mat-filter
@@ -26,17 +26,17 @@
   <rb-mat-table
     [columns]="columns"
     [dataList]="issueList"
-    [updateButton]="updateButton"
-    (clickUpdate)="onClickUpdate($event)"
-    [deleteButton]="deleteButton"
-    (clickDelete)="onClickDelete($event)"
-    [viewButton]="viewButton"
-    (clickView)="onClickView($event)"
     [filterValue]="filterValue"
-    [selectedRowId] = "selectedRowId">
+    [selectedRowId] = "selectedRowId"
+    [tableButtons]="tableButtons"
+    (clickUpdate)="onClickUpdate($event)"
+    (clickDelete)="onClickDelete($event)"
+    (clickView)="onClickView($event)"
+  >
   </rb-mat-table>
   <rb-modal-box-delete (isDeleteRow)="onIsDeleteRow($event)">
   </rb-modal-box-delete>
+  <issue-modal-box-view></issue-modal-box-view>
 </div>
 
 <ng-template #loading>

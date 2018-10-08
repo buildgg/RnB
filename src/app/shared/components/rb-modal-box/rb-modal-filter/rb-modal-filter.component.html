@@ -1,0 +1,76 @@
+<button class="rb-modal-box-button" (click)="open()">
+  <span>Фильтровать</span></button>
+
+<rb-modal-universal [visible]="visible">
+  <form [formGroup]="filterGroup">
+
+    <rb-checkbox [labelCheckBox]="'Выбранные'"
+                 formControlName="checkedIssuer">
+    </rb-checkbox>
+    <rb-checkbox [labelCheckBox]="'Я-ответственный'"
+                 formControlName="iIssuer">
+    </rb-checkbox>
+    <rb-checkbox [labelCheckBox]="'Заявки моего филиала'"
+                 formControlName="myBranch">
+    </rb-checkbox>
+
+    <fieldset class="rb-modal-box-input">
+      <legend>Сумма:</legend>
+      <label for="summa-from">
+        <span>от</span>
+        <input id="summa-from" name="summa-from" formControlName="sumFrom"/>
+      </label>
+      <label for="summa-till">
+        <span>до</span>
+        <input id="summa-till" name="summa-till" formControlName="sumTill"/>
+      </label>
+    </fieldset>
+
+    <fieldset class="rb-modal-box-input">
+      <legend>Дата:</legend>
+      <label for="date-from">
+        <span>от</span>
+        <input type="date" id="date-from" name="date-from" formControlName="dateFrom"/>
+      </label>
+      <label for="date-till">
+        <span>до</span>
+        <input type="date" id="date-till" name="date-till" formControlName="dateTill"/>
+      </label>
+    </fieldset>
+    <div class="rb-modal-box-input">
+      <label for="branch">
+        <span>Филиал</span>
+        <input id="branch" name="branch" formControlName="branch"/>
+      </label>
+    </div>
+    <div class="rb-modal-box-input">
+      <label for="articleType">
+        <span>Тип статей</span>
+        <input id="articleType" name="articleType" formControlName="articleType"/>
+      </label>
+    </div>
+    <div class="rb-modal-box-input">
+      <label for="issuer">
+        <span>Инициатор</span>
+        <input id="issuer" name="issuer" formControlName="issuer"/>
+      </label>
+    </div>
+    <div class="rb-modal-box-input">
+      <label for="description">
+        <span>Описание</span>
+      </label>
+      <input id="description" name="description"
+             class="description" formControlName="description"/>
+    </div>
+  </form>
+  <button type="submit"
+          class="rb-modal-box-button-cancel"
+          (click)="cancel()">
+    Отменить
+  </button>
+  <button type="submit"
+          class="rb-modal-box-button-accept"
+          (click)="apply(filterGroup)">
+    Применить
+  </button>
+</rb-modal-universal>

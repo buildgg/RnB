@@ -32,11 +32,13 @@
     <ng-container matColumnDef="actions">
       <th mat-header-cell *matHeaderCellDef> Операции </th>
       <td mat-cell *matCellDef="let element">
-        <rb-button [anchorRouterLink]=viewButton.anchorRouterLink
+
+     <!--   <rb-button [anchorRouterLink]=viewButton.anchorRouterLink
                    [srcImg]=viewButton.srcImg
                    [titleHover]=viewButton.titleHover
                    (actionButton)="onActionButtonView(element)">
         </rb-button>
+
         <rb-button [anchorRouterLink]=updateButton.anchorRouterLink
                    [srcImg]=updateButton.srcImg
                    [titleHover]=updateButton.titleHover
@@ -46,6 +48,24 @@
         <rb-button [anchorRouterLink]=deleteButton.anchorRouterLink
                    [srcImg]=deleteButton.srcImg
                    [titleHover]=deleteButton.titleHover
+                   (actionButton)=onActionButtonDelete(element)>
+        </rb-button>        -->
+
+        <rb-button [anchorRouterLink]=tableButtons.view.anchorRouterLink
+                   [srcImg]=tableButtons.view.srcImg
+                   [titleHover]= tableButtons.view.titleHover
+                   (actionButton)="onActionButtonView(element)">
+        </rb-button>
+
+        <rb-button [anchorRouterLink]= tableButtons.update.anchorRouterLink
+                   [srcImg]= tableButtons.update.srcImg
+                   [titleHover]= tableButtons.update.titleHover
+                   (actionButton)=onActionButtonUpdate(element)
+                   >
+        </rb-button>
+        <rb-button [anchorRouterLink]= tableButtons.deleteRow.anchorRouterLink
+                   [srcImg]= tableButtons.deleteRow.srcImg
+                   [titleHover]= tableButtons.deleteRow.titleHover
                    (actionButton)=onActionButtonDelete(element)>
         </rb-button>
         <!--<button mat-icon-button color="accent">

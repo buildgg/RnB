@@ -41,9 +41,9 @@ export class BBDComponent implements OnInit {
     bbdList$;
     selectedBBD: BBD;
 
-    updateButton: ButtonAnchor = new UpdateButtonAnchor();
-    deleteButton: ButtonAnchor = new DeleteButtonAnchor();
-    viewButton: ButtonAnchor = new ViewButtonAnchor();
+/*    updateButton: ButtonAnchor/!* = new UpdateButtonAnchor()*!/;
+    deleteButton: ButtonAnchor/!* = new DeleteButtonAnchor()*!/;
+    viewButton: ButtonAnchor/!* = new ViewButtonAnchor()*!/;*/
 
     isVisibleList: boolean = true;
 

@@ -1,4 +1,3 @@
-/* The Modal (background) */
 .rb-modal {
   /*display: none; !* Hidden by default *!*/
   display: block;
@@ -13,15 +12,16 @@
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
   /* box-shadow: 2px 2px 8px #1771CB;*/
 }
-
+/*margin: 10% auto; !* 15% from the top and centered *!*/
 /* Modal Content/Box */
 .rb-modal-content {
+  width: 35%;
+  margin: 5% auto;
   background-color: #fefefe;
-  /*margin: 10% auto; !* 15% from the top and centered *!*/
-  margin: 20% auto;
+/*  margin: 20% auto;*/
   padding: 20px;
   border: 1px solid #888;
-  width: 25%; /* Could be more or less, depending on screen size */
+  /*width: 25%;*/ /* Could be more or less, depending on screen size */
   -webkit-animation-name: animatetop;
   -webkit-animation-duration: 0.4s;
   animation-name: animatetop;
@@ -74,7 +74,4 @@
 }
 .rb-modal-box-button-cancel:hover {
   font-weight: 600;
-}
-.description{
-  width: 80%;
 }

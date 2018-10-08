@@ -4,6 +4,8 @@ import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {SelectionModel} from '@angular/cdk/collections';
 import {ButtonAnchor} from '../../../models/view-model/button/button-anchor.model';
 import {ColumnTable} from '../../../models/view-model/column-table';
+import {TableButtons} from '../../../models/view-model/button/table-buttons';
+
 
 @Component({
   selector: 'rb-mat-table',
@@ -15,15 +17,20 @@ export class RbMatTableComponent implements OnInit, OnChanges{
 
   @Input() columns: ColumnTable[];
   @Input() dataList;
-  @Input() updateButton: ButtonAnchor;
-  @Output() clickUpdate = new EventEmitter;
-  @Input() deleteButton: ButtonAnchor;
-  @Output() clickDelete = new EventEmitter;
-  @Input() viewButton: ButtonAnchor;
-  @Output() clickView = new EventEmitter;
   @Input() filterValue: string;
   @Input() selectedRowId;
+  @Input() tableButtons: TableButtons;
 
+  @Output() clickUpdate = new EventEmitter;
+  @Output() clickDelete = new EventEmitter;
+  @Output() clickView = new EventEmitter;
+
+/*  @Output()
+  clickTable = {
+    clickUpdate:  new EventEmitter,
+    clickDelete:  new EventEmitter,
+    clickView:    new EventEmitter
+  }*/
 
   dataSource;
   displayedColumns: string[] = [];

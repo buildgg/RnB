@@ -10,8 +10,8 @@ import {Issue} from '../shared/models/issue.model';
 import {DropDownMenu} from '../shared/models/view-model/drop-down-menu.model';
 import {IssueService} from './issue.service';
 import {RbModalBoxDeleteComponent} from '../shared/components/rb-modal-box/rb-modal-box-delete/rb-modal-box-delete.component';
-
-
+import {TableButtons} from '../shared/models/view-model/button/table-buttons';
+import {IssueModalBoxViewComponent} from './issue-modal-box-view/issue-modal-box-view.component';
 
 @Component({
   selector: 'budget-issue',
@@ -29,12 +29,16 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
   modelBoxDelete: RbModalBoxDeleteComponent;
   isDeleteRow = new Subject();
 
+  @ViewChild(IssueModalBoxViewComponent)
+    viewModalBox: IssueModalBoxViewComponent;
 
-  updateButton: ButtonAnchor = new Button.UpdateButton();
-  deleteButton: ButtonAnchor = new Button.DeleteButton();
-  viewButton: ButtonAnchor = new Button.ViewButton();
+  tableButtons: TableButtons = {
+    update:    new Button.UpdateButton(),
+    deleteRow: new Button.DeleteButton(),
+    view:      new Button.ViewButton()
+  };
+
   addButton: ButtonAnchor = new Button.AddButton();
-
   filterValue: string;
   selectedRowId: string;
 
@@ -45,7 +49,6 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
   ngOnInit() {
 
     this.activatedRoute.paramMap.subscribe(param => this.selectedRowId = param.get('id'));
-
     this.issueService.getIssues().subscribe(
       (val: Issue[]) => this.issueList = val
     );
@@ -61,16 +64,13 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
     this.issueService.idChanged.subscribe(
       val => {
         this.selectedRowId = val;
-        console.log('val = ' + val);
       }
    );
-
   }
 
   ngOnDestroy() {
     this.selectedRowId = null;
   }
-
   isLoadedData() {
     return this.columns !== undefined && this.issueList !== undefined;
   }
@@ -98,17 +98,19 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
     this.isDeleteRow.pipe(take(1)).subscribe(
       val => {
         if (val) {
-        this.issueService.deleteIssue(data.id);
+        this.issueService.deleteIssue(+data.id);
         }
       }
     );
   }
 
-  onClickView(data) {
-    console.log(data + ' onClickUpdate');
-  }
   onIsDeleteRow(data): void {
-   this.isDeleteRow.next(data);
+    this.isDeleteRow.next(data);
+  }
+
+  onClickView(data) {
+    this.viewModalBox.launch(data);
+
   }
 
 }

@@ -1,6 +1,5 @@
-<div class="rb-modal" *ngIf="visible">
-  <div class="rb-modal-content">
-   <h5>Вы собираетесь удалить заявку?</h5>
+  <rb-modal-universal [visible]="visible">
+    <h5>Вы собираетесь удалить запись?</h5>
     <button type="button"
             class="rb-modal-box-button-cancel"
             (click)="cancel()">
@@ -11,6 +10,5 @@
             (click)="apply()">
       Применить
     </button>
-  </div>
+  </rb-modal-universal>
 
-</div>

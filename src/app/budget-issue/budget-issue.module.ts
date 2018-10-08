@@ -11,6 +11,7 @@ import {RbMaterialModule} from '../shared/components/rb-material/rb-material.mod
 import {IssueService} from './issue.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { IssueModalBoxViewComponent } from './issue-modal-box-view/issue-modal-box-view.component';
 
 @NgModule({
   imports: [
@@ -25,7 +26,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
   declarations: [
     BudgetIssueComponent,
     IssueListComponent,
-    IssueEditComponent],
+    IssueEditComponent,
+    IssueModalBoxViewComponent],
   providers: [IssueService]
 })
 export class BudgetIssueModule { }

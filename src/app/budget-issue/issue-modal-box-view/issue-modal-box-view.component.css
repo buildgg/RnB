@@ -1,0 +1,23 @@
+.rb-table {
+  width: 90%;
+  margin-left: 5%;
+}
+tr {
+  border-bottom: 1px solid #adc2d3;
+}
+td {
+  padding: 10px;
+}
+.rb-table-description {
+  font-weight: 600;
+  width: 20%;
+}
+h5 {
+  color: #FFFFFF;
+  background-color: #1771cb;
+  margin-left: 5%;
+  padding: 8px 5px 8px 15px;
+}
+.rb-modal-box-button-close {
+  margin-left: 70%;
+}

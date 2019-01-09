@@ -1,22 +1,16 @@
 <div class="list-wrap">
   <ul class="nav-list">
     <li *ngFor="let item of navList" class="li-hover">
-<!--    <rb-link
-      [routerLink]="[item.path]"
-      [classCss]="'a-label'">
-      <i [class]=[item.classI]></i>
-      {{item.name}}
-    </rb-link>-->
       <a (click)="navListSelected(item)"
-        [routerLink]="[item.path]"
+        [routerLink]="item.path"
          routerLinkActive="active"
          class="a-label" href="#">
-        <i [class]=[item.classI]></i>
+        <i [class]= "item.classI"></i>
         {{item.name}}
       </a>
     </li>
     <li class="li-hover">
-      <a (click)="isVisible = !isVisible"
+      <a (click)="open()"
          class="a-label dropdown-toggle"
          routerLink="/home-screen/admin-page" >
         <i class='fa fa-cog'></i>
@@ -26,7 +20,7 @@
 
 <!--      Блок отображения подпунктов Admin-page-->
 
-    <div *ngIf="isVisible" class="hideAdmin">
+    <div *ngIf="visibleAdminListItem" class="hideAdmin">
      <li>
         <a
            routerLink="/home-screen/admin-page/user"

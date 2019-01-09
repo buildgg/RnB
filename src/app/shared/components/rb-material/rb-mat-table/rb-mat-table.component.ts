@@ -5,6 +5,7 @@ import {SelectionModel} from '@angular/cdk/collections';
 import {ButtonAnchor} from '../../../models/view-model/button/button-anchor.model';
 import {ColumnTable} from '../../../models/view-model/column-table';
 import {TableButtons} from '../../../models/view-model/button/table-buttons';
+import {Issue} from '../../../models/issue.model';
 
 
 @Component({
@@ -25,17 +26,11 @@ export class RbMatTableComponent implements OnInit, OnChanges{
   @Output() clickDelete = new EventEmitter;
   @Output() clickView = new EventEmitter;
 
-/*  @Output()
-  clickTable = {
-    clickUpdate:  new EventEmitter,
-    clickDelete:  new EventEmitter,
-    clickView:    new EventEmitter
-  }*/
-
   dataSource;
   displayedColumns: string[] = [];
   @ViewChild(MatSort) sort: MatSort;
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  @ViewChild(MatPaginator)
+  paginator: MatPaginator;
   selection = new SelectionModel(true, []);
 
   ngOnInit() {
@@ -50,7 +45,6 @@ export class RbMatTableComponent implements OnInit, OnChanges{
 
   onSelectedChange(row, valueCheck) {
     this.selection.toggle(row);
-    console.log('!!! row ' + row.$id + ' valueCheck = ' + valueCheck.checked);
   }
 
   applyFilter(filterValue: string) {

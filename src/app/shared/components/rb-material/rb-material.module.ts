@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import {
   MatAutocompleteModule,
   MatCheckboxModule,
-  MatIconModule, MatInputModule,
+  MatIconModule, MatInputModule, MatPaginatorIntl,
   MatPaginatorModule, MatSortModule,
   MatTableModule
 } from '@angular/material';
@@ -14,6 +14,7 @@ import { RbMatDropDownComponent } from './rb-mat-drop-down/rb-mat-drop-down.comp
 import {ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CustomLabelPaginator} from './rb-mat-table/custom-label-paginator';
 
 @NgModule({
   imports: [
@@ -44,6 +45,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     MatInputModule,
     RbMatDropDownComponent,
     MatAutocompleteModule
-    ]
+    ],
+  providers: [{ provide: MatPaginatorIntl, useClass: CustomLabelPaginator}],
 })
 export class RbMaterialModule { }

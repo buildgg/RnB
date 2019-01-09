@@ -1,0 +1,23 @@
+<div *ngIf = "isLoadedData(); else loading">
+  <div class="box">
+    <div>
+      <rb-drop-down-menu [nameDropDown]="'Операции'"
+                         [dropDownArray]="operations"
+                         (selectedItemMenu)="makeOperation($event)">
+      </rb-drop-down-menu>
+    </div>
+<!--    <div>
+      <rb-modal-filter></rb-modal-filter>
+    </div>-->
+
+<!--    <div class="mat-filter">
+      <rb-mat-filter
+        (applyFilter)="applyFilter($event)">
+      </rb-mat-filter>
+    </div>-->
+  </div>
+</div>
+
+<ng-template #loading>
+  <rb-spinner></rb-spinner>
+</ng-template>

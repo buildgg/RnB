@@ -11,7 +11,9 @@
 .mat-table {
   font-family: "Segoe UI",Roboto,"Helvetica Neue", Arial,sans-serif;
   color: #0000008a;
+  overflow: auto;
 }
+
 .mat-header-cell {
   font-size: 16px;
   border-bottom: 2px solid #1771cb;
@@ -34,6 +36,7 @@
 .selected{
   background-color: /*rgba(8, 148, 255, 0.16);*/
    #e9ecef;
+/*  #7c92a9;*/
   /*border: 1px solid rgba(8, 148, 255, 0.16);*/
 }
 /*

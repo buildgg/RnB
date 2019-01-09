@@ -12,6 +12,7 @@ import {IssueService} from './issue.service';
 import {RbModalBoxDeleteComponent} from '../shared/components/rb-modal-box/rb-modal-box-delete/rb-modal-box-delete.component';
 import {TableButtons} from '../shared/models/view-model/button/table-buttons';
 import {IssueModalBoxViewComponent} from './issue-modal-box-view/issue-modal-box-view.component';
+import {RbMatTableComponent} from '../shared/components/rb-material/rb-mat-table/rb-mat-table.component';
 
 @Component({
   selector: 'budget-issue',
@@ -30,7 +31,10 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
   isDeleteRow = new Subject();
 
   @ViewChild(IssueModalBoxViewComponent)
-    viewModalBox: IssueModalBoxViewComponent;
+  viewModalBox: IssueModalBoxViewComponent;
+
+  @ViewChild(RbMatTableComponent)
+  selectedArray: RbMatTableComponent;
 
   tableButtons: TableButtons = {
     update:    new Button.UpdateButton(),
@@ -39,6 +43,7 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
   };
 
   addButton: ButtonAnchor = new Button.AddButton();
+
   filterValue: string;
   selectedRowId: string;
 
@@ -47,7 +52,6 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
               private activatedRoute: ActivatedRoute) {}
 
   ngOnInit() {
-
     this.activatedRoute.paramMap.subscribe(param => this.selectedRowId = param.get('id'));
     this.issueService.getIssues().subscribe(
       (val: Issue[]) => this.issueList = val
@@ -81,6 +85,8 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
 
   makeOperation(operation) {
     console.log(' operation = ' + operation.name);
+    console.log(this.getSelectedItems().length);
+
   }
 
   onClickUpdate(data) {
@@ -110,7 +116,12 @@ export class BudgetIssueComponent implements OnInit, OnDestroy{
 
   onClickView(data) {
     this.viewModalBox.launch(data);
-
   }
+
+  getSelectedItems(): Issue[] {
+    return this.selectedArray.selection.selected;
+  }
+
+
 
 }

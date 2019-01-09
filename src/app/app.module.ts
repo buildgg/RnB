@@ -15,6 +15,8 @@ import {AppRoutingModule} from './app-routing.module';
 import {BBDModule} from './bbd/bbd.module';
 import {CoreModule} from './core/core.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {CollectionIssueModule} from './collection-issue/collection-issue.module';
+
 
 
 
@@ -33,7 +35,9 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AdminPageModule,
     AppRoutingModule,
     CoreModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CollectionIssueModule
+
   ],
   bootstrap: [AppComponent]
 

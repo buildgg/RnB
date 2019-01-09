@@ -3,9 +3,10 @@ import {NgModule} from '@angular/core';
 
 import {HomeScreenComponent} from './home-screen.component';
 import {AuthGuard} from '../auth/auth-guard.service';
-import {routesAdminPage} from '../admin-page/admin-page-routing.module';
 import {BBDComponent} from '../bbd/bbd.component';
+import {routesAdminPage} from '../admin-page/admin-page-routing.module';
 import {routesIssue} from '../budget-issue/budget-issue-routing.module';
+import {routesCollectionIssue} from '../collection-issue/collection-issue-routing.module';
 
 export const routesHomeScreen: Routes = [
   {
@@ -19,6 +20,7 @@ export const routesHomeScreen: Routes = [
       /* loadChildren: 'app/budget-issue/budget-issue.module#BudgetIssueModule'*/
       ,
       /*,*/
+      {path: 'collection-issue', children: [...routesCollectionIssue]},
 
       {path: 'bbd', component: BBDComponent},
       {

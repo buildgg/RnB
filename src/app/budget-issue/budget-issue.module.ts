@@ -12,6 +12,7 @@ import {IssueService} from './issue.service';
 import {ReactiveFormsModule} from '@angular/forms';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { IssueModalBoxViewComponent } from './issue-modal-box-view/issue-modal-box-view.component';
+import { ModalBoxCreateCollectionComponent } from './modal-box-create-collection/modal-box-create-collection.component';
 
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { IssueModalBoxViewComponent } from './issue-modal-box-view/issue-modal-b
     BudgetIssueComponent,
     IssueListComponent,
     IssueEditComponent,
-    IssueModalBoxViewComponent],
+    IssueModalBoxViewComponent,
+    ModalBoxCreateCollectionComponent],
   providers: [IssueService]
 })
 export class BudgetIssueModule { }

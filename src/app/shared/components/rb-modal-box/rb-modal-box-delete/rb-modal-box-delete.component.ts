@@ -3,7 +3,8 @@ import {ManageModalBox} from '../rb-modal-universal/manage-modal-box';
 
 @Component({
   selector: 'rb-modal-box-delete',
-  templateUrl: './rb-modal-box-delete.component.html'
+  templateUrl: './rb-modal-box-delete.component.html',
+  styles: ['h5 {margin-left: 5%}']
 })
 export class RbModalBoxDeleteComponent extends ManageModalBox{
 

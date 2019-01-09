@@ -17,16 +17,9 @@ import {RoleClassProxy} from '../shared/proxy-data-source/roleClassProxy';
 /*****  FireBase  ****/
 import {RnbRealTimeFireBaseService} from '../shared/serviceFireBase/realTimeFireBase';
 import {environment} from '../../environments/environment';
-import {AngularFireModule} from 'angularfire2';
-import {AngularFireDatabaseModule} from 'angularfire2/database';
 import { UserLinkRoleListComponent } from './user/user-link-role-list/user-link-role-list.component';
 import {UserLinkRoleViewComponent} from './user/user-link-role-view/user-link-role-view.component';
 import {UserStaticData} from '../shared/staticDataMockup/userStaticData';
-
-
-
-
-
 
 @NgModule({
     imports: [
@@ -34,12 +27,11 @@ import {UserStaticData} from '../shared/staticDataMockup/userStaticData';
         AdminPageRoutingModule,
         LayoutModule,
         ReactiveFormsModule,
-        ComponentsModule,
-        /*****  FireBase  ****/
-        AngularFireDatabaseModule,
-        AngularFireModule.initializeApp(environment.firebaseConfig)
+        ComponentsModule
     ],
-    declarations: [AdminPageComponent, UserComponent, RoleComponent, UserLinkRoleEditFormComponent, RoleEditFormComponent, UserLinkRoleListComponent, UserLinkRoleViewComponent],
+    declarations: [AdminPageComponent, UserComponent, RoleComponent,
+      UserLinkRoleEditFormComponent, RoleEditFormComponent, UserLinkRoleListComponent,
+      UserLinkRoleViewComponent],
     exports: [AdminPageComponent, UserComponent, RoleComponent ],
     providers: [ UserClassProxy, RoleClassProxy, RnbRealTimeFireBaseService, UserStaticData ]
 })

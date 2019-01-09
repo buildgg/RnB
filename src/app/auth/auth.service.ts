@@ -1,8 +1,7 @@
 import {Injectable} from '@angular/core';
 import {User} from '../shared/models/user.model';
-import {Observable} from 'rxjs';
+import {Observable,  from } from 'rxjs';
 import { tap, filter, first } from 'rxjs/operators';
-import { from } from 'rxjs';
 
 
 export const USERS: User[] = [

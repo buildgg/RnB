@@ -73,7 +73,7 @@ export class RbLookUpComponent implements AfterViewChecked, OnChanges, ControlVa
       .pipe(
         startWith(''),
         distinctUntilChanged(),
-        map(value => this.filter(value))
+        map((value: string) => this.filter(value))
       );
   }
 

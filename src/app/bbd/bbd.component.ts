@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import {BBD} from '../shared/models/bbd.model';
 import {BBDListComponent} from './bbd-list/bbd-list.component';
 import {BBDMockData} from './bbd-mock-data';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ButtonAnchor} from '../shared/models/view-model/button/button-anchor.model';
 import {UpdateButtonAnchor} from '../shared/models/view-model/button/update-button-anchor.model';
 import {DeleteButtonAnchor} from '../shared/models/view-model/button/delete-button-anchor.model';

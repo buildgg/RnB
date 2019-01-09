@@ -1,31 +1,27 @@
 import {Injectable} from '@angular/core';
 import {$id, RnBRecord} from '../models/rnb-shared-structures';
-import {Subject, Observable} from 'rxjs';
-import { from } from 'rxjs';
+import {Subject, Observable,  from } from 'rxjs';
 
 
 
-import {AngularFireDatabase, AngularFireList} from 'angularfire2/database';
-
-
-const FIRE_TIMEOUT = 10000; // ТАЙМАУТ НЕ ПОМАГАЕТ - ОН ТУПО ГЕНЕРИТ ERROR ЧЕРЕЗ ТАЙМАУТ, если ничего не прихоидт с обзёрвбла , на который подписались
+const FIRE_TIMEOUT = 10000;
 
 @Injectable()
 export class RnbRealTimeFireBaseService {
 
-    private _dataList: AngularFireList<any>;
+    private _dataList;
 
-    constructor(private db: AngularFireDatabase) {
+    constructor() {
     }
 
-    innerGetDataList(listName: string): AngularFireList<any> {
-        this._dataList = this.db.list(listName);
-        return this._dataList;
+    innerGetDataList(listName: string){
+       /* this._dataList = this.db.list(listName);
+        return this._dataList;*/
     }
 
 
     getDataList<T>(listName: string): Observable<T[]> {
-        const pubSub = new Subject<T[]>();
+        /*const pubSub = new Subject<T[]>();
         let innerArray = new Array<T>();
         this.innerGetDataList(listName).snapshotChanges().subscribe(
             value => {
@@ -39,11 +35,12 @@ export class RnbRealTimeFireBaseService {
             },
             value => {pubSub.next(null); }
         );
-        return pubSub.asObservable();
+        return pubSub.asObservable();*/
+        return null;
     }
 
     insertRecord(oneRecord: RnBRecord, listName: string): Observable<$id> {
-        const pubSub = new Subject<$id>();
+        /*const pubSub = new Subject<$id>();
         const rezInstance = {} as RnBRecord;
         for (const objProp in oneRecord) {
             if (objProp !== '$id') {
@@ -58,11 +55,11 @@ export class RnbRealTimeFireBaseService {
                 pubSub.error('ошибка при попытке insert');
                 return null;
             }));
-        return pubSub.asObservable();
+        return pubSub.asObservable();*/return null;
     }
 
     updateRecord(oneRecord: RnBRecord, listName: string): Observable<$id>{
-        const pubSub = new Subject<string>();
+    /*    const pubSub = new Subject<string>();
         const rezultInstance = {} as RnBRecord;
         const rezultInstanceIDField = {} as RnBRecord;
         for (const objProp in oneRecord) {
@@ -79,12 +76,12 @@ export class RnbRealTimeFireBaseService {
             value => {
                 pubSub.next('ошибка при попытке update');
             });
-        return pubSub.asObservable();
+        return pubSub.asObservable();*/return null;
     }
 
 
     deleteRecord(oneRecord: RnBRecord, listName: string) {
-        const pubSub = new Subject<string>();
+       /* const pubSub = new Subject<string>();
         this.innerGetDataList(listName).remove(oneRecord.$id).then(
             value => {
                 pubSub.next(oneRecord.$id);
@@ -92,7 +89,8 @@ export class RnbRealTimeFireBaseService {
             value => {
                 pubSub.next('ошибка при попытке delete');
             });
-        return pubSub.asObservable();
+        return pubSub.asObservable();*/
+      return null;
     }
 
 

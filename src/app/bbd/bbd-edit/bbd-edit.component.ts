@@ -3,7 +3,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {BBDMockData} from '../bbd-mock-data';
 import {BBD} from '../../shared/models/bbd.model';
 import {BudgetPosition} from '../../shared/models/budget-position.model';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 import {ButtonAnchor} from '../../shared/models/view-model/button/button-anchor.model';
 import {UpdateButtonAnchor} from '../../shared/models/view-model/button/update-button-anchor.model';
 import {DeleteButtonAnchor} from '../../shared/models/view-model/button/delete-button-anchor.model';

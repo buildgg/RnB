@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import {HomeScreenModule} from './home-screen/home-screen.module';
-import {AlertModule} from 'ngx-bootstrap';
 import {Router} from '@angular/router';
 
 import {HomeScreenRoutingModule} from './home-screen/home-screen-routing.module';
@@ -27,7 +26,6 @@ import {CollectionIssueModule} from './collection-issue/collection-issue.module'
   imports: [
     BrowserModule,
     HomeScreenModule,
-    AlertModule.forRoot(),
     HomeScreenRoutingModule,
     BudgetIssueModule,
     BBDModule,
